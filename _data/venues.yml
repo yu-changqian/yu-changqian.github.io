@@ -1,9 +1,11 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"CVPR":
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ECCV":
+  color: "#00369f"
 
-"Vision":
-  color: "#009f36"
+"ICCV":
+  color: "#00369f"
+
+"IJCV":
+  color: "#00369f"

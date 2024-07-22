@@ -2,7 +2,8 @@
 ---
 <div class="row">
   {% if site.enable_publication_thumbnails %}
-    <div class="col col-sm-2 abbr">
+    <div class="col col-sm-3 abbr">
+      {% endif %}
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
           {% assign venue_style = null %}
@@ -10,7 +11,7 @@
             {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
           {%- endif -%}
           <abbr
-            class="badge rounded w-100"
+            class="badge w-50"
             {% if venue_style %}
               {{ venue_style }}
             {% endif -%}
@@ -22,30 +23,26 @@
             {% endif %}
           </abbr>
         {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+          <abbr class="badge w-50">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
       {% if entry.preview %}
-        {% if entry.preview contains '://' %}
-          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
-        {% else %}
-          {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
-          {%
-            include figure.liquid
-            loading="eager"
-            path=entry_path
-            sizes = "200px"
-            class="preview z-depth-1 rounded"
-            zoomable=true
-            alt=entry.preview
-          %}
-        {% endif %}
-      {% endif %}
+        {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
+        {%
+          include figure.liquid
+          loading="eager"
+          path=entry_path
+          width = "180px"
+          height = "120px"
+          class="preview z-depth-1 rounded"
+          zoomable=true
+          alt=entry.preview
+        %}
     </div>
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-9{% else %}col-sm-10{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->
@@ -149,11 +146,11 @@
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
     {% if entry.type == 'article' %}
-      {% capture entrytype %}<em>{{entry.journal}}</em>{% endcapture %}
+      {% capture entrytype %}<em>{{entry.journal}}</em> (<b>{{entry.abbr}}</b>){% endcapture %}
     {% elsif proceedings contains entry.type %}
-      {% capture entrytype %}<em>In {{entry.booktitle}}</em> {% endcapture %}
+      {% capture entrytype %}In <em>{{entry.booktitle}}</em> (<b>{{entry.abbr}}</b>) {% endcapture %}
     {% elsif thesis contains entry.type %}
-      {% capture entrytype %}<em>{{entry.school}}</em> {% endcapture %}
+      {% capture entrytype %}<em>{{entry.school}}</em> (<b>{{entry.abbr}}</b>) {% endcapture %}
     {% else %}
       {% capture entrytype %}{% endcapture %}
     {% endif %}
