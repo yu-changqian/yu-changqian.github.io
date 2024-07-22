@@ -7,7 +7,7 @@ subtitle: Senior Technical Specialist@Kunlun Tech, Ex-Tech Specialist@Meituan, I
 
 profile:
   align: left
-  image: bio.jpg
+  image: bio_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
       <a href="/assets/pdf/cv.pdf"><i class="ai ai-cv-square ai-2x"></i></a>
