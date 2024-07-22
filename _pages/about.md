@@ -10,7 +10,7 @@ profile:
   image: bio.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-      <a href="assets/pdf/cv.pdf"><i class="ai ai-cv-square ai-2x"></i></a>
+      <a href="/assets/pdf/cv.pdf"><i class="ai ai-cv-square ai-2x"></i></a>
       <a href="https://www.linkedin.com/in/yu-changqian/"><i class="fa-brands fa-linkedin fa-2x"></i></a>
       <a href="https://scholar.google.com/citations?user=Hv-vj2sAAAAJ&hl=en"><i class="ai ai-google-scholar-square ai-2x"></i></a>
       <a href="https://github.com/yu-changqian"><i class="fa-brands fa-square-github fa-2x"></i></a>
