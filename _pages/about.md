@@ -1,25 +1,36 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Senior Technical Specialist@Kunlun Tech, Ex-Tech Specialist@Meituan, Intern@MSRA, Megvii
+
 
 profile:
-  align: right
-  image: prof_pic.jpg
+  align: left
+  image: bio.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+      <a href="assets/pdf/cv.pdf"><i class="ai ai-cv-square ai-2x"></i></a>
+      <a href="https://www.linkedin.com/in/yu-changqian/"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+      <a href="https://scholar.google.com/citations?user=Hv-vj2sAAAAJ&hl=en"><i class="ai ai-google-scholar-square ai-2x"></i></a>
+      <a href="https://github.com/yu-changqian"><i class="fa-brands fa-square-github fa-2x"></i></a>
+      <a href="https://x.com/ChangqianYu"><i class="fa-brands fa-square-x-twitter fa-2x"></i></a>
+      <a href="https://www.zhihu.com/people/yu-chang-qian"><i class="fa-brands fa-zhihu fa-2x"></i></a>
+      
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+awards: true
+social: false # includes social icons at the bottom of the page
 ---
+As a Senior Technical Specialist at **Kunlun Tech**, I lead a team developing cutting-edge large multimodal models, with expertise in Diffusion and VLM technologies. My tenure at **Meituan's Autonomous Delivery Department** as a Technical Specialist equipped me with a robust understanding of real-world applications of AI.
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I obtained my Ph.D. degree from School of Artificial Intelligence and Automation, **Huazhong University of Science and Technology** in 2021, under the expert guidance of [Prof. Nong Sang](https://scholar.google.com/citations?user=ky_ZowEAAAAJ&hl=zh-CN) and [Prof. Changxin Gao](https://scholar.google.com/citations?user=4tku-lwAAAAJ&hl=zh-CN). My academic journey was further enriched by a visiting Ph.D. position at the Australian Institute for Machine Learning, **University of Adelaide**, where I worked closely with [Prof. Chunhua Shen](https://scholar.google.com/citations?user=Ljk2BvIAAAAJ&hl=zh-CN). During my doctoral studies, I received the **Excellent Doctoral Dissertation Award** (one of only 10 students in the country).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My industry experience includes being a research intern at **Microsoft Research Asia** and **Megvii (Face++)**, where I collaborated with [Dr. Jingdong Wang](https://jingdongwang2017.github.io/), [Dr. Gang Yu](https://www.skicyyu.org/), and [Dr. Jian Sun](https://scholar.google.com/citations?user=ALVSZAYAAAAJ&hl=en). I was part of the winning team at the COCO & Mapillary Panoptic Segmentation Challenge 2018.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+My passion lies in tackling complex problems in computer vision and artificial intelligence. I have made significant contributions to the fields of semantic/panoptic segmentation, behavior prediction, and vision-language models. Among my most notable works are:
+- [BiSeNet](https://openaccess.thecvf.com/content_ECCV_2018/html/Changqian_Yu_BiSeNet_Bilateral_Segmentation_ECCV_2018_paper.html) (Rank 10 in ECCV 2018 Top-10 Influential Papers & Citation > 2500).
+- [BiSeNetV2](https://link.springer.com/article/10.1007/s11263-021-01515-2) (IJCV & ESI & ESI-Hot & Citation > 1000).
+- [DFNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Yu_Learning_a_Discriminative_CVPR_2018_paper.html) (CVPR & Citation > 900)
+- [Lite-HRNet](https://openaccess.thecvf.com/content/CVPR2021/html/Yu_Lite-HRNet_A_Lightweight_High-Resolution_Network_CVPR_2021_paper.html) (CVPR & Citation > 300)
