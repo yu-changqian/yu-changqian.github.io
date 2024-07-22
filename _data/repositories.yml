@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - yu-changqian
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - yu-changqian/TorchSeg
+  - HRNet/Lite-HRNet
+  - yu-changqian/ContextPrior
+  - yu-changqian/CondNet
+
+
