@@ -28,10 +28,20 @@ table {
   th {
     font-size: 1rem;
   }
+}
 
-  th {
-    font-weight: bold;
-  }
+.news table th {
+  font-size: 0.9rem;
+
+}
+.news table td {
+  font-size: 1.0rem;
+
+}
+.news table th,
+.news table td {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 a,
@@ -682,6 +692,11 @@ footer.sticky-bottom {
       margin-bottom: 1rem;
 
       .preview {
+        z-index: -1;
+        position: absolute; /* 设置 abbr 和 preview 为绝对定位 */
+        top: 0.1rem; /* 从容器顶部开始 */
+        margin-left: 5px;
+        margin-bottom: 5px;
       }
 
       .abbr {
@@ -691,6 +706,10 @@ footer.sticky-bottom {
           display: inline-block;
           background-color: var(--global-theme-color);
           margin-bottom: 0.5rem;
+
+          div {
+            color: white;
+          }
 
           a {
             color: white;
