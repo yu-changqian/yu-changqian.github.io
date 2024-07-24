@@ -13,7 +13,7 @@ nav_order: 2
 Please see <a href="https://scholar.google.com/citations?user=Hv-vj2sAAAAJ&hl=en">Google Scholar</a>(>5800 citations) for more recent works and arXiv papers.
 </p>
 <p>
-* : Equal contribution  ✝: Corresponding  author.
+* : Equal contribution  †: Corresponding  author.
 </p>
 
 {% bibliography %}
