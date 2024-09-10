@@ -23,6 +23,8 @@ nav_order: 5
 - (2014) Second Class Prize, Outstanding Students, Shandong University
 
 ## Challenges
+- (2024) Rank 1 in Argoverse Challenge 2024 - Single Agent Forecasting
+- (2024) Rank 3 in Argoverse Challenge 2024 - Multi-agent Motion Forecasting
 - (2022) Rank 1 in GigaVision Challenge 2022 - Trajectory Prediction
 - (2022) Rank 3 in Argoverse Challenge 2022 - Motion Forecasting (Honorable Mention Prize)
 - (2018) Rank 1 in COCO Challenge 2018 - Panoptic Segmentation Track 
