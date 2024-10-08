@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Senior Technical Specialist@Kunlun Tech, Ex-Tech Specialist@Meituan, Intern@MSRA, Megvii
+subtitle: Senior Research Scientist@Kunlun Tech, Ex-Research Scientist@Meituan, Intern@MSRA, Megvii
 
 
 profile:
@@ -23,7 +23,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 awards: true
 social: false # includes social icons at the bottom of the page
 ---
-As a Senior Technical Specialist at **Kunlun Tech**, I lead a team developing cutting-edge large multimodal models, with expertise in Diffusion and VLM technologies. My tenure at **Meituan's Autonomous Delivery Department** as a Technical Specialist equipped me with a robust understanding of real-world applications of AI.
+As a Senior Research Scientist at **Kunlun Tech**, I lead a team developing cutting-edge large multimodal models, with expertise in Diffusion and VLM technologies. My tenure at **Meituan's Autonomous Delivery Department** as a Research Scientist equipped me with a robust understanding of real-world applications of AI.
 
 I obtained my Ph.D. degree from School of Artificial Intelligence and Automation, **Huazhong University of Science and Technology** in 2021, under the expert guidance of [Prof. Nong Sang](https://scholar.google.com/citations?user=ky_ZowEAAAAJ&hl=zh-CN) and [Prof. Changxin Gao](https://scholar.google.com/citations?user=4tku-lwAAAAJ&hl=zh-CN). My academic journey was further enriched by a visiting Ph.D. position at the Australian Institute for Machine Learning, **University of Adelaide**, where I worked closely with [Prof. Chunhua Shen](https://scholar.google.com/citations?user=Ljk2BvIAAAAJ&hl=zh-CN). During my doctoral studies, I received the **Excellent Doctoral Dissertation Award** (one of only 10 students in the country).
 
