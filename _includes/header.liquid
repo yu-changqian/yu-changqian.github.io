@@ -114,6 +114,11 @@
               </button>
             </li>
           {% endif %}
+          <li class="toggle-container">
+            <button id="lang-toggle" title="Switch Language" onclick="window.toggleLanguage()">
+              {% if page.lang == 'cn' %}EN{% else %}中{% endif %}
+            </button>
+          </li>
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">
