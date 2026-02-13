@@ -692,11 +692,12 @@ footer.sticky-bottom {
       margin-bottom: 1rem;
 
       .preview {
-        z-index: -1;
-        position: absolute; /* 设置 abbr 和 preview 为绝对定位 */
-        top: 0.1rem; /* 从容器顶部开始 */
-        margin-left: 5px;
-        margin-bottom: 5px;
+        // z-index: -1;
+        // position: absolute; /* 设置 abbr 和 preview 为绝对定位 */
+        // top: 0.1rem; /* 从容器顶部开始 */
+        // margin-left: 5px;
+        // margin-bottom: 5px;
+        width: 100%;
       }
 
       .abbr {
