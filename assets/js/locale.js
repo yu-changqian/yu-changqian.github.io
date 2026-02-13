@@ -1,28 +1,36 @@
 // Language handling logic
 
-(function() {
+(function () {
   const cnPath = '/cn/';
   const enPath = '/';
-  
+
   // Function to get current language based on URL
   function getCurrentLang() {
     return window.location.pathname.startsWith(cnPath) ? 'cn' : 'en';
   }
 
   // Function to switch language
-  window.toggleLanguage = function() {
-    const currentLang = getCurrentLang();
-    const newLang = currentLang === 'cn' ? 'en' : 'cn';
-    
+  // Function to switch language
+  window.toggleLanguage = function () {
+    const currentPath = window.location.pathname;
+    let newPath;
+    let newLang;
+
+    if (currentPath.startsWith('/cn/')) {
+      // Switch to EN
+      newPath = currentPath.replace('/cn/', '/');
+      newLang = 'en';
+    } else {
+      // Switch to CN
+      newPath = '/cn' + currentPath;
+      newLang = 'cn';
+    }
+
     // Save preference
     localStorage.setItem('lang_pref', newLang);
 
     // Redirect
-    if (newLang === 'cn') {
-      window.location.href = cnPath;
-    } else {
-      window.location.href = enPath;
-    }
+    window.location.href = newPath;
   };
 
   // Auto-detect and redirect logic
@@ -34,11 +42,11 @@
     if (pref) {
       if (pref === 'cn' && currentLang !== 'cn') {
         // Only redirect if explicitly preferred CN but on EN page
-         // However, we shouldn't force redirect if they manually navigated? 
-         // Let's keep it simple: if pref implies a different root, we might want to redirect, 
-         // but that can be annoying. 
-         // Better strategy: Only auto-redirect on landing if NO preference is set.
-         return; 
+        // However, we shouldn't force redirect if they manually navigated? 
+        // Let's keep it simple: if pref implies a different root, we might want to redirect, 
+        // but that can be annoying. 
+        // Better strategy: Only auto-redirect on landing if NO preference is set.
+        return;
       }
       return;
     }
