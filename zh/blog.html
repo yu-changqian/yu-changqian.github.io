@@ -1,0 +1,39 @@
+---
+layout: default
+title: 博客
+description: "关于 AI 研究、工程与思考。"
+lang: zh
+permalink: /zh/blog/
+---
+{% assign lang = page.lang | default: "en" %}
+{% assign t = site.data.i18n[lang] %}
+<div class="container--narrow">
+  <div class="blog-header">
+    <h1 class="blog-header__title">{{ t.blog.title }}</h1>
+    <p class="blog-header__desc">{{ t.blog.subtitle }}</p>
+  </div>
+
+  {% if site.posts.size > 0 %}
+  <div class="post-list">
+    {% for post in site.posts %}
+    <a href="{{ post.url | relative_url }}" class="post-preview">
+      <div class="post-preview__meta">
+        <span class="post-preview__date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        {% assign words = post.content | number_of_words %}
+        {% assign minutes = words | divided_by: 200 | plus: 1 %}
+        <span class="post-preview__date">· {{ minutes }} {{ t.home.min_read }}</span>
+        {% for tag in post.tags limit:3 %}
+        <span class="post-preview__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <h3 class="post-preview__title">{{ post.title }}</h3>
+      {% if post.description %}
+      <p class="post-preview__desc">{{ post.description }}</p>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="blog-empty">{{ t.home.coming_soon }}</p>
+  {% endif %}
+</div>

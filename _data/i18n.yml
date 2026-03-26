@@ -1,0 +1,87 @@
+en:
+  nav:
+    about: "About"
+    publications: "Publications"
+    blog: "Blog"
+    awards: "Awards"
+  home:
+    selected_publications: "Selected Publications"
+    view_all: "View all →"
+    latest_posts: "Latest Posts"
+    news: "News"
+    timeline: "Timeline"
+    open_source: "Open Source"
+    coming_soon: "Coming soon — stay tuned!"
+    min_read: "min read"
+    citations: "citations"
+  publications:
+    title: "Publications"
+    subtitle: "for a complete list. (* Equal contribution, † Corresponding author)"
+    see: "See"
+    paper: "Paper"
+    arxiv: "arXiv"
+    code: "Code"
+  awards:
+    title: "Awards & Services"
+    awards: "Awards"
+    challenges: "Challenges"
+    services: "Academic Services"
+    talks: "Invited Talks"
+  blog:
+    title: "Blog"
+    subtitle: "Thoughts on AI research, engineering, and beyond."
+    prev: "← Prev"
+    next: "Next →"
+  post:
+    prev: "← Previous"
+    next: "Next →"
+  footer:
+    rights: ""
+  error:
+    title: "404"
+    message: "Page not found — it may have been moved or deleted."
+    back: "← Back to Home"
+
+zh:
+  nav:
+    about: "关于"
+    publications: "论文"
+    blog: "博客"
+    awards: "荣誉"
+  home:
+    selected_publications: "代表论文"
+    view_all: "查看全部 →"
+    latest_posts: "最新博客"
+    news: "动态"
+    timeline: "经历"
+    open_source: "开源项目"
+    coming_soon: "即将更新，敬请期待！"
+    min_read: "分钟阅读"
+    citations: "引用"
+  publications:
+    title: "学术论文"
+    subtitle: "查看完整列表。(* 共同贡献, † 通讯作者)"
+    see: "访问"
+    paper: "论文"
+    arxiv: "arXiv"
+    code: "代码"
+  awards:
+    title: "荣誉与服务"
+    awards: "学术荣誉"
+    challenges: "竞赛成绩"
+    services: "学术服务"
+    talks: "受邀报告"
+  blog:
+    title: "博客"
+    subtitle: "关于 AI 研究、工程与思考。"
+    prev: "← 上一页"
+    next: "下一页 →"
+  post:
+    prev: "← 上一篇"
+    next: "下一篇 →"
+  footer:
+    rights: ""
+  error:
+    title: "404"
+    message: "页面未找到 — 可能已被移动或删除。"
+    back: "← 返回首页"

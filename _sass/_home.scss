@@ -1,0 +1,244 @@
+// ============================================================
+// Home Page
+// ============================================================
+
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+}
+
+.hero__photo {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 640px) {
+    width: 110px;
+    height: 110px;
+    border-radius: 12px;
+  }
+}
+
+.hero__info {
+  flex: 1;
+}
+
+.hero__name {
+  font-size: $text-2xl;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 640px) {
+    font-size: $text-xl;
+  }
+}
+
+.hero__tagline {
+  font-size: $text-lg;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+
+  @media (max-width: 640px) {
+    font-size: $text-base;
+  }
+}
+
+.hero__title {
+  font-size: $text-xs;
+  color: var(--text-tertiary);
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+}
+
+.hero__bio {
+  font-size: $text-sm;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+
+  p {
+    margin-bottom: 0.4rem;
+  }
+
+  a {
+    font-weight: 500;
+  }
+}
+
+.hero__social {
+  @media (max-width: 640px) {
+    justify-content: center;
+  }
+}
+
+// --- Selected Pubs Grid ---
+
+.pub-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+// --- Latest Posts ---
+
+.post-preview {
+  display: block;
+  padding: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-color: var(--text-tertiary);
+  }
+}
+
+.post-preview__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-preview__date {
+  font-size: $text-sm;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.post-preview__tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.post-preview__title {
+  font-size: $text-base;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.post-preview__desc {
+  font-size: $text-sm;
+  color: var(--text-tertiary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+// --- Career Timeline ---
+
+.tl-entry {
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.35rem 0;
+  font-size: $text-sm;
+  line-height: 1.65;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+}
+
+.tl-entry__period {
+  flex-shrink: 0;
+  min-width: 7rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+  font-size: $text-xs;
+  padding-top: 0.15rem;
+
+  @media (max-width: 640px) {
+    min-width: auto;
+  }
+}
+
+.tl-entry__body {
+  color: var(--text-secondary);
+
+  p {
+    margin-bottom: 0;
+  }
+
+  strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  a {
+    font-weight: 500;
+  }
+
+  em {
+    color: var(--text-tertiary);
+    font-style: italic;
+  }
+}
+
+// --- Open Source List ---
+
+.oss-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.oss-item {
+  padding: 0.3rem 0;
+  font-size: $text-sm;
+  line-height: 1.6;
+}
+
+.oss-item__name {
+  font-weight: 600;
+}
+
+.oss-item__link {
+  font-size: $text-xs;
+  color: var(--text-tertiary);
+  margin-left: 0.25rem;
+}
+
+.oss-item__sep {
+  color: var(--text-tertiary);
+  margin: 0 0.35rem;
+}
+
+.oss-item__desc {
+  color: var(--text-secondary);
+}

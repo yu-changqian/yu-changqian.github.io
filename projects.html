@@ -1,0 +1,64 @@
+---
+layout: default
+title: Projects
+description: "Industry projects, products, and open-source contributions by Changqian Yu."
+permalink: /projects/
+---
+{% assign lang = page.lang | default: "en" %}
+{% assign t = site.data.i18n[lang].projects %}
+<div class="container">
+  <div class="page-header">
+    <h1>{{ t.title }}</h1>
+    <p>{{ t.subtitle }}</p>
+  </div>
+
+  <div class="pinned-grid">
+    {% for p in site.data.projects %}
+    <div class="pinned-card">
+      <div class="pinned-card__head">
+        <svg class="pinned-card__icon" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg>
+        {% if p.links.code %}
+        <a href="{{ p.links.code }}" class="pinned-card__name" target="_blank" rel="noopener">{% if p.title[lang] %}{{ p.title[lang] }}{% else %}{{ p.title }}{% endif %}</a>
+        {% else %}
+        <span class="pinned-card__name">{% if p.title[lang] %}{{ p.title[lang] }}{% else %}{{ p.title }}{% endif %}</span>
+        {% endif %}
+      </div>
+
+      <p class="pinned-card__desc">{% if p.description[lang] %}{{ p.description[lang] }}{% else %}{{ p.description }}{% endif %}</p>
+
+      <div class="pinned-card__foot">
+        <div class="pinned-card__tags">
+          {% for tag in p.tags limit:3 %}
+          {% assign tag_lower = tag | downcase | replace: " ", "-" | replace: "/", "-" %}
+          {% assign dot_class = "dot--default" %}
+          {% case tag_lower %}
+            {% when "python" %}{% assign dot_class = "dot--python" %}
+            {% when "pytorch" %}{% assign dot_class = "dot--pytorch" %}
+            {% when "vlm" %}{% assign dot_class = "dot--vlm" %}
+            {% when "diffusion" %}{% assign dot_class = "dot--diffusion" %}
+            {% when "multimodal" %}{% assign dot_class = "dot--multimodal" %}
+            {% when "llm" %}{% assign dot_class = "dot--llm" %}
+            {% when "autonomous-driving" %}{% assign dot_class = "dot--ad" %}
+            {% when "trajectory-prediction" %}{% assign dot_class = "dot--traj" %}
+            {% when "transformer" %}{% assign dot_class = "dot--transformer" %}
+            {% when "music-generation" %}{% assign dot_class = "dot--music" %}
+            {% when "flow-matching" %}{% assign dot_class = "dot--flow" %}
+            {% when "segmentation" %}{% assign dot_class = "dot--seg" %}
+            {% when "computer-vision" %}{% assign dot_class = "dot--cv" %}
+          {% endcase %}
+          <span class="pinned-card__tag"><span class="pinned-card__dot {{ dot_class }}"></span>{{ tag }}</span>
+          {% endfor %}
+        </div>
+        <span class="pinned-card__meta">{{ p.period }}</span>
+      </div>
+
+      {% if p.links.paper or p.links.code %}
+      <div class="pinned-card__links">
+        {% if p.links.paper %}<a href="{{ p.links.paper }}" class="link-btn" target="_blank" rel="noopener">Paper</a>{% endif %}
+        {% if p.links.code %}<a href="{{ p.links.code }}" class="link-btn" target="_blank" rel="noopener">Code</a>{% endif %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>

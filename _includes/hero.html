@@ -1,0 +1,37 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign about = site.data.about %}
+
+<section class="hero">
+  <div class="hero__photo">
+    <img src="{{ about.photo | relative_url }}" alt="{{ about.name[lang] }}" width="140" height="140">
+  </div>
+  <div class="hero__info">
+    <h1 class="hero__name">{{ about.name[lang] }}</h1>
+    <p class="hero__tagline">{{ about.tagline[lang] }}</p>
+    <div class="hero__bio">
+      {% for paragraph in about.bio[lang] %}
+      {{ paragraph | markdownify }}
+      {% endfor %}
+    </div>
+    <div class="social-links hero__social">
+      {% if site.social.cv %}
+      <a href="{{ site.social.cv | relative_url }}" class="social-link" aria-label="CV" title="{% if lang == 'zh' %}简历{% else %}CV{% endif %}">{% include social-icon.html icon="cv" %}</a>
+      {% endif %}
+      {% if site.social.github %}
+      <a href="https://github.com/{{ site.social.github }}" class="social-link" aria-label="GitHub" title="GitHub">{% include social-icon.html icon="github" %}</a>
+      {% endif %}
+      {% if site.social.scholar %}
+      <a href="https://scholar.google.com/citations?user={{ site.social.scholar }}" class="social-link" aria-label="Google Scholar" title="Google Scholar">{% include social-icon.html icon="scholar" %}</a>
+      {% endif %}
+      {% if site.social.linkedin %}
+      <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" class="social-link" aria-label="LinkedIn" title="LinkedIn">{% include social-icon.html icon="linkedin" %}</a>
+      {% endif %}
+      {% if site.social.twitter %}
+      <a href="https://x.com/{{ site.social.twitter }}" class="social-link" aria-label="X (Twitter)" title="X (Twitter)">{% include social-icon.html icon="twitter" %}</a>
+      {% endif %}
+      {% if site.social.zhihu %}
+      <a href="https://www.zhihu.com/people/{{ site.social.zhihu }}" class="social-link" aria-label="Zhihu" title="知乎">{% include social-icon.html icon="zhihu" %}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

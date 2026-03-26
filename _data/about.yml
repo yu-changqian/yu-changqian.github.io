@@ -1,0 +1,56 @@
+# =============================================================
+# Personal Info — Bilingual
+# =============================================================
+
+name:
+  en: "Changqian Yu"
+  zh: "余昌黔"
+
+photo: "/assets/img/bio_pic.jpg"
+
+title:
+  en: "Senior Research Scientist @ Kuaishou, Lead of Kling-Image-Omni · PhD from HUST"
+  zh: "资深专家 @ 快手，Lead of Kling-Image-Omni · 华中科技大学博士"
+
+tagline:
+  en: "I build multimodal AI that sees, understands, and creates 🧠"
+  zh: "构建能看、能懂、能创造的多模态 AI 🧠"
+
+bio:
+  en:
+    - "I lead the **Kling-Image-Omni** team at [Kuaishou Technology](https://www.kuaishou.com), building multimodal AI systems for visual understanding and generation. I'm passionate about **Diffusion Models**, **Vision-Language Models**, and making AI see and create. PhD from [HUST](http://english.hust.edu.cn/) (🏆 [CSIG Top-10 Dissertation Award]()), [Stanford Top 2% Most-cited Scientists]()."
+  zh:
+    - "我在[快手](https://www.kuaishou.com)带领 **Kling-Image-Omni** 团队，构建视觉理解与生成的多模态 AI 系统。研究方向聚焦 **Diffusion 模型**和**视觉语言模型**。[华中科技大学](http://www.hust.edu.cn/)博士（🏆 [CSIG 全国优博]()，全国仅10人），[斯坦福全球前 2% 高被引科学家]()。"
+
+# Career timeline — narrative style, rendered on homepage
+timeline:
+  - period: "2025 –"
+    en: "I lead the **Kling-Image-Omni** team at [Kuaishou Technology](https://www.kuaishou.com), shipping products that power visual generation and understanding at scale. Key launches include **Kling-Image-O1** — bringing chain-of-thought reasoning to image generation — and **Kling-Image 3.0 & 3.0 Omni**, the latest generation of Kuaishou's image foundation models."
+    zh: "在[快手](https://www.kuaishou.com)带领 **Kling-Image-Omni** 团队，构建大规模视觉生成与理解产品。核心交付包括 **Kling-Image-O1**——将链式思维推理引入图像生成，以及 **Kling-Image 3.0 & 3.0 Omni**，快手最新一代图像基础模型。"
+
+  - period: "2023 – 2025"
+    en: "I led multimodal AI research at **Kunlun Tech** (Skywork). Shipped [**Skywork-VL-32B**](), a vision-language model integrating vision encoders with large language models, and built the storyboard generation model powering cinematic shot planning in [**SkyReels**](). Also built a scalable Diffusion training pipeline for text-to-image generation and image editing."
+    zh: "在**昆仑万维**（天工）主导多模态 AI 研究。交付了 [**Skywork-VL-32B**]() 视觉语言模型，以及 [**SkyReels**]() 中的分镜生成大模型，驱动影视级镜头规划。同时构建了可扩展的 Diffusion 训练流水线，支持文生图与图像编辑。"
+
+  - period: "2021 – 2023"
+    en: "I was a Research Scientist at **Meituan**'s Autonomous Delivery Department, developing trajectory prediction and motion planning models for the autonomous delivery fleet. My transformer-based prediction model was deployed on real vehicles serving millions of orders, reducing prediction error by 25%+ over previous baselines."
+    zh: "在**美团**自动配送部担任研究科学家，为自动配送车队开发轨迹预测和运动规划模型。提出的基于 Transformer 的预测模型部署在真实配送车上，服务百万级订单，预测误差较前代 baseline 降低 25%+。"
+
+  - period: "2016 – 2021"
+    en: "PhD at [HUST](http://english.hust.edu.cn/), focusing on semantic and panoptic segmentation. Won **1st place** in the COCO & Mapillary Panoptic Segmentation Challenge 2018 at ECCV. Built [TorchSeg](https://github.com/ycszen/TorchSeg), a widely-used PyTorch segmentation codebase (2 000+ GitHub stars). Visiting student at the **University of Adelaide**. Interned at **Microsoft Research Asia** (Stars of Tomorrow) and **Megvii (Face++)**."
+    zh: "在[华中科技大学](http://www.hust.edu.cn/)攻读博士，研究方向为语义分割与全景分割。在 ECCV 2018 的 COCO & Mapillary 全景分割挑战赛中获得**第一名**。创建了 [TorchSeg](https://github.com/ycszen/TorchSeg)（2000+ GitHub star）。赴**阿德莱德大学**联合培养。在**微软亚洲研究院**（明日之星）和**旷视科技**实习。"
+
+# Open-source projects — displayed as a simple list
+open_source:
+  - name: "TorchSeg"
+    url: "https://github.com/ycszen/TorchSeg"
+    desc:
+      en: "PyTorch semantic segmentation codebase — BiSeNet, DFN, DenseASPP and more. 2 000+ ⭐"
+      zh: "PyTorch 语义分割代码库 — BiSeNet、DFN、DenseASPP 等。2000+ ⭐"
+
+  - name: "FluxMusic"
+    url: "https://github.com/feizc/FluxMusic"
+    paper: "https://arxiv.org/abs/2409.00587"
+    desc:
+      en: "Text-to-music generation with rectified flow transformers."
+      zh: "基于 rectified flow transformers 的文本转音乐生成。"

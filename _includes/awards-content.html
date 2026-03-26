@@ -1,0 +1,57 @@
+{% assign lang = include.lang | default: "en" %}
+{% assign t = site.data.i18n[lang].awards %}
+{% assign data = site.data.awards %}
+
+<h3>{{ t.awards }}</h3>
+<ul class="awards-list">
+  {% for a in data.awards %}
+  <li class="awards-item{% if a.highlight %} awards-item--highlight{% endif %}">
+    <span class="awards-item__year">{{ a.year }}</span>
+    <span class="awards-item__text">{{ a[lang] }}</span>
+  </li>
+  {% endfor %}
+</ul>
+
+<hr>
+
+<h3>{{ t.challenges }}</h3>
+<ul class="awards-list">
+  {% for c in data.challenges %}
+  <li class="awards-item">
+    <span class="awards-item__year">{{ c.year }}</span>
+    <span class="awards-item__rank">
+      {% if c.rank == 1 %}🥇{% elsif c.rank == 2 %}🥈{% elsif c.rank == 3 %}🥉{% endif %}
+      {% if lang == "zh" %}
+        {% if c.rank == 1 %}<strong>第一名</strong>{% elsif c.rank == 2 %}第二名{% elsif c.rank == 3 %}第三名{% else %}第{{ c.rank }}名{% endif %}
+      {% else %}
+        {% if c.rank == 1 %}<strong>Rank 1</strong>{% elsif c.rank == 2 %}Rank 2{% elsif c.rank == 3 %}Rank 3{% else %}Rank {{ c.rank }}{% endif %}
+      {% endif %}
+    </span>
+    <span class="awards-item__dash">—</span>
+    <span class="awards-item__text">{{ c[lang] }}</span>
+  </li>
+  {% endfor %}
+</ul>
+
+<hr>
+
+<h3>{{ t.services }}</h3>
+<ul class="awards-list awards-list--plain">
+  {% for s in data.services %}
+  <li class="awards-item">
+    <span class="awards-item__text">{{ s[lang] }}</span>
+  </li>
+  {% endfor %}
+</ul>
+
+<hr>
+
+<h3>{{ t.talks }}</h3>
+<ul class="awards-list">
+  {% for talk in data.talks %}
+  <li class="awards-item">
+    <span class="awards-item__year">{{ talk.date }}</span>
+    <span class="awards-item__text">{{ talk[lang].venue }} — <em>"{{ talk[lang].title }}"</em></span>
+  </li>
+  {% endfor %}
+</ul>

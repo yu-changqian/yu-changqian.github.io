@@ -1,0 +1,26 @@
+// ============================================================
+// Dark Mode
+// ============================================================
+
+[data-theme="dark"] {
+  --bg-primary: #{$dark-bg-primary};
+  --bg-secondary: #{$dark-bg-secondary};
+  --bg-tertiary: #{$dark-bg-tertiary};
+  --text-primary: #{$dark-text-primary};
+  --text-secondary: #{$dark-text-secondary};
+  --text-tertiary: #{$dark-text-tertiary};
+  --accent: #{$dark-accent};
+  --accent-hover: #{$dark-accent-hover};
+  --accent-light: #{$dark-accent-light};
+  --border: #{$dark-border};
+  --card-bg: #{$dark-card-bg};
+  --card-shadow: #{$dark-card-shadow};
+  --card-shadow-hover: #{$dark-card-shadow-hover};
+  --code-bg: #{$dark-code-bg};
+  --code-text: #{$dark-code-text};
+  --nav-bg: rgba(15, 23, 42, 0.85);
+
+  img {
+    opacity: 0.9;
+  }
+}

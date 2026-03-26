@@ -1,0 +1,9 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign about = site.data.about %}
+
+{% for entry in about.timeline %}
+<div class="tl-entry">
+  <span class="tl-entry__period">{{ entry.period }}</span>
+  <div class="tl-entry__body">{{ entry[lang] | markdownify }}</div>
+</div>
+{% endfor %}

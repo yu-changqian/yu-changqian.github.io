@@ -1,0 +1,71 @@
+// ============================================================
+// Awards Page
+// ============================================================
+
+.awards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.awards-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  font-size: $text-sm;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  border-bottom: 1px solid transparent;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: var(--bg-secondary);
+    border-radius: 4px;
+  }
+
+  &--highlight {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+}
+
+.awards-item__year {
+  flex-shrink: 0;
+  min-width: 3.5rem;
+  font-size: $text-xs;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.awards-item__rank {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: $text-sm;
+}
+
+.awards-item__dash {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.awards-item__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.awards-list--plain .awards-item {
+  padding-left: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .awards-item {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .awards-item__year {
+    min-width: auto;
+  }
+}
