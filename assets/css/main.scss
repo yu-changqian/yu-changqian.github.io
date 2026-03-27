@@ -1,12 +1,10 @@
 ---
 ---
 
-@import "variables";
-@import "base";
-@import "dark";
-@import "layout";
-@import "components";
-@import "home";
-@import "blog";
-@import "projects";
-@import "awards";
+@use "base";
+@use "dark";
+@use "layout";
+@use "components";
+@use "home";
+@use "blog";
+@use "awards";

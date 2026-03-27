@@ -49,13 +49,12 @@ Site runs at `http://localhost:4000`. Push to `main` branch triggers automatic d
 │   ├── _components.scss   # Cards, tags, buttons, news list
 │   ├── _home.scss         # Hero, timeline, open source, pub grid
 │   ├── _blog.scss         # Blog list and post page
-│   ├── _projects.scss     # Project cards (legacy, kept for /projects/)
 │   └── _awards.scss       # Awards page
 ├── _posts/                # Blog posts (Markdown)
 ├── assets/
 │   ├── css/main.scss      # SCSS entry point
 │   ├── js/main.js         # Theme toggle, mobile nav, scroll effects
-│   └── img/               # Images (bio photo, favicons, pub previews)
+│   └── img/               # Images (bio photo, favicons, timeline logos, pub previews)
 ├── index.html             # English homepage
 ├── zh/                    # Chinese versions of all pages
 │   ├── index.html
@@ -96,6 +95,8 @@ Edit the `timeline` section in `_data/about.yml`:
 ```yaml
 timeline:
   - period: "2025 –"
+    logo: "/assets/img/logos/kuaishou.svg"   # optional
+    logo_alt: "Kuaishou"                     # optional
     en: "Narrative paragraph with **bold** and [links](url)."
     zh: "对应的中文叙事。"
   - period: "2023 – 2025"
@@ -108,6 +109,7 @@ Tips:
 - Bold product names: `**Kling-Image-O1**`
 - Use `[text](url)` for links; leave `()` empty as placeholder
 - Entries render top-to-bottom; put most recent first
+- Timeline logos are loaded from `assets/img/logos/` (SVG preferred)
 
 ### Open Source Projects
 
@@ -230,7 +232,7 @@ The workflow is defined in `.github/workflows/deploy.yml`. No manual steps neede
 ## Notes
 
 - **No CV/resume file** in the repo — intentionally excluded for privacy
-- **Images**: Publication preview images go in `assets/img/publication_preview/`. Bio photo is `assets/img/bio_pic.jpg`
-- **Legacy /projects/ page**: Still exists at `/projects/` but removed from nav; career info is now on the homepage timeline
+- **Images**: Publication preview images go in `assets/img/publication_preview/`; timeline logos go in `assets/img/logos/`; bio photo is `assets/img/bio_pic.jpg`
+- **Career timeline is the source of truth**: Experience content lives in `_data/about.yml` (`timeline` section), not in a separate projects page
 - **Language auto-redirect**: First-time visitors with Chinese browser locale are redirected to `/zh/` for whitelisted pages (configured in `main.js`)
 - **Sass compilation**: `sass.style: compressed` in `_config.yml` for production minification

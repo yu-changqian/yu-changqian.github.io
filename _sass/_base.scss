@@ -2,6 +2,8 @@
 // Base Styles — Reset, Typography, Global Elements
 // ============================================================
 
+@use "variables" as *;
+
 *,
 *::before,
 *::after {

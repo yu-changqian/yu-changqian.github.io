@@ -43,8 +43,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - Research.md
-  - Plan.md
   - LICENSE
   - .DS_Store
 

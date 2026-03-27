@@ -4,7 +4,18 @@
 <div class="tl-list">
 {% for entry in about.timeline %}
 <div class="tl-entry">
-  <span class="tl-entry__period">{{ entry.period }}</span>
+  <div class="tl-entry__meta">
+    <span class="tl-entry__period">{{ entry.period }}</span>
+    <div class="tl-entry__brand-wrap">
+      <div class="tl-entry__brand">
+        {% if entry.logo %}
+        <img src="{{ entry.logo | relative_url }}" alt="{{ entry.logo_alt | default: 'organization logo' }}" class="tl-entry__logo" loading="lazy">
+        {% else %}
+        <span class="tl-entry__brand-fallback" aria-hidden="true">•</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
   <div class="tl-entry__body">{{ entry[lang] | markdownify }}</div>
 </div>
 {% endfor %}

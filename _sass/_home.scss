@@ -2,6 +2,8 @@
 // Home Page
 // ============================================================
 
+@use "variables" as *;
+
 .hero {
   display: flex;
   gap: 3rem;
@@ -183,7 +185,7 @@
 
 .tl-entry {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.75rem;
   padding: 0.75rem 0.5rem;
   font-size: $text-base;
   line-height: 1.75;
@@ -200,18 +202,62 @@
   }
 }
 
-.tl-entry__period {
+.tl-entry__meta {
   flex-shrink: 0;
-  min-width: 8rem;
+  width: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-top: 0.2rem;
+
+  @media (max-width: 640px) {
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.tl-entry__period {
   font-weight: 600;
   color: var(--text-tertiary);
   font-variant-numeric: tabular-nums;
   font-size: $text-sm;
-  padding-top: 0.15rem;
+}
+
+.tl-entry__brand-wrap {
+  width: 100%;
 
   @media (max-width: 640px) {
-    min-width: auto;
+    display: none;
   }
+}
+
+.tl-entry__brand {
+  width: 7.75rem;
+  height: 4rem;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.tl-entry__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.15rem;
+  display: block;
+}
+
+.tl-entry__brand-fallback {
+  font-size: 1rem;
+  color: var(--text-tertiary);
 }
 
 .tl-entry__body {

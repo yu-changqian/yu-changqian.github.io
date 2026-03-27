@@ -2,6 +2,8 @@
 // Dark Mode
 // ============================================================
 
+@use "variables" as *;
+
 [data-theme="dark"] {
   --bg-primary: #{$dark-bg-primary};
   --bg-secondary: #{$dark-bg-secondary};
