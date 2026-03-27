@@ -67,7 +67,7 @@ html {
 body {
   font-family: $font-sans;
   font-size: $text-base;
-  line-height: 1.6;
+  line-height: 1.75;
   color: var(--text-primary);
   background: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
@@ -124,7 +124,7 @@ strong {
 hr {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 1.25rem 0;
+  margin: 3rem 0;
 }
 
 img {

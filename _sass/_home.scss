@@ -4,15 +4,15 @@
 
 .hero {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   align-items: flex-start;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 
   @media (max-width: 640px) {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 }
 
@@ -54,14 +54,17 @@
 }
 
 .hero__tagline {
-  font-size: $text-lg;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-size: $text-xl;
+  font-weight: 600;
+  background: linear-gradient(120deg, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
 
   @media (max-width: 640px) {
-    font-size: $text-base;
+    font-size: $text-lg;
   }
 }
 
@@ -73,17 +76,27 @@
 }
 
 .hero__bio {
-  font-size: $text-sm;
+  font-size: $text-base;
   color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 0.75rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
 
   p {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 
   a {
+    color: var(--text-primary);
     font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 4px;
+    transition: text-decoration-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
   }
 }
 
@@ -98,22 +111,25 @@
 .pub-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 // --- Latest Posts ---
 
 .post-preview {
   display: block;
-  padding: 1rem;
+  padding: 1.25rem;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 8px;
   text-decoration: none;
-  transition: border-color $transition-fast;
+  box-shadow: var(--card-shadow);
+  transition: border-color $transition-fast, box-shadow $transition-fast, transform $transition-fast;
 
   &:hover {
-    border-color: var(--text-tertiary);
+    border-color: var(--border);
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
   }
 }
 
@@ -156,31 +172,41 @@
 .post-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 // --- Career Timeline ---
 
+.tl-list {
+  margin: 0 -0.5rem;
+}
+
 .tl-entry {
   display: flex;
-  gap: 1.25rem;
-  padding: 0.35rem 0;
-  font-size: $text-sm;
-  line-height: 1.65;
+  gap: 1.5rem;
+  padding: 0.75rem 0.5rem;
+  font-size: $text-base;
+  line-height: 1.75;
+  border-radius: 8px;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: var(--bg-secondary);
+  }
 
   @media (max-width: 640px) {
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.25rem;
   }
 }
 
 .tl-entry__period {
   flex-shrink: 0;
-  min-width: 7rem;
+  min-width: 8rem;
   font-weight: 600;
   color: var(--text-tertiary);
   font-variant-numeric: tabular-nums;
-  font-size: $text-xs;
+  font-size: $text-sm;
   padding-top: 0.15rem;
 
   @media (max-width: 640px) {
@@ -201,7 +227,17 @@
   }
 
   a {
+    color: var(--text-primary);
     font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 4px;
+    transition: text-decoration-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
   }
 
   em {
@@ -215,13 +251,19 @@
 .oss-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 -0.5rem;
 }
 
 .oss-item {
-  padding: 0.3rem 0;
+  padding: 0.5rem 0.5rem;
   font-size: $text-sm;
   line-height: 1.6;
+  border-radius: 6px;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: var(--bg-secondary);
+  }
 }
 
 .oss-item__name {
