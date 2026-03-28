@@ -1,15 +1,15 @@
-name: Update Citation Counts
+name: Update Publications and Citations
 
 on:
   schedule:
-    - cron: "0 6 * * 1" # every Monday at 06:00 UTC
+    - cron: "0 6 1 * *" # 1st of each month at 06:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  update-citations:
+  update-publications:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,9 +23,13 @@ jobs:
           python-version: "3.x"
 
       - name: Install dependencies
-        run: pip install pyyaml requests
+        run: pip install pyyaml requests scholarly
 
-      - name: Update citation counts
+      - name: Sync publications from Google Scholar
+        run: python scripts/sync_publications_from_scholar.py --scholar-id Hv-vj2sAAAAJ
+        continue-on-error: true
+
+      - name: Update citation counts for selected publications
         run: python scripts/update_citations.py
 
       - name: Commit and push if changed
@@ -33,6 +37,6 @@ jobs:
           git diff --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _data/publications.yml
-          git commit -m "chore: update citation counts [automated]"
+          git add _data/publications.yml _data/publications_all.yml _data/scholar_stats.yml
+          git commit -m "chore: sync publications and update citation counts [automated]"
           git push

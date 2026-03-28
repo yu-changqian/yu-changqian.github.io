@@ -1,0 +1,462 @@
+- key: auto-2026-vqrae-representation-quantization-autoencoders-for-multimodal-understanding-gene
+  title: 'VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction'
+  authors: Sinan Du, Jiahao Guo, Bo Li, Shuhao Cui, Zhengzhuo Xu, Yuchuan Luo, Yongxian Wei, Kun Gai, Xinggang Wang, <strong>Kai
+    Wu</strong>, Chun Yuan
+  venue: CVPR
+  venue_full: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  year: 2026
+  selected: false
+  citations: 2
+  links:
+    paper: https://doi.org/10.48550/arxiv.2511.23386
+    arxiv: '2511.23386'
+  bibtex: "@misc{https://doi.org/10.48550/arxiv.2511.23386,\n  doi = {10.48550/ARXIV.2511.23386},\n  url = {https://arxiv.org/abs/2511.23386},\n\
+    \  author = {Du, Sinan and Guo, Jiahao and Li, Bo and Cui, Shuhao and Xu, Zhengzhuo and Luo, Yifu and Wei, Yongxian and\
+    \ Gai, Kun and Wang, Xinggang and Wu, Kai and Yuan, Chun},\n  keywords = {Computer Vision and Pattern Recognition (cs.CV),\
+    \ FOS: Computer and information sciences, FOS: Computer and information sciences},\n  title = {VQRAE: Representation Quantization\
+    \ Autoencoders for Multimodal Understanding, Generation and Reconstruction},\n  publisher = {arXiv},\n  year = {2025},\n\
+    \  copyright = {Creative Commons Attribution 4.0 International}\n}"
+- key: auto-2025-skyreels-a1-expressive-portrait-animation-in-video-diffusion-transformers
+  title: 'Skyreels-a1: Expressive portrait animation in video diffusion transformers'
+  authors: Di Qiu, Zhengcong Fei, Rui Wang, Jianjun Bai, <strong>Changqian Yu</strong>, Mingyuan Fan, Guibin Chen, Xiang Wen
+  venue: arXiv
+  venue_full: arXiv preprint
+  year: 2025
+  selected: false
+  citations: 31
+  links:
+    paper: https://doi.org/10.48550/arxiv.2502.10841
+    arxiv: '2502.10841'
+  bibtex: "@misc{https://doi.org/10.48550/arxiv.2502.10841,\n  doi = {10.48550/ARXIV.2502.10841},\n  url = {https://arxiv.org/abs/2502.10841},\n\
+    \  author = {Qiu, Di and Fei, Zhengcong and Wang, Rui and Bai, Jialin and Yu, Changqian and Fan, Mingyuan and Chen, Guibin\
+    \ and Wen, Xiang},\n  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences,\
+    \ FOS: Computer and information sciences},\n  title = {SkyReels-A1: Expressive Portrait Animation in Video Diffusion Transformers},\n\
+    \  publisher = {arXiv},\n  year = {2025},\n  copyright = {Creative Commons Attribution 4.0 International}\n}"
+- key: auto-2025-ingredients-blending-custom-photos-with-video-diffusion-transformers
+  title: 'Ingredients: Blending Custom Photos with Video Diffusion Transformers'
+  authors: Zhengcong Fei, Debang Li, Di Qiu, <strong>Changqian Yu</strong>, Mingyuan Fan
+  venue: arXiv
+  venue_full: arXiv preprint
+  year: 2025
+  selected: false
+  citations: 8
+  links:
+    paper: https://doi.org/10.48550/arxiv.2501.01790
+    arxiv: '2501.01790'
+  bibtex: "@misc{https://doi.org/10.48550/arxiv.2501.01790,\n  doi = {10.48550/ARXIV.2501.01790},\n  url = {https://arxiv.org/abs/2501.01790},\n\
+    \  author = {Fei, Zhengcong and Li, Debang and Qiu, Di and Yu, Changqian and Fan, Mingyuan},\n  keywords = {Computer Vision\
+    \ and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},\n\
+    \  title = {Ingredients: Blending Custom Photos with Video Diffusion Transformers},\n  publisher = {arXiv},\n  year =\
+    \ {2025},\n  copyright = {arXiv.org perpetual, non-exclusive license}\n}"
+- key: auto-2024-futurenet-lof-joint-trajectory-prediction-and-lane-occupancy-field-prediction-wi
+  title: 'FutureNet-LOF: Joint trajectory prediction and lane occupancy field prediction with future context encoding'
+  authors: Mingkun Wang, Xiaoguang Ren, Ruochun Jin, Minglong Li, Xiaochuan Zhang, <strong>Changqian Yu</strong>, Mingxu Wang,
+    Wenjing Yang
+  venue: ICRA
+  venue_full: IEEE International Conference on Robotics and Automation
+  year: 2025
+  selected: false
+  citations: 11
+  links:
+    paper: https://doi.org/10.1109/icra55743.2025.11128073
+  bibtex: '@inproceedings{Wang_2025, title={FutureNet-LoF: Joint Trajectory Prediction and Lane Occupancy Field Prediction
+    with Future Context Encoding}, url={http://dx.doi.org/10.1109/icra55743.2025.11128073}, DOI={10.1109/icra55743.2025.11128073},
+    booktitle={2025 IEEE International Conference on Robotics and Automation (ICRA)}, publisher={IEEE}, author={Wang, Mingkun
+    and Ren, Xiaoguang and Jin, Ruochun and Li, Minglong and Zhang, Xiaochuan and Yu, Changqian and Wang, Mingxu and Yang,
+    Wenjing}, year={2025}, month=may, pages={8841–8848} }'
+- key: auto-2024-video-diffusion-transformers-are-in-context-learners
+  title: Video diffusion transformers are in-context learners
+  authors: Zhengcong Fei, Di Qiu, Debang Li, <strong>Changqian Yu</strong>, Mingyuan Fan
+  venue: arXiv
+  venue_full: arXiv preprint
+  year: 2024
+  selected: false
+  citations: 7
+  links:
+    paper: https://doi.org/10.48550/arxiv.2412.10783
+    arxiv: '2412.10783'
+  bibtex: "@misc{https://doi.org/10.48550/arxiv.2412.10783,\n  doi = {10.48550/ARXIV.2412.10783},\n  url = {https://arxiv.org/abs/2412.10783},\n\
+    \  author = {Fei, Zhengcong and Qiu, Di and Li, Debang and Yu, Changqian and Fan, Mingyuan},\n  keywords = {Computer Vision\
+    \ and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},\n\
+    \  title = {Video Diffusion Transformers are In-Context Learners},\n  publisher = {arXiv},\n  year = {2024},\n  copyright\
+    \ = {Creative Commons Attribution 4.0 International}\n}"
+- key: auto-2023-semantic-segmentation-via-pixel-to-center-similarity-calculation
+  title: Semantic segmentation via pixel‐to‐center similarity calculation
+  authors: Dongyue Wu, Zilin Guo, Aoyan Li, <strong>Changqian Yu</strong>, Nong Sang, Changxin Gao
+  venue: CAAI TIT
+  venue_full: CAAI Transactions on Intelligence Technology
+  year: 2024
+  selected: false
+  citations: 8
+  links:
+    paper: https://doi.org/10.1049/cit2.12245
+  bibtex: '@article{Wu_2023, title={Semantic segmentation via pixel‐to‐center similarity calculation}, volume={9}, ISSN={2468-2322},
+    url={http://dx.doi.org/10.1049/cit2.12245}, DOI={10.1049/cit2.12245}, number={1}, journal={CAAI Transactions on Intelligence
+    Technology}, publisher={Institution of Engineering and Technology (IET)}, author={Wu, Dongyue and Guo, Zilin and Li, Aoyan
+    and Yu, Changqian and Sang, Nong and Gao, Changxin}, year={2023}, month=jun, pages={87–100} }'
+- key: auto-2023-sctnet-single-branch-cnn-with-transformer-semantic-information-for-real-time-seg
+  title: 'Sctnet: Single-branch cnn with transformer semantic information for real-time segmentation'
+  authors: Zhengze Xu, Dongyue Wu, <strong>Changqian Yu</strong>, Xiangxiang Chu, Nong Sang, Changxin Gao
+  venue: AAAI
+  venue_full: AAAI Conference on Artificial Intelligence
+  year: 2024
+  selected: false
+  citations: 179
+  links:
+    paper: https://doi.org/10.1609/aaai.v38i6.28457
+  bibtex: '@article{Xu_2024, title={SCTNet: Single-Branch CNN with Transformer Semantic Information for Real-Time Segmentation},
+    volume={38}, ISSN={2159-5399}, url={http://dx.doi.org/10.1609/aaai.v38i6.28457}, DOI={10.1609/aaai.v38i6.28457}, number={6},
+    journal={Proceedings of the AAAI Conference on Artificial Intelligence}, publisher={Association for the Advancement of
+    Artificial Intelligence (AAAI)}, author={Xu, Zhengze and Wu, Dongyue and Yu, Changqian and Chu, Xiangxiang and Sang, Nong
+    and Gao, Changxin}, year={2024}, month=mar, pages={6378–6386} }'
+- key: auto-2023-plip-language-image-pre-training-for-person-representation-learning
+  title: 'Plip: Language-image pre-training for person representation learning'
+  authors: Changxin Gao, Jiahao Hong, Nong Sang, Jingdong Wang, <strong>Changqian Yu</strong>, Feng Zhang, Hanyu Zhou, Jialong
+    Zuo
+  venue: NeurIPS
+  venue_full: Advances in Neural Information Processing Systems
+  year: 2024
+  selected: false
+  citations: 95
+  links:
+    paper: https://doi.org/10.52202/079017-1452
+  bibtex: '@inproceedings{Gao_2024, series={NeurIPS 2024}, title={PLIP: Language-Image Pre-training for Person Representation
+    Learning}, url={http://dx.doi.org/10.52202/079017-1452}, DOI={10.52202/079017-1452}, booktitle={Advances in Neural Information
+    Processing Systems 37}, publisher={Neural Information Processing Systems Foundation, Inc. (NeurIPS)}, author={Gao, Changxin
+    and Hong, Jiahao and Sang, Nong and Wang, Jingdong and Yu, Changqian and Zhang, Feng and Zhou, Hanyu and Zuo, Jialong},
+    year={2024}, pages={45666–45702}, collection={NeurIPS 2024} }'
+- key: auto-2024-moviecharacter-a-tuning-free-framework-for-controllable-character-video-synthesi
+  title: 'Moviecharacter: A tuning-free framework for controllable character video synthesis'
+  authors: ''
+  venue: arXiv
+  venue_full: arXiv preprint
+  year: 2024
+  selected: false
+  citations: 10
+  links: {}
+  bibtex: "@article{auto-2024-moviecharacter-a-tuning-free-framework-for-controllable-character-video-synthesi,\n  title={Moviecharacter:\
+    \ A tuning-free framework for controllable character video synthesis},\n  author={},\n  journal={arXiv preprint},\n  year={2024}\n\
+    }"
+- key: auto-2024-flux-that-plays-music
+  title: Flux that plays music
+  authors: Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Junshi Huang
+  venue: arXiv
+  venue_full: arXiv preprint
+  year: 2024
+  selected: false
+  citations: 30
+  links:
+    paper: https://doi.org/10.48550/arxiv.2409.00587
+    arxiv: '2409.00587'
+  bibtex: "@misc{https://doi.org/10.48550/arxiv.2409.00587,\n  doi = {10.48550/ARXIV.2409.00587},\n  url = {https://arxiv.org/abs/2409.00587},\n\
+    \  author = {Fei, Zhengcong and Fan, Mingyuan and Yu, Changqian and Huang, Junshi},\n  keywords = {Sound (cs.SD), Computer\
+    \ Vision and Pattern Recognition (cs.CV), Audio and Speech Processing (eess.AS), FOS: Computer and information sciences,\
+    \ FOS: Computer and information sciences, FOS: Electrical engineering, electronic engineering, information engineering,\
+    \ FOS: Electrical engineering, electronic engineering, information engineering},\n  title = {FLUX that Plays Music},\n\
+    \  publisher = {arXiv},\n  year = {2024},\n  copyright = {Creative Commons Attribution 4.0 International}\n}"
+- key: auto-2024-dimba-transformer-mamba-diffusion-models
+  title: 'Dimba: Transformer-mamba diffusion models'
+  authors: Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Debang Li, Youqiang Zhang, Junshi Huang
+  venue: arXiv
+  venue_full: arXiv preprint
+  year: 2024
+  selected: false
+  citations: 55
+  links:
+    paper: https://doi.org/10.48550/arxiv.2406.01159
+    arxiv: '2406.01159'
+  bibtex: "@misc{https://doi.org/10.48550/arxiv.2406.01159,\n  doi = {10.48550/ARXIV.2406.01159},\n  url = {https://arxiv.org/abs/2406.01159},\n\
+    \  author = {Fei, Zhengcong and Fan, Mingyuan and Yu, Changqian and Li, Debang and Zhang, Youqiang and Huang, Junshi},\n\
+    \  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer\
+    \ and information sciences},\n  title = {Dimba: Transformer-Mamba Diffusion Models},\n  publisher = {arXiv},\n  year =\
+    \ {2024},\n  copyright = {arXiv.org perpetual, non-exclusive license}\n}"
+- key: auto-2024-diffusion-rwkv-scaling-rwkv-like-architectures-for-diffusion-models
+  title: 'Diffusion-rwkv: Scaling rwkv-like architectures for diffusion models'
+  authors: Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Debang Li, Junshi Huang
+  venue: arXiv
+  venue_full: arXiv preprint
+  year: 2024
+  selected: false
+  citations: 54
+  links:
+    paper: https://doi.org/10.48550/arxiv.2404.04478
+    arxiv: '2404.04478'
+  bibtex: "@misc{https://doi.org/10.48550/arxiv.2404.04478,\n  doi = {10.48550/ARXIV.2404.04478},\n  url = {https://arxiv.org/abs/2404.04478},\n\
+    \  author = {Fei, Zhengcong and Fan, Mingyuan and Yu, Changqian and Li, Debang and Huang, Junshi},\n  keywords = {Computer\
+    \ Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},\n\
+    \  title = {Diffusion-RWKV: Scaling RWKV-Like Architectures for Diffusion Models},\n  publisher = {arXiv},\n  year = {2024},\n\
+    \  copyright = {Creative Commons Attribution 4.0 International}\n}"
+- key: auto-2023-hybrid-motion-representation-learning-for-prediction-from-raw-sensor-data
+  title: Hybrid motion representation learning for prediction from raw sensor data
+  authors: Depu Meng, <strong>Changqian Yu</strong>, Jiajun Deng, Deheng Qian, Houqiang Li, Dongchun Ren
+  venue: IEEE TMM
+  venue_full: IEEE Transactions on Multimedia
+  year: 2023
+  selected: false
+  citations: 7
+  links:
+    paper: https://doi.org/10.1109/tmm.2023.3242581
+  bibtex: '@article{Meng_2023, title={Hybrid Motion Representation Learning for Prediction From Raw Sensor Data}, volume={25},
+    ISSN={1941-0077}, url={http://dx.doi.org/10.1109/tmm.2023.3242581}, DOI={10.1109/tmm.2023.3242581}, journal={IEEE Transactions
+    on Multimedia}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Meng, Depu and Yu, Changqian
+    and Deng, Jiajun and Qian, Deheng and Li, Houqiang and Ren, Dongchun}, year={2023}, pages={8868–8879} }'
+- key: auto-2023-conditional-boundary-loss-for-semantic-segmentation
+  title: Conditional boundary loss for semantic segmentation
+  authors: Dongyue Wu, Zilin Guo, Aoyan Li, <strong>Changqian Yu</strong>, Changxin Gao, Nong Sang
+  venue: IEEE TIP
+  venue_full: IEEE Transactions on Image Processing
+  year: 2023
+  selected: false
+  citations: 55
+  links:
+    paper: https://doi.org/10.1109/tip.2023.3290519
+  bibtex: '@article{Wu_2023, title={Conditional Boundary Loss for Semantic Segmentation}, volume={32}, ISSN={1941-0042}, url={http://dx.doi.org/10.1109/tip.2023.3290519},
+    DOI={10.1109/tip.2023.3290519}, journal={IEEE Transactions on Image Processing}, publisher={Institute of Electrical and
+    Electronics Engineers (IEEE)}, author={Wu, Dongyue and Guo, Zilin and Li, Aoyan and Yu, Changqian and Gao, Changxin and
+    Sang, Nong}, year={2023}, pages={3717–3731} }'
+- key: auto-2022-ganet-goal-area-network-for-motion-forecasting
+  title: 'GANet: Goal Area Network for Motion Forecasting'
+  authors: Mingkun Wang, Xinge Zhu, <strong>Changqian Yu</strong>, Wei Li, Yuexin Ma, Ruochun Jin, Xiaoguang Ren, Dongchun
+    Ren, Mingxu Wang, Wenjing Yang
+  venue: ICRA
+  venue_full: IEEE International Conference on Robotics and Automation
+  year: 2022
+  selected: false
+  citations: 148
+  links:
+    paper: https://doi.org/10.1109/icra48891.2023.10160468
+  bibtex: '@inproceedings{Wang_2023, title={GANet: Goal Area Network for Motion Forecasting}, url={http://dx.doi.org/10.1109/icra48891.2023.10160468},
+    DOI={10.1109/icra48891.2023.10160468}, booktitle={2023 IEEE International Conference on Robotics and Automation (ICRA)},
+    publisher={IEEE}, author={Wang, Mingkun and Zhu, Xinge and Yu, Changqian and Li, Wei and Ma, Yuexin and Jin, Ruochun and
+    Ren, Xiaoguang and Ren, Dongchun and Wang, Mingxu and Yang, Wenjing}, year={2023}, month=may, pages={1609–1615} }'
+- key: auto-2022-efficient-video-segmentation-models-with-per-frame-inference
+  title: Efficient video segmentation models with per-frame inference
+  authors: Yifan Liu, Chunhua Shen, <strong>Changqian Yu</strong>, Jingdong Wang
+  venue: arXiv
+  venue_full: arXiv preprint
+  year: 2022
+  selected: false
+  citations: 3
+  links:
+    paper: https://doi.org/10.48550/arxiv.2202.12427
+    arxiv: '2202.12427'
+  bibtex: "@misc{https://doi.org/10.48550/arxiv.2202.12427,\n  doi = {10.48550/ARXIV.2202.12427},\n  url = {https://arxiv.org/abs/2202.12427},\n\
+    \  author = {Liu, Yifan and Shen, Chunhua and Yu, Changqian and Wang, Jingdong},\n  keywords = {Computer Vision and Pattern\
+    \ Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},\n  title = {Efficient\
+    \ Video Segmentation Models with Per-frame Inference},\n  publisher = {arXiv},\n  year = {2022},\n  copyright = {Creative\
+    \ Commons Attribution Non Commercial Share Alike 4.0 International}\n}"
+- key: auto-2022-d2t-a-framework-for-transferring-detection-to-tracking
+  title: 'D2T: A framework for transferring detection to tracking'
+  authors: Huai Qin, <strong>Changqian Yu</strong>, Changxin Gao, Nong Sang
+  venue: PR
+  venue_full: Pattern Recognition
+  year: 2022
+  selected: false
+  citations: 4
+  links:
+    paper: https://doi.org/10.1016/j.patcog.2022.108544
+  bibtex: '@article{Qin_2022, title={D2T: A Framework For transferring detection to tracking}, volume={126}, ISSN={0031-3203},
+    url={http://dx.doi.org/10.1016/j.patcog.2022.108544}, DOI={10.1016/j.patcog.2022.108544}, journal={Pattern Recognition},
+    publisher={Elsevier BV}, author={Qin, Huai and Yu, Changqian and Gao, Changxin and Sang, Nong}, year={2022}, month=jun,
+    pages={108544} }'
+- key: auto-2022-core-consistent-representation-learning-for-face-forgery-detection
+  title: 'Core: Consistent representation learning for face forgery detection'
+  authors: Yunsheng Ni, Depu Meng, <strong>Changqian Yu</strong>, Chengbin Quan, Dongchun Ren, Youjian Zhao
+  venue: CVPRW
+  venue_full: IEEE/CVF CVPR Workshops
+  year: 2022
+  selected: false
+  citations: 172
+  links:
+    paper: https://doi.org/10.1109/cvprw56347.2022.00011
+  bibtex: '@inproceedings{Ni_2022, title={CORE: Consistent Representation Learning for Face Forgery Detection}, url={http://dx.doi.org/10.1109/cvprw56347.2022.00011},
+    DOI={10.1109/cvprw56347.2022.00011}, booktitle={2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops
+    (CVPRW)}, publisher={IEEE}, author={Ni, Yunsheng and Meng, Depu and Yu, Changqian and Quan, Chengbin and Ren, Dongchun
+    and Zhao, Youjian}, year={2022}, month=jun, pages={12–21} }'
+- key: auto-2022-aggregating-region-context-information-for-semantic-segmentation
+  title: Aggregating region context information for semantic segmentation
+  authors: Zilin Guo, Dongyue Wu, Zhang Qiang, Nong Sang, <strong>Changqian Yu</strong>, Changxin Gao
+  venue: ICGIP
+  venue_full: International Conference on Graphics and Image Processing
+  year: 2022
+  selected: false
+  citations: 0
+  links:
+    paper: https://doi.org/10.1117/12.2623426
+  bibtex: '@inproceedings{Guo_2022, title={Aggregating region context information for semantic segmentation}, url={http://dx.doi.org/10.1117/12.2623426},
+    DOI={10.1117/12.2623426}, booktitle={Thirteenth International Conference on Graphics and Image Processing (ICGIP 2021)},
+    publisher={SPIE}, author={Guo, Zilin and Wu, Dongyue and Zhang, Qiang and Sang, Nong and Yu, Changqian and Gao, Changxin},
+    editor={Xu, Dan and Xiao, Liang}, year={2022}, month=feb, pages={100} }'
+- key: auto-2021-pose-guided-hierarchical-semantic-decomposition-and-composition-for-human-parsin
+  title: Pose-guided hierarchical semantic decomposition and composition for human parsing
+  authors: Beibei Yang, <strong>Changqian Yu</strong>, Jin-Gang Yu, Changxin Gao, Nong Sang
+  venue: IEEE TCYB
+  venue_full: IEEE Transactions on Cybernetics
+  year: 2021
+  selected: false
+  citations: 13
+  links:
+    paper: https://doi.org/10.1109/tcyb.2021.3107544
+  bibtex: '@article{Yang_2023, title={Pose-Guided Hierarchical Semantic Decomposition and Composition for Human Parsing},
+    volume={53}, ISSN={2168-2275}, url={http://dx.doi.org/10.1109/tcyb.2021.3107544}, DOI={10.1109/tcyb.2021.3107544}, number={3},
+    journal={IEEE Transactions on Cybernetics}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Yang,
+    Beibei and Yu, Changqian and Yu, Jin-Gang and Gao, Changxin and Sang, Nong}, year={2023}, month=mar, pages={1641–1652}
+    }'
+- key: auto-2021-condnet-conditional-classifier-for-scene-segmentation
+  title: 'CondNet: Conditional classifier for scene segmentation'
+  authors: <strong>Changqian Yu</strong>, Yuanjie Shao, Changxin Gao, Nong Sang
+  venue: IEEE SPL
+  venue_full: IEEE Signal Processing Letters
+  year: 2021
+  selected: false
+  citations: 19
+  links:
+    paper: https://doi.org/10.1109/lsp.2021.3070472
+    arxiv: '2109.10322'
+  bibtex: '@article{Yu_2021, title={CondNet: Conditional Classifier for Scene Segmentation}, volume={28}, ISSN={1558-2361},
+    url={http://dx.doi.org/10.1109/lsp.2021.3070472}, DOI={10.1109/lsp.2021.3070472}, journal={IEEE Signal Processing Letters},
+    publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Yu, Changqian and Shao, Yuanjie and Gao,
+    Changxin and Sang, Nong}, year={2021}, pages={758–762} }'
+- key: auto-2020-csenet-cascade-semantic-erasing-network-for-weakly-supervised-semantic-segmentat
+  title: 'CSENet: Cascade semantic erasing network for weakly-supervised semantic segmentation'
+  authors: Jiahui Liu, <strong>Changqian Yu</strong>, Beibei Yang, Changxin Gao, Nong Sang
+  venue: Neurocomputing
+  venue_full: Neurocomputing
+  year: 2021
+  selected: false
+  citations: 11
+  links:
+    paper: https://doi.org/10.1016/j.neucom.2020.05.107
+  bibtex: '@article{Liu_2021, title={CSENet: Cascade semantic erasing network for weakly-supervised semantic segmentation},
+    volume={453}, ISSN={0925-2312}, url={http://dx.doi.org/10.1016/j.neucom.2020.05.107}, DOI={10.1016/j.neucom.2020.05.107},
+    journal={Neurocomputing}, publisher={Elsevier BV}, author={Liu, Jiahui and Yu, Changqian and Yang, Beibei and Gao, Changxin
+    and Sang, Nong}, year={2021}, month=sep, pages={885–895} }'
+- key: auto-2021-attribute-specific-control-units-in-stylegan-for-fine-grained-image-manipulation
+  title: Attribute-specific control units in stylegan for fine-grained image manipulation
+  authors: Rui Wang, Jian Chen, Gang Yu, Li Sun, <strong>Changqian Yu</strong>, Changxin Gao, Nong Sang
+  venue: ACM MM
+  venue_full: ACM International Conference on Multimedia
+  year: 2021
+  selected: false
+  citations: 18
+  links:
+    paper: https://doi.org/10.1145/3474085.3475274
+    arxiv: '2111.13010'
+  bibtex: '@inproceedings{Wang_2021, series={MM ’21}, title={Attribute-specific Control Units in StyleGAN for Fine-grained
+    Image Manipulation}, url={http://dx.doi.org/10.1145/3474085.3475274}, DOI={10.1145/3474085.3475274}, booktitle={Proceedings
+    of the 29th ACM International Conference on Multimedia}, publisher={ACM}, author={Wang, Rui and Chen, Jian and Yu, Gang
+    and Sun, Li and Yu, Changqian and Gao, Changxin and Sang, Nong}, year={2021}, month=oct, pages={926–934}, collection={MM
+    ’21} }'
+- key: auto-2020-representative-graph-neural-network
+  title: Representative Graph Neural Network
+  authors: <strong>Changqian Yu</strong>, Yifan Liu, Changxin Gao, Chunhua Shen, Nong Sang
+  venue: ECCV
+  venue_full: European Conference on Computer Vision
+  year: 2020
+  selected: false
+  citations: 52
+  links:
+    paper: https://doi.org/10.1007/978-3-030-58571-6_23
+  bibtex: '@inbook{Yu_2020, title={Representative Graph Neural Network}, ISBN={9783030585716}, ISSN={1611-3349}, url={http://dx.doi.org/10.1007/978-3-030-58571-6_23},
+    DOI={10.1007/978-3-030-58571-6_23}, booktitle={Computer Vision – ECCV 2020}, publisher={Springer International Publishing},
+    author={Yu, Changqian and Liu, Yifan and Gao, Changxin and Shen, Chunhua and Sang, Nong}, year={2020}, pages={379–396}
+    }'
+- key: auto-2020-gtnet-generative-transfer-network-for-zero-shot-object-detection
+  title: 'GTNet: Generative Transfer Network for Zero-Shot Object Detection'
+  authors: Shizhen Zhao, Changxin Gao, Yuanjie Shao, Lerenhan Li, <strong>Changqian Yu</strong>, Zhong Ji, Nong Sang
+  venue: AAAI
+  venue_full: AAAI Conference on Artificial Intelligence
+  year: 2020
+  selected: false
+  citations: 64
+  links:
+    paper: https://doi.org/10.1609/aaai.v34i07.6996
+  bibtex: '@article{Zhao_2020, title={GTNet: Generative Transfer Network for Zero-Shot Object Detection}, volume={34}, ISSN={2159-5399},
+    url={http://dx.doi.org/10.1609/aaai.v34i07.6996}, DOI={10.1609/aaai.v34i07.6996}, number={07}, journal={Proceedings of
+    the AAAI Conference on Artificial Intelligence}, publisher={Association for the Advancement of Artificial Intelligence
+    (AAAI)}, author={Zhao, Shizhen and Gao, Changxin and Shao, Yuanjie and Li, Lerenhan and Yu, Changqian and Ji, Zhong and
+    Sang, Nong}, year={2020}, month=apr, pages={12967–12974} }'
+- key: auto-2020-efficient-semantic-video-segmentation-with-per-frame-inference
+  title: Efficient Semantic Video Segmentation with Per-frame Inference
+  authors: Yifan Liu, Chunhua Shen, <strong>Changqian Yu</strong>, Jingdong Wang
+  venue: ECCV
+  venue_full: European Conference on Computer Vision
+  year: 2020
+  selected: false
+  citations: 193
+  links:
+    paper: https://doi.org/10.1007/978-3-030-58607-2_21
+  bibtex: '@inbook{Liu_2020, title={Efficient Semantic Video Segmentation with Per-Frame Inference}, ISBN={9783030586072},
+    ISSN={1611-3349}, url={http://dx.doi.org/10.1007/978-3-030-58607-2_21}, DOI={10.1007/978-3-030-58607-2_21}, booktitle={Computer
+    Vision – ECCV 2020}, publisher={Springer International Publishing}, author={Liu, Yifan and Shen, Chunhua and Yu, Changqian
+    and Wang, Jingdong}, year={2020}, pages={352–368} }'
+- key: auto-2020-context-prior-for-scene-segmentation
+  title: Context Prior for Scene Segmentation
+  authors: <strong>Changqian Yu</strong>, Jingbo Wang, Changxin Gao, Gang Yu, Chunhua Shen, Nong Sang
+  venue: CVPR
+  venue_full: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  year: 2020
+  selected: false
+  citations: 354
+  links:
+    paper: https://doi.org/10.1109/cvpr42600.2020.01243
+  bibtex: '@inproceedings{Yu_2020, title={Context Prior for Scene Segmentation}, url={http://dx.doi.org/10.1109/cvpr42600.2020.01243},
+    DOI={10.1109/cvpr42600.2020.01243}, booktitle={2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    publisher={IEEE}, author={Yu, Changqian and Wang, Jingbo and Gao, Changxin and Yu, Gang and Shen, Chunhua and Sang, Nong},
+    year={2020}, month=jun, pages={12413–12422} }'
+- key: auto-2019-graph-based-scale-aware-network-for-human-parsing
+  title: Graph-based scale-aware network for human parsing
+  authors: Beibei Yang, <strong>Changqian Yu</strong>, Jiahui Liu, Changxin Gao, Nong Sang
+  venue: PRCV
+  venue_full: Chinese Conference on Pattern Recognition and Computer Vision
+  year: 2019
+  selected: false
+  citations: 2
+  links:
+    paper: https://doi.org/10.1007/978-3-030-31723-2_24
+  bibtex: '@inbook{Yang_2019, title={Graph-Based Scale-Aware Network for Human Parsing}, ISBN={9783030317232}, ISSN={1611-3349},
+    url={http://dx.doi.org/10.1007/978-3-030-31723-2_24}, DOI={10.1007/978-3-030-31723-2_24}, booktitle={Pattern Recognition
+    and Computer Vision}, publisher={Springer International Publishing}, author={Yang, Beibei and Yu, Changqian and Liu, Jiahui
+    and Gao, Changxin and Sang, Nong}, year={2019}, pages={279–290} }'
+- key: auto-2019-an-end-to-end-network-for-panoptic-segmentation
+  title: An end-to-end network for panoptic segmentation
+  authors: Huanyu Liu, Chao Peng, <strong>Changqian Yu</strong>, Jingbo Wang, Xu Liu, Gang Yu, Wei Jiang
+  venue: CVPR
+  venue_full: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  year: 2019
+  selected: false
+  citations: 208
+  links:
+    paper: https://doi.org/10.1109/cvpr.2019.00633
+  bibtex: '@inproceedings{Liu_2019, title={An End-To-End Network for Panoptic Segmentation}, url={http://dx.doi.org/10.1109/cvpr.2019.00633},
+    DOI={10.1109/cvpr.2019.00633}, booktitle={2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    publisher={IEEE}, author={Liu, Huanyu and Peng, Chao and Yu, Changqian and Wang, Jingbo and Liu, Xu and Yu, Gang and Jiang,
+    Wei}, year={2019}, month=jun, pages={6165–6174} }'
+- key: auto-2018-spatially-attentive-correlation-filters-for-visual-tracking
+  title: Spatially Attentive Correlation Filters for Visual Tracking
+  authors: Huai Qin, Zhixiong Pi, <strong>Changqian Yu</strong>, Changxin Gao, Jin-Gang Yu, Nong Sang
+  venue: ICIP
+  venue_full: IEEE International Conference on Image Processing
+  year: 2018
+  selected: false
+  citations: 0
+  links:
+    paper: https://doi.org/10.1109/icip.2018.8451045
+  bibtex: '@inproceedings{Qin_2018, title={Spatially Attentive Correlation Filters for Visual Tracking}, url={http://dx.doi.org/10.1109/icip.2018.8451045},
+    DOI={10.1109/icip.2018.8451045}, booktitle={2018 25th IEEE International Conference on Image Processing (ICIP)}, publisher={IEEE},
+    author={Qin, Huai and Pi, Zhixiong and Yu, Changqian and Gao, Changxin and Yu, Jin-Gang and Sang, Nong}, year={2018},
+    month=oct, pages={2695–2699} }'
+- key: auto-2018-center-level-verification-model-for-person-re-identification
+  title: Center-Level Verification Model for Person Re-identification
+  authors: Ruochen Zheng, Yang Chen, <strong>Changqian Yu</strong>, Chuchu Han, Changxin Gao, Nong Sang
+  venue: PRCV
+  venue_full: Chinese Conference on Pattern Recognition and Computer Vision
+  year: 2018
+  selected: false
+  citations: 1
+  links:
+    paper: https://doi.org/10.1007/978-3-030-03398-9_9
+  bibtex: '@inbook{Zheng_2018, title={Center-Level Verification Model for Person Re-identification}, ISBN={9783030033989},
+    ISSN={1611-3349}, url={http://dx.doi.org/10.1007/978-3-030-03398-9_9}, DOI={10.1007/978-3-030-03398-9_9}, booktitle={Pattern
+    Recognition and Computer Vision}, publisher={Springer International Publishing}, author={Zheng, Ruochen and Chen, Yang
+    and Yu, Changqian and Han, Chuchu and Gao, Changxin and Sang, Nong}, year={2018}, pages={98–107} }'

@@ -1,23 +1,12 @@
-- year: 2024
-  en: 'Ranked <strong>1st</strong> in <a href="https://www.argoverse.org/av2.html">Argoverse Challenge 2024</a> — Single Agent Forecasting.'
-  zh: '在 <a href="https://www.argoverse.org/av2.html">Argoverse Challenge 2024</a> 单智能体预测赛道获得<strong>第一名</strong>。'
+- year: 2025
+  en: 'Paper <em>VQRAE</em> accepted at <strong>CVPR 2026</strong>.'
+  zh: '论文 <em>VQRAE</em> 被 <strong>CVPR 2026</strong> 录用。'
 
-- year: 2024
-  en: 'Paper <em>PLIP</em> accepted at <strong>NeurIPS 2024</strong>.'
-  zh: '论文 <em>PLIP</em> 被 <strong>NeurIPS 2024</strong> 录用。'
+- year: 2025
+  en: 'Paper <em>CoTyle</em> accepted at <strong>CVPR 2026</strong>.'
+  zh: '论文 <em>CoTyle</em> 被 <strong>CVPR 2026</strong> 录用。'
 
-- year: 2023
-  en: 'Ranked as <a href="https://elsevier.digitalcommonsdata.com/datasets/btchxktzyw/6">World''s Top 2% most-cited scientists 2023</a> by Stanford University.'
-  zh: '入选<a href="https://elsevier.digitalcommonsdata.com/datasets/btchxktzyw/6">斯坦福大学全球前 2% 高被引科学家 2023</a>。'
+- year: 2025
+  en: 'Received the <a href="https://www.cie.org.cn/list_43/15597.html"><strong>Second Prize in Natural Science of the Science and Technology Award</strong> from the Chinese Institute of Electronics (CIE)</a>.'
+  zh: '荣获 <a href="https://www.cie.org.cn/list_43/15597.html">中国电子学会科学技术奖——<strong>自然科学奖二等奖</strong></a>'
 
-- year: 2022
-  en: 'Received the <strong>CSIG Excellent Doctoral Dissertation Award</strong> (10 recipients nationwide).'
-  zh: '获<strong>中国图象图形学学会优秀博士学位论文奖</strong>（全国优博，全国仅10人）。'
-
-- year: 2022
-  en: 'Ranked <strong>1st</strong> in GigaVision Challenge 2022 — Trajectory Prediction.'
-  zh: '在 GigaVision Challenge 2022 轨迹预测赛道获得<strong>第一名</strong>。'
-
-- year: 2018
-  en: 'Won <strong>1st place</strong> in COCO & Mapillary Panoptic Segmentation Challenge 2018. Presented at ECCV 2018 Workshop.'
-  zh: '在 COCO & Mapillary 全景分割挑战赛 2018 获得<strong>第一名</strong>，受邀在 ECCV 2018 Workshop 做报告。'

@@ -1,7 +1,15 @@
 awards:
+  - year: 2025
+    en: "Second Prize of Natural Science Award, Science and Technology Award of Chinese Institute of Electronics"
+    zh: "中国电子学会科学技术奖——自然科学奖二等奖"
+    highlight: true
+  - year: 2023-2025
+    en: "Stanford's Top 2% Scientists"
+    zh: "斯坦福全球前 2% 顶尖科学家"
+    highlight: true
   - year: 2022
-    en: "CSIG Excellent Doctoral Dissertation Award — **Top 10 nationwide**"
-    zh: "中国图象图形学学会优秀博士学位论文奖 — **全国优博**"
+    en: "CSIG Excellent Doctoral Dissertation Award — Top 10 nationwide"
+    zh: "中国图象图形学学会优秀博士学位论文奖（全国优博）"
     highlight: true
   - year: 2021
     en: "Outstanding Graduate, Huazhong University of Science and Technology"
@@ -11,27 +19,10 @@ awards:
     zh: '微软亚洲研究院"明日之星"实习项目'
   - year: 2019
     en: "State Scholarship for Study Abroad, CSC"
-    zh: "**国家建设高水平大学公派研究生奖学金**, 国家留学基金委"
-    highlight: true
+    zh: "国家建设高水平大学公派研究生奖学金, 国家留学基金委"
   - year: 2018
     en: "National Scholarship, Ministry of Education"
-    zh: "**国家奖学金**, 教育部"
-    highlight: true
-  - year: 2018
-    en: "Short-term Study Abroad Scholarship for Postgraduates, HUST"
-    zh: "华中科技大学研究生短期出国交流奖学金"
-  - year: 2018
-    en: "Merit Student, HUST"
-    zh: "华中科技大学三好学生"
-  - year: 2019
-    en: '"Hewang" Electric Excellence Scholarship, HUST'
-    zh: '华中科技大学"合旺"电气优秀奖学金'
-  - year: 2018
-    en: '"Hewang" Electric Excellence Scholarship, HUST'
-    zh: '华中科技大学"合旺"电气优秀奖学金'
-  - year: 2017
-    en: "Graduate Knowledge and Excellence Scholarship, HUST"
-    zh: "华中科技大学研究生知行优秀奖学金"
+    zh: "国家奖学金, 教育部"
 
 challenges:
   - year: 2024
@@ -58,10 +49,6 @@ challenges:
     rank: 1
     en: "Mapillary Challenge 2018, Panoptic Segmentation Track"
     zh: "Mapillary Challenge 2018, 全景分割赛道"
-  - year: 2018
-    rank: 5
-    en: "Scene Understanding Challenge for Autonomous Navigation"
-    zh: "非结构化环境自主导航场景理解挑战赛"
   - year: 2018
     rank: 2
     en: "Momenta Lane Detection Challenge"

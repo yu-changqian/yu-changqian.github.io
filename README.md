@@ -23,11 +23,12 @@ Site runs at `http://localhost:4000`. Push to `main` branch triggers automatic d
 .
 ├── _config.yml            # Site metadata, author info, social links, plugins
 ├── _data/
-│   ├── about.yml          # ★ Personal info, tagline, bio, career timeline, open source
-│   ├── publications.yml   # ★ Publication list (auto-updated citations)
-│   ├── news.yml           # ★ News/updates on homepage
-│   ├── awards.yml         # ★ Awards, challenges, services, talks
-│   └── i18n.yml           # UI text translations (EN/ZH)
+│   ├── about.yml            # ★ Personal info, tagline, bio, career timeline, open source
+│   ├── publications.yml     # ★ Curated selected publications (manually maintained)
+│   ├── publications_all.yml # ★ Auto-synced full publication list (Google Scholar/OpenAlex)
+│   ├── news.yml             # ★ News/updates on homepage
+│   ├── awards.yml           # ★ Awards, challenges, services, talks
+│   └── i18n.yml             # UI text translations (EN/ZH)
 ├── _includes/
 │   ├── hero.html          # Hero section (reads from about.yml)
 │   ├── timeline.html      # Career timeline (reads from about.yml)
@@ -62,8 +63,8 @@ Site runs at `http://localhost:4000`. Push to `main` branch triggers automatic d
 │   ├── blog.html
 │   └── awards.html
 └── .github/workflows/
-    ├── deploy.yml         # Auto-deploy on push to main
-    └── update-citations.yml  # Weekly citation count updates
+    ├── deploy.yml             # Auto-deploy on push to main
+    └── update-citations.yml   # Weekly publication sync + citation updates
 ```
 
 ## How to Update Content
@@ -127,7 +128,12 @@ open_source:
 
 ### Publications
 
-Edit `_data/publications.yml`. Each entry:
+Publication data is split into two files:
+
+- `_data/publications.yml`: curated selected papers (manual, rich metadata, homepage cards)
+- `_data/publications_all.yml`: full list auto-synced from Google Scholar/OpenAlex (includes `bibtex`)
+
+Curated entry example (`_data/publications.yml`):
 
 ```yaml
 - key: author2024title          # unique ID
@@ -146,7 +152,19 @@ Edit `_data/publications.yml`. Each entry:
   preview: filename.png         # image in assets/img/publication_preview/
 ```
 
-Citation counts are auto-updated every Monday by `.github/workflows/update-citations.yml`.
+Auto-sync command (manual run):
+
+```bash
+python scripts/sync_publications_from_scholar.py --scholar-id Hv-vj2sAAAAJ
+```
+
+This script will:
+
+- Keep `_data/publications.yml` as selected-only
+- Fetch all papers from OpenAlex (mapped from Google Scholar profile)
+- Generate/update `_data/publications_all.yml` with `bibtex` and citations
+
+Workflow `.github/workflows/update-citations.yml` runs weekly to sync publications and refresh citation counts.
 
 ### News
 

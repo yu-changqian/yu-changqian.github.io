@@ -185,6 +185,39 @@
   }
 }
 
+// --- Scholar Stats (badge style) ---
+
+.scholar-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.scholar-badge {
+  display: inline-flex;
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 0.75rem;
+  line-height: 1;
+  border: 1px solid var(--border);
+}
+
+.scholar-badge__label {
+  padding: 0.3rem 0.5rem;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.scholar-badge__value {
+  padding: 0.3rem 0.5rem;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
 // --- Year Group ---
 
 .year-group {

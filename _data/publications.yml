@@ -1,220 +1,82 @@
-- key: fei2024flux
-  title: "FLUX that Plays Music"
-  authors: "Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Junshi Huang"
-  venue: arXiv
-  venue_full: arXiv preprint
-  year: 2024
-  selected: true
-  google_scholar_id: M3ejUd6NZC8C
-  links:
-    arxiv: "2409.00587"
-    code: "https://github.com/feizc/FluxMusic"
-  preview: fluxmusic.png
-
 - key: fei2024scaling
-  title: "Scaling Diffusion Transformers to 16 Billion Parameters"
-  authors: "Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Debang Li, Junshi Huang"
+  title: Scaling Diffusion Transformers to 16 Billion Parameters
+  authors: Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Debang Li, Junshi Huang
   venue: arXiv
   venue_full: arXiv preprint
   year: 2024
   selected: true
   google_scholar_id: 4TOpqqG69KYC
   links:
-    arxiv: "2407.11633"
-    code: "https://github.com/feizc/DiT-MoE"
+    arxiv: '2407.11633'
+    code: https://github.com/feizc/DiT-MoE
   preview: dit-moe.png
-
-- key: fei2024dimba
-  title: "Dimba: Transformer-Mamba Diffusion Models"
-  authors: "Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Debang Li, Youqiang Zhang, Junshi Huang"
-  venue: arXiv
-  venue_full: arXiv preprint
-  year: 2024
-  selected: true
-  google_scholar_id: YOwf2qJgpHMC
-  links:
-    arxiv: "2406.01159"
-    code: "https://github.com/feizc/Dimba"
-    paper: "https://dimba-project.github.io/"
-  preview: dimba.jpg
-
 - key: fei2024dis
-  title: "Scalable Diffusion Models with State Space Backbone"
-  authors: "Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Junshi Huang"
+  title: Scalable Diffusion Models with State Space Backbone
+  authors: Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Junshi Huang
   venue: arXiv
   venue_full: arXiv preprint
   year: 2024
   selected: true
   google_scholar_id: Zph67rFs4hoC
   links:
-    arxiv: "2402.05608"
-    code: "https://github.com/feizc/DiS"
+    arxiv: '2402.05608'
+    code: https://github.com/feizc/DiS
   preview: dis.jpg
-
-- key: zuo2024plip
-  title: "PLIP: Language-Image Pre-training for Person Representation Learning"
-  authors: "Jialong Zuo, Jiahao Hong, Feng Zhang, <strong>Changqian Yu</strong>, Hanyu Zhou, Changxin Gao, Nong Sang, Jingdong Wang"
-  venue: NeurIPS
-  venue_full: Annual Conference on Neural Information Processing Systems
-  year: 2024
-  selected: true
-  google_scholar_id: 3fE2CSJIrl8C
-  links:
-    arxiv: "2305.08386"
-    code: "https://github.com/Zplusdragon/PLIP"
-  preview: plip.png
-
-- key: meng2023hybrid
-  title: "Hybrid Motion Representation Learning for Prediction from Raw Sensor Data"
-  authors: "Depu Meng, <strong>Changqian Yu†</strong>, Jiajun Deng, Deheng Qian, Houqiang Li, Dongchun Ren"
-  venue: IEEE TMM
-  venue_full: IEEE Transactions on Multimedia
-  year: 2023
-  selected: true
-  google_scholar_id: MXK_kJrjxJIC
-  links:
-    paper: "https://ieeexplore.ieee.org/abstract/document/10040996"
-  preview: hymo.jpg
-
-- key: wu2023cbl
-  title: "Conditional Boundary Loss for Semantic Segmentation"
-  authors: "Dongyue Wu, Zilin Guo, Aoyan Li, <strong>Changqian Yu</strong>, Changxin Gao, Nong Sang"
-  venue: IEEE TIP
-  venue_full: IEEE Transactions on Image Processing
-  year: 2023
-  selected: true
-  google_scholar_id: kNdYIx-mwKoC
-  links:
-    paper: "https://ieeexplore.ieee.org/abstract/document/10173725"
-    code: "https://github.com/dywu98/CBL-Conditional-Boundary-Loss"
-  preview: cbl.png
-
 - key: yu2021bisenetv2
-  title: "BiSeNet V2: Bilateral Network with Guided Aggregation for Real-time Semantic Segmentation"
-  authors: "<strong>Changqian Yu</strong>, Changxin Gao†, Jingbo Wang, Gang Yu, Chunhua Shen, Nong Sang"
+  title: 'BiSeNet V2: Bilateral Network with Guided Aggregation for Real-time Semantic Segmentation'
+  authors: <strong>Changqian Yu</strong>, Changxin Gao†, Jingbo Wang, Gang Yu, Chunhua Shen, Nong Sang
   venue: IJCV
   venue_full: International Journal of Computer Vision
   year: 2021
   selected: true
-  award: "ESI Highly Cited Paper"
-  citations: "1000+"
+  award: ESI Highly Cited Paper
+  citations: 1900+
   google_scholar_id: Y0pCki6q_DkC
   links:
-    paper: "https://link.springer.com/article/10.1007/s11263-021-01515-2"
-    arxiv: "2004.02147"
-    code: "https://github.com/yu-changqian/TorchSeg/tree/master/model/bisenet"
+    paper: https://link.springer.com/article/10.1007/s11263-021-01515-2
+    arxiv: '2004.02147'
+    code: https://github.com/yu-changqian/TorchSeg/tree/master/model/bisenet
   preview: bisenetv2.png
-
 - key: yu2021litehrnet
-  title: "Lite-HRNet: A Lightweight High-Resolution Network"
-  authors: "<strong>Changqian Yu</strong>, Bin Xiao, Changxin Gao, Lu Yuan, Lei Zhang, Nong Sang, Jingdong Wang"
+  title: 'Lite-HRNet: A Lightweight High-Resolution Network'
+  authors: <strong>Changqian Yu</strong>, Bin Xiao, Changxin Gao, Lu Yuan, Lei Zhang, Nong Sang, Jingdong Wang
   venue: CVPR
   venue_full: IEEE Conference on Computer Vision and Pattern Recognition
   year: 2021
   selected: true
-  citations: "300+"
+  citations: 600+
   google_scholar_id: WF5omc3nYNoC
   links:
-    paper: "https://openaccess.thecvf.com/content/CVPR2021/html/Yu_Lite-HRNet_A_Lightweight_High-Resolution_Network_CVPR_2021_paper.html"
-    arxiv: "2104.06403"
-    code: "https://github.com/HRNet/Lite-HRNet"
+    paper: https://openaccess.thecvf.com/content/CVPR2021/html/Yu_Lite-HRNet_A_Lightweight_High-Resolution_Network_CVPR_2021_paper.html
+    arxiv: '2104.06403'
+    code: https://github.com/HRNet/Lite-HRNet
   preview: litehrnet.png
-
-- key: yu2021condnet
-  title: "CondNet: Conditional Classifier for Scene Segmentation"
-  authors: "<strong>Changqian Yu</strong>, Yuanjie Shao, Changxin Gao, Nong Sang"
-  venue: IEEE SPL
-  venue_full: IEEE Signal Processing Letters
-  year: 2021
-  selected: true
-  google_scholar_id: ufrVoPGSRksC
-  links:
-    paper: "https://ieeexplore.ieee.org/abstract/document/9393566/"
-    arxiv: "2109.10322"
-    code: "https://github.com/yu-changqian/CondNet"
-  preview: condnet.png
-
-- key: yu2020context
-  title: "Context Prior for Scene Segmentation"
-  authors: "<strong>Changqian Yu</strong>, Jingbo Wang, Changxin Gao, Gang Yu, Chunhua Shen, Nong Sang"
-  venue: CVPR
-  venue_full: IEEE Conference on Computer Vision and Pattern Recognition
-  year: 2020
-  selected: true
-  google_scholar_id: Tyk-4Ss8FVUC
-  links:
-    paper: "https://openaccess.thecvf.com/content_CVPR_2020/html/Yu_Context_Prior_for_Scene_Segmentation_CVPR_2020_paper.html"
-    arxiv: "2004.01547"
-    code: "https://github.com/yu-changqian/ContextPrior"
-  preview: cpnet.png
-
-- key: yu2020rgnet
-  title: "Representative Graph Neural Network"
-  authors: "<strong>Changqian Yu</strong>, Yifan Liu, Changxin Gao, Chunhua Shen, Nong Sang"
-  venue: ECCV
-  venue_full: European Conference on Computer Vision
-  year: 2020
-  selected: true
-  google_scholar_id: W7OEmFMy1HYC
-  links:
-    paper: "https://link.springer.com/chapter/10.1007/978-3-030-58571-6_23"
-    arxiv: "2008.05202"
-  preview: rgnet.png
-
-- key: liu2020efficient
-  title: "Efficient Semantic Video Segmentation with Per-frame Inference"
-  authors: "Yifan Liu, Chunhua Shen, <strong>Changqian Yu</strong>, Jingdong Wang"
-  venue: ECCV
-  venue_full: European Conference on Computer Vision
-  year: 2020
-  selected: true
-  google_scholar_id: zYLM7Y9cAGgC
-  links:
-    paper: "https://link.springer.com/chapter/10.1007/978-3-030-58607-2_21"
-    arxiv: "2002.11433"
-    code: "https://github.com/irfanICMLL/ETC-Real-time-Per-frame-Semantic-video-segmentation"
-  preview: vidseg.png
-
-- key: liu2019oanet
-  title: "An End-to-End Network for Panoptic Segmentation"
-  authors: "Huanyu Liu, Chao Peng, <strong>Changqian Yu</strong>, Jingbo Wang, Xu Liu, Gang Yu, Wei Jiang"
-  venue: CVPR
-  venue_full: IEEE Conference on Computer Vision and Pattern Recognition
-  year: 2019
-  selected: true
-  google_scholar_id: 2osOgNQ5qMEC
-  links:
-    paper: "https://openaccess.thecvf.com/content_CVPR_2019/html/Liu_An_End-To-End_Network_for_Panoptic_Segmentation_CVPR_2019_paper.html"
-    arxiv: "1903.05027"
-  preview: oanet.png
-
 - key: yu2018bisenet
-  title: "BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation"
-  authors: "<strong>Changqian Yu*</strong>, Jingbo Wang*, Chao Peng, Changxin Gao†, Gang Yu, Nong Sang"
+  title: 'BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation'
+  authors: <strong>Changqian Yu*</strong>, Jingbo Wang*, Chao Peng, Changxin Gao†, Gang Yu, Nong Sang
   venue: ECCV
   venue_full: European Conference on Computer Vision
   year: 2018
   selected: true
-  award: "ECCV 2018 Top-10 Influential Papers"
-  citations: "2500+"
+  award: ECCV 2018 Top-10 Influential Papers
+  citations: 3700+
   google_scholar_id: UeHWp8X0CEIC
   links:
-    paper: "https://openaccess.thecvf.com/content_ECCV_2018/html/Changqian_Yu_BiSeNet_Bilateral_Segmentation_ECCV_2018_paper.html"
-    arxiv: "1808.00897"
-    code: "https://github.com/yu-changqian/TorchSeg/tree/master/model/bisenet"
+    paper: https://openaccess.thecvf.com/content_ECCV_2018/html/Changqian_Yu_BiSeNet_Bilateral_Segmentation_ECCV_2018_paper.html
+    arxiv: '1808.00897'
+    code: https://github.com/yu-changqian/TorchSeg/tree/master/model/bisenet
   preview: bisenet_preview.png
-
 - key: yu2018dfnet
-  title: "Learning a Discriminative Feature Network for Semantic Segmentation"
-  authors: "<strong>Changqian Yu</strong>, Jingbo Wang, Chao Peng, Changxin Gao, Gang Yu, Nong Sang"
+  title: Learning a Discriminative Feature Network for Semantic Segmentation
+  authors: <strong>Changqian Yu</strong>, Jingbo Wang, Chao Peng, Changxin Gao, Gang Yu, Nong Sang
   venue: CVPR
   venue_full: IEEE Conference on Computer Vision and Pattern Recognition
   year: 2018
   selected: true
-  citations: "900+"
+  citations: 1000+
   google_scholar_id: u5HHmVD_uO8C
   links:
-    paper: "https://openaccess.thecvf.com/content_cvpr_2018/html/Yu_Learning_a_Discriminative_CVPR_2018_paper.html"
-    arxiv: "1804.09337"
-    code: "https://github.com/yu-changqian/TorchSeg/"
+    paper: https://openaccess.thecvf.com/content_cvpr_2018/html/Yu_Learning_a_Discriminative_CVPR_2018_paper.html
+    arxiv: '1804.09337'
+    code: https://github.com/yu-changqian/TorchSeg/
   preview: dfnet.png

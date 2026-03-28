@@ -7,7 +7,7 @@
   {% for a in data.awards %}
   <li class="awards-item{% if a.highlight %} awards-item--highlight{% endif %}">
     <span class="awards-item__year">{{ a.year }}</span>
-    <span class="awards-item__text">{{ a[lang] }}</span>
+    <span class="awards-item__text">{{ a[lang] | markdownify | remove: '<p>' | remove: '</p>' }}</span>
   </li>
   {% endfor %}
 </ul>
@@ -15,7 +15,7 @@
 <hr>
 
 <h3>{{ t.challenges }}</h3>
-<ul class="awards-list">
+<ul class="awards-list awards-list--challenges">
   {% for c in data.challenges %}
   <li class="awards-item">
     <span class="awards-item__year">{{ c.year }}</span>
@@ -39,7 +39,7 @@
 <ul class="awards-list awards-list--plain">
   {% for s in data.services %}
   <li class="awards-item">
-    <span class="awards-item__text">{{ s[lang] }}</span>
+    <span class="awards-item__text">{{ s[lang] | markdownify | remove: '<p>' | remove: '</p>' }}</span>
   </li>
   {% endfor %}
 </ul>

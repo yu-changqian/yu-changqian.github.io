@@ -21,6 +21,9 @@ en:
     paper: "Paper"
     arxiv: "arXiv"
     code: "Code"
+    total_citations: "Citations"
+    total_papers: "Papers"
+    max_citations: "Top-1 Cited"
   awards:
     title: "Awards & Services"
     awards: "Awards"
@@ -65,6 +68,9 @@ zh:
     paper: "论文"
     arxiv: "arXiv"
     code: "代码"
+    total_citations: "总引用"
+    total_papers: "论文数"
+    max_citations: "单篇最高引用"
   awards:
     title: "荣誉与服务"
     awards: "学术荣誉"

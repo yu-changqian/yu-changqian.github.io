@@ -28,7 +28,8 @@
       {% if include.pub.award %}
         <span class="badge">{{ include.pub.award }}</span>
       {% endif %}
-      {% if include.pub.citations %}
+      {% assign citation_num = include.pub.citations | plus: 0 %}
+      {% if include.pub.citations and citation_num > 0 %}
         <span class="pub-card__citations">{{ include.pub.citations }} {{ th.citations }}</span>
       {% endif %}
       {% if include.pub.links.paper %}
