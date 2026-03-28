@@ -30,6 +30,7 @@ en:
     challenges: "Challenges"
     services: "Academic Services"
     talks: "Invited Talks"
+    media: "Media & Interviews"
   blog:
     title: "Blog"
     subtitle: "Thoughts on AI research, engineering, and beyond."
@@ -77,6 +78,7 @@ zh:
     challenges: "竞赛成绩"
     services: "学术服务"
     talks: "受邀报告"
+    media: "媒体采访"
   blog:
     title: "博客"
     subtitle: "关于 AI 研究、工程与思考。"

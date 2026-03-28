@@ -55,3 +55,17 @@
   </li>
   {% endfor %}
 </ul>
+
+{% if data.media.size > 0 %}
+<hr>
+
+<h3>{{ t.media }}</h3>
+<ul class="awards-list">
+  {% for m in data.media %}
+  <li class="awards-item">
+    <span class="awards-item__year">{{ m.date }}</span>
+    <span class="awards-item__text">{{ m[lang].outlet }} — <a href="{{ m.url }}" target="_blank"><em>"{{ m[lang].title }}"</em></a></span>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

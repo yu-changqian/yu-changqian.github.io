@@ -112,3 +112,21 @@ talks:
     zh:
       venue: "ECCV 2018 COCO & Mapillary 联合 Workshop"
       title: "全景分割挑战赛 2018"
+
+media:
+  - date: "08/2022"
+    url: "https://www.bilibili.com/video/BV1VW4y1t7iW/"
+    en:
+      outlet: "Bilibili — 在下小苏"
+      title: "Career Interview: One Year as an AI Researcher"
+    zh:
+      outlet: "Bilibili — 在下小苏"
+      title: "职业访谈：入职一年后的成长与变化"
+  - date: "08/2021"
+    url: "https://www.bilibili.com/video/BV1zr4y1y7Pf/"
+    en:
+      outlet: "Bilibili — 在下小苏"
+      title: "Career Interview: From PhD to Industry"
+    zh:
+      outlet: "Bilibili — 在下小苏"
+      title: "职业访谈：从博士到工业界"
