@@ -24,7 +24,7 @@ bio:
 
 # Career timeline — narrative style, rendered on homepage
 timeline:
-  - period: "2025 – Present"
+  - period: "Present"
     logo: "/assets/img/logos/kling.png"
     logo_alt: "Kling"
     en: "I lead the **Kling-Image-Omni** team at Kling AI, Kuaishou Technology, shipping products that power visual generation and understanding at scale. Key launches include [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog) — bringing visual reasoning to image generation — and [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog), the latest generation of Kling AI's omni-image foundation models."
