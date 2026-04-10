@@ -177,18 +177,18 @@
   gap: 1rem;
 }
 
-// --- Career Timeline ---
+// --- Career Timeline (unified layout) ---
 
 .tl-list {
-  margin: 0 -0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.tl-entry {
+.tl-item {
   display: flex;
-  gap: 1.75rem;
+  gap: 1.25rem;
   padding: 0.75rem 0.5rem;
-  font-size: $text-base;
-  line-height: 1.75;
   border-radius: 8px;
   transition: background $transition-fast;
 
@@ -197,80 +197,69 @@
   }
 
   @media (max-width: 640px) {
-    flex-direction: column;
-    gap: 0.25rem;
+    gap: 1rem;
   }
 }
 
-.tl-entry__meta {
+.tl-item__logo-col {
   flex-shrink: 0;
-  width: 9rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
+  width: 5.5rem;
   padding-top: 0.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 
   @media (max-width: 640px) {
-    width: auto;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
+    width: 4rem;
   }
 }
 
-.tl-entry__period {
+.tl-item__logo {
+  max-width: 5.5rem;
+  max-height: 3.5rem;
+  object-fit: contain;
+  display: block;
+
+  @media (max-width: 640px) {
+    max-width: 4rem;
+    max-height: 3rem;
+  }
+}
+
+.tl-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tl-item__header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.tl-item__company {
+  font-size: $text-base;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tl-item__period {
+  font-size: $text-sm;
   font-weight: 600;
   color: var(--text-tertiary);
   font-variant-numeric: tabular-nums;
-  font-size: $text-sm;
 }
 
-.tl-entry__brand-wrap {
-  width: 100%;
-
-  @media (max-width: 640px) {
-    display: none;
-  }
-}
-
-.tl-entry__brand {
-  width: 7.75rem;
-  height: 4rem;
-  border-radius: 10px;
-  border: none;
-  background: transparent;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.tl-entry__logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 0.15rem;
-  display: block;
-}
-
-.tl-entry__brand-fallback {
-  font-size: 1rem;
-  color: var(--text-tertiary);
-}
-
-.tl-entry__body {
+.tl-item__body {
   color: var(--text-secondary);
+  font-size: $text-base;
+  line-height: 1.75;
+  margin-top: 0.25rem;
 
-  p {
-    margin-bottom: 0;
-  }
-
-  strong {
-    color: var(--text-primary);
-    font-weight: 600;
-  }
+  p { margin-bottom: 0; }
+  strong { color: var(--text-primary); font-weight: 600; }
+  em { color: var(--text-tertiary); font-style: italic; }
 
   a {
     color: var(--text-primary);
@@ -285,10 +274,76 @@
       text-decoration-color: var(--accent);
     }
   }
+}
 
-  em {
-    color: var(--text-tertiary);
-    font-style: italic;
+// --- Multi-role section ---
+
+.tl-item__roles {
+  margin-top: 0.25rem;
+}
+
+.tl-role {
+  padding: 0.5rem 0 0.5rem 0.85rem;
+  border-left: 2px solid var(--border);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0.85rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  &.tl-role--last {
+    border-left-color: transparent;
+  }
+}
+
+.tl-role__header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tl-role__title {
+  font-size: $text-sm;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tl-role__period {
+  font-size: $text-xs;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.tl-role__body {
+  color: var(--text-secondary);
+  font-size: $text-sm;
+  line-height: 1.75;
+  margin-top: 0.2rem;
+
+  p { margin-bottom: 0; }
+  strong { color: var(--text-primary); font-weight: 600; }
+  em { color: var(--text-tertiary); font-style: italic; }
+
+  a {
+    color: var(--text-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 4px;
+    transition: text-decoration-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
   }
 }
 
@@ -329,4 +384,44 @@
 
 .oss-item__desc {
   color: var(--text-secondary);
+}
+
+// --- Hiring ---
+
+.hiring__intro {
+  font-size: $text-sm;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 0 0.5rem;
+}
+
+.hiring__directions {
+  padding-left: 1.25rem;
+  margin: 0 0 0.5rem;
+
+  li {
+    font-size: $text-sm;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+}
+
+.hiring__cta {
+  font-size: $text-sm;
+  color: var(--text-secondary);
+  margin: 0;
+
+  a {
+    color: var(--text-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 4px;
+    transition: text-decoration-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+  }
 }

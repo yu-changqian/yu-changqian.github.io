@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-description: "Changqian Yu — Senior Research Scientist at Kuaishou, Lead of Kling-Image-Omni. Expert in Diffusion Models and Vision-Language Models."
+description: "Changqian Yu — Director of Kling Image at Kuaishou. Expert in Diffusion Models and Vision-Language Models."
 ---
 {% assign lang = page.lang | default: "en" %}
 {% assign t = site.data.i18n[lang] %}
@@ -16,6 +16,8 @@ description: "Changqian Yu — Senior Research Scientist at Kuaishou, Lead of Kl
     <div class="section__title"><span>{{ t.home.timeline }}</span></div>
     {% include timeline.html %}
   </section>
+
+  {% include hiring.html %}
 
   <section class="section">
     <div class="section__title"><span>{{ t.home.open_source }}</span></div>

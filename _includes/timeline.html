@@ -3,20 +3,33 @@
 
 <div class="tl-list">
 {% for entry in about.timeline %}
-<div class="tl-entry">
-  <div class="tl-entry__meta">
-    <span class="tl-entry__period">{{ entry.period }}</span>
-    <div class="tl-entry__brand-wrap">
-      <div class="tl-entry__brand">
-        {% if entry.logo %}
-        <img src="{{ entry.logo | relative_url }}" alt="{{ entry.logo_alt | default: 'organization logo' }}" class="tl-entry__logo" loading="lazy">
-        {% else %}
-        <span class="tl-entry__brand-fallback" aria-hidden="true">•</span>
-        {% endif %}
-      </div>
-    </div>
+<div class="tl-item">
+  <div class="tl-item__logo-col">
+    {% if entry.logo %}
+    <img src="{{ entry.logo | relative_url }}" alt="{{ entry.logo_alt | default: 'logo' }}" class="tl-item__logo" loading="lazy">
+    {% endif %}
   </div>
-  <div class="tl-entry__body">{{ entry[lang] | markdownify }}</div>
+  <div class="tl-item__content">
+    <div class="tl-item__header">
+      {% if entry.company %}<span class="tl-item__company">{{ entry.company[lang] }}</span>{% endif %}
+      <span class="tl-item__period">{{ entry.period }}</span>
+    </div>
+    {% if entry.roles %}
+    <div class="tl-item__roles">
+      {% for role in entry.roles %}
+      <div class="tl-role{% if forloop.last %} tl-role--last{% endif %}">
+        <div class="tl-role__header">
+          <span class="tl-role__title">{{ role.title[lang] }}</span>
+          <span class="tl-role__period">{{ role.period }}</span>
+        </div>
+        <div class="tl-role__body">{{ role[lang] | markdownify }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="tl-item__body">{{ entry[lang] | markdownify }}</div>
+    {% endif %}
+  </div>
 </div>
 {% endfor %}
 </div>
