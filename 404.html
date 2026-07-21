@@ -1,0 +1,12 @@
+---
+layout: default
+title: "404"
+permalink: /404.html
+---
+{% assign lang = page.lang | default: "en" %}
+{% assign t = site.data.i18n[lang].error %}
+<div class="container error-page">
+  <h1 class="error-page__code">{{ t.title }}</h1>
+  <p class="error-page__message">{{ t.message }}</p>
+  <a href="{{ '/' | relative_url }}" class="link-btn error-page__btn">{{ t.back }}</a>
+</div>

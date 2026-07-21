@@ -1,0 +1,49 @@
+{% comment %}
+  Usage: {% include publication.html pub=pub %}
+{% endcomment %}
+{% assign lang = page.lang | default: "en" %}
+{% assign tp = site.data.i18n[lang].publications %}
+{% assign th = site.data.i18n[lang].home %}
+
+<div class="pub-card">
+  {% if include.pub.preview %}
+  <div class="pub-card__preview">
+    <img src="{{ '/assets/img/publication_preview/' | append: include.pub.preview | relative_url }}" alt="{{ include.pub.title }}" loading="lazy">
+  </div>
+  {% endif %}
+  <div class="pub-card__content">
+    <div class="pub-card__title">
+      {% if include.pub.links.paper %}
+        <a href="{{ include.pub.links.paper }}">{{ include.pub.title }}</a>
+      {% elsif include.pub.links.arxiv %}
+        <a href="https://arxiv.org/abs/{{ include.pub.links.arxiv }}">{{ include.pub.title }}</a>
+      {% else %}
+        {{ include.pub.title }}
+      {% endif %}
+    </div>
+    <div class="pub-card__authors">{{ include.pub.authors }}</div>
+    <div class="pub-card__meta">
+      {% assign venue_lower = include.pub.venue | downcase | truncate: 4, "" %}
+      <span class="tag tag--{{ venue_lower }}">{{ include.pub.venue }}</span>
+      {% if include.pub.award %}
+        <span class="badge">{{ include.pub.award }}</span>
+      {% endif %}
+      {% assign citation_num = include.pub.citations | plus: 0 %}
+      {% if include.pub.citations and citation_num > 0 %}
+        <span class="pub-card__citations">{{ include.pub.citations }} {{ th.citations }}</span>
+      {% endif %}
+      {% if include.pub.links.paper %}
+        <a href="{{ include.pub.links.paper }}" class="link-btn">{{ tp.paper }}</a>
+      {% endif %}
+      {% if include.pub.links.arxiv %}
+        <a href="https://arxiv.org/abs/{{ include.pub.links.arxiv }}" class="link-btn">{{ tp.arxiv }}</a>
+      {% endif %}
+      {% if include.pub.links.code %}
+        <a href="{{ include.pub.links.code }}" class="link-btn">{{ tp.code }}</a>
+      {% endif %}
+      {% if include.pub.links.demo %}
+        <a href="{{ include.pub.links.demo }}" class="link-btn">{{ tp.demo | default: "Demo" }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

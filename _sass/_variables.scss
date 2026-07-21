@@ -1,0 +1,61 @@
+// ============================================================
+// Design Tokens
+// ============================================================
+
+// --- Light Theme ---
+$bg-primary:        #ffffff;
+$bg-secondary:      #f8fafc;
+$bg-tertiary:       #f1f5f9;
+$text-primary:      #0f172a;
+$text-secondary:    #475569;
+$text-tertiary:     #94a3b8;
+$accent:            #2563eb;
+$accent-hover:      #1d4ed8;
+$accent-light:      #dbeafe;
+$border:            #e2e8f0;
+$card-bg:           #ffffff;
+$card-shadow:       0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.04);
+$card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+$code-bg:           #f1f5f9;
+$code-text:         #e11d48;
+
+// --- Dark Theme ---
+$dark-bg-primary:      #0f172a;
+$dark-bg-secondary:    #1e293b;
+$dark-bg-tertiary:     #334155;
+$dark-text-primary:    #f1f5f9;
+$dark-text-secondary:  #94a3b8;
+$dark-text-tertiary:   #64748b;
+$dark-accent:          #60a5fa;
+$dark-accent-hover:    #93bbfd;
+$dark-accent-light:    rgba(96, 165, 250, 0.1);
+$dark-border:          #334155;
+$dark-card-bg:         #1e293b;
+$dark-card-shadow:     0 4px 20px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+$dark-card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+$dark-code-bg:         #1e293b;
+$dark-code-text:       #f472b6;
+
+// --- Typography ---
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+$font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, monospace;
+
+$text-xs:   0.75rem;
+$text-sm:   0.875rem;
+$text-base: 1rem;
+$text-lg:   1.125rem;
+$text-xl:   1.25rem;
+$text-2xl:  1.5rem;
+$text-3xl:  1.875rem;
+$text-4xl:  2.25rem;
+
+// --- Spacing ---
+$content-width: 720px;
+$wide-width:    960px;
+$nav-height:    56px;
+
+// --- Transitions ---
+$transition-fast: 150ms ease;
+$transition-base: 250ms ease;
+$transition-slow: 400ms ease;
+

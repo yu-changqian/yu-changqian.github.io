@@ -1,0 +1,43 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign t = site.data.i18n[lang].nav %}
+{% if lang == "zh" %}
+  {% assign prefix = "/zh" %}
+{% else %}
+  {% assign prefix = "" %}
+{% endif %}
+
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="{{ prefix | append: '/' | relative_url }}" class="nav__brand">
+      {{ site.data.about.name[lang] }}
+    </a>
+
+    <button class="nav__hamburger" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__links">
+        {% assign is_home = false %}{% if page.url == '/' or page.url == '/zh/' %}{% assign is_home = true %}{% endif %}
+        {% assign is_pubs = false %}{% if page.url contains '/publications/' %}{% assign is_pubs = true %}{% endif %}
+        {% assign is_blog = false %}{% if page.url contains '/blog/' or page.layout == 'post' %}{% assign is_blog = true %}{% endif %}
+        {% assign is_awards = false %}{% if page.url contains '/awards/' %}{% assign is_awards = true %}{% endif %}
+        <li><a href="{{ prefix | append: '/' | relative_url }}" class="nav__link {% if is_home %}active{% endif %}" {% if is_home %}aria-current="page"{% endif %}>{{ t.about }}</a></li>
+        <li><a href="{{ prefix | append: '/publications/' | relative_url }}" class="nav__link {% if is_pubs %}active{% endif %}" {% if is_pubs %}aria-current="page"{% endif %}>{{ t.publications }}</a></li>
+        <li><a href="{{ prefix | append: '/blog/' | relative_url }}" class="nav__link {% if is_blog %}active{% endif %}" {% if is_blog %}aria-current="page"{% endif %}>{{ t.blog }}</a></li>
+        <li><a href="{{ prefix | append: '/awards/' | relative_url }}" class="nav__link {% if is_awards %}active{% endif %}" {% if is_awards %}aria-current="page"{% endif %}>{{ t.awards }}</a></li>
+      </ul>
+      <div class="nav__actions">
+        {% if lang == "zh" %}
+          <a href="{{ page.url | remove: '/zh' | relative_url }}" class="nav__lang-btn" id="lang-toggle" title="Switch to English">EN</a>
+        {% else %}
+          <a href="{{ '/zh' | append: page.url | relative_url }}" class="nav__lang-btn" id="lang-toggle" title="切换到中文">中</a>
+        {% endif %}
+        <button class="nav__toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

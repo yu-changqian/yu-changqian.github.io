@@ -1,0 +1,96 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+
+{% assign lang = page.lang | default: "en" %}
+{% assign has_bilingual = false %}
+{% if page.url == "/" or page.url == "/zh/" or page.url contains "/publications/" or page.url contains "/blog/" or page.url contains "/awards/" %}
+  {% unless page.layout == "post" %}
+    {% assign has_bilingual = true %}
+  {% endunless %}
+{% endif %}
+{% if lang == "zh" %}
+  {% assign has_bilingual = true %}
+{% endif %}
+{% if has_bilingual %}
+  {% if lang == "zh" %}
+  <link rel="alternate" hreflang="zh" href="{{ page.url | absolute_url }}" />
+  <link rel="alternate" hreflang="en" href="{{ page.url | remove: '/zh' | absolute_url }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ page.url | remove: '/zh' | absolute_url }}" />
+  {% else %}
+  <link rel="alternate" hreflang="en" href="{{ page.url | absolute_url }}" />
+  <link rel="alternate" hreflang="zh" href="{{ '/zh' | append: page.url | absolute_url }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}" />
+  {% endif %}
+{% endif %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.loli.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"
+      onerror="this.href=this.href.replace('fonts.googleapis.com','fonts.loli.net')">
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+
+{% feed_meta %}
+
+{% if page.url == '/' or page.url == '/zh/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author.name }}",
+  "url": "{{ site.url }}",
+  "email": "{{ site.author.email }}",
+  "jobTitle": "Senior Research Scientist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Kuaishou Technology"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Huazhong University of Science and Technology"
+  },
+  "sameAs": [
+    "https://github.com/{{ site.social.github }}",
+    "https://scholar.google.com/citations?user={{ site.social.scholar }}",
+    "https://www.linkedin.com/in/{{ site.social.linkedin }}",
+    "https://x.com/{{ site.social.twitter }}"
+  ]
+}
+</script>
+{% endif %}
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title | escape }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "url": "{{ page.url | absolute_url }}"
+}
+</script>
+{% endif %}
+
+<script>
+  (function() {
+    var t = localStorage.getItem('theme');
+    if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>

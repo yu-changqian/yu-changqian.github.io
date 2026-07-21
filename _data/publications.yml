@@ -1,0 +1,84 @@
+- key: "fei2024scaling"
+  title: "Scaling Diffusion Transformers to 16 Billion Parameters"
+  authors: "Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Debang Li, Junshi Huang"
+  venue: "arXiv"
+  venue_full: "arXiv preprint"
+  year: 2024
+  selected: true
+  google_scholar_id: "4TOpqqG69KYC"
+  links:
+    arxiv: "2407.11633"
+    code: "https://github.com/feizc/DiT-MoE"
+  preview: "dit-moe.png"
+  citations: 49
+- key: "fei2024dis"
+  title: "Scalable Diffusion Models with State Space Backbone"
+  authors: "Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Junshi Huang"
+  venue: "arXiv"
+  venue_full: "arXiv preprint"
+  year: 2024
+  selected: true
+  google_scholar_id: "Zph67rFs4hoC"
+  links:
+    arxiv: "2402.05608"
+    code: "https://github.com/feizc/DiS"
+  preview: "dis.jpg"
+  citations: 49
+- key: "yu2021bisenetv2"
+  title: "BiSeNet V2: Bilateral Network with Guided Aggregation for Real-time Semantic Segmentation"
+  authors: "<strong>Changqian Yu</strong>, Changxin Gao†, Jingbo Wang, Gang Yu, Chunhua Shen, Nong Sang"
+  venue: "IJCV"
+  venue_full: "International Journal of Computer Vision"
+  year: 2021
+  selected: true
+  award: "ESI Highly Cited Paper"
+  citations: 1618
+  google_scholar_id: "Y0pCki6q_DkC"
+  links:
+    paper: "https://link.springer.com/article/10.1007/s11263-021-01515-2"
+    arxiv: "2004.02147"
+    code: "https://github.com/yu-changqian/TorchSeg/tree/master/model/bisenet"
+  preview: "bisenetv2.png"
+- key: "yu2021litehrnet"
+  title: "Lite-HRNet: A Lightweight High-Resolution Network"
+  authors: "<strong>Changqian Yu</strong>, Bin Xiao, Changxin Gao, Lu Yuan, Lei Zhang, Nong Sang, Jingdong Wang"
+  venue: "CVPR"
+  venue_full: "IEEE Conference on Computer Vision and Pattern Recognition"
+  year: 2021
+  selected: true
+  citations: 412
+  google_scholar_id: "WF5omc3nYNoC"
+  links:
+    paper: "https://openaccess.thecvf.com/content/CVPR2021/html/Yu_Lite-HRNet_A_Lightweight_High-Resolution_Network_CVPR_2021_paper.html"
+    arxiv: "2104.06403"
+    code: "https://github.com/HRNet/Lite-HRNet"
+  preview: "litehrnet.png"
+- key: "yu2018bisenet"
+  title: "BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation"
+  authors: "<strong>Changqian Yu*</strong>, Jingbo Wang*, Chao Peng, Changxin Gao†, Gang Yu, Nong Sang"
+  venue: "ECCV"
+  venue_full: "European Conference on Computer Vision"
+  year: 2018
+  selected: true
+  award: "ECCV 2018 Top-10 Influential Papers"
+  citations: 2700
+  google_scholar_id: "UeHWp8X0CEIC"
+  links:
+    paper: "https://openaccess.thecvf.com/content_ECCV_2018/html/Changqian_Yu_BiSeNet_Bilateral_Segmentation_ECCV_2018_paper.html"
+    arxiv: "1808.00897"
+    code: "https://github.com/yu-changqian/TorchSeg/tree/master/model/bisenet"
+  preview: "bisenet_preview.png"
+- key: "yu2018dfnet"
+  title: "Learning a Discriminative Feature Network for Semantic Segmentation"
+  authors: "<strong>Changqian Yu</strong>, Jingbo Wang, Chao Peng, Changxin Gao, Gang Yu, Nong Sang"
+  venue: "CVPR"
+  venue_full: "IEEE Conference on Computer Vision and Pattern Recognition"
+  year: 2018
+  selected: true
+  citations: 813
+  google_scholar_id: "u5HHmVD_uO8C"
+  links:
+    paper: "https://openaccess.thecvf.com/content_cvpr_2018/html/Yu_Learning_a_Discriminative_CVPR_2018_paper.html"
+    arxiv: "1804.09337"
+    code: "https://github.com/yu-changqian/TorchSeg/"
+  preview: "dfnet.png"

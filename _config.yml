@@ -1,0 +1,59 @@
+title: Changqian Yu
+description: >-
+  Director of Kling Image at Kuaishou Technology.
+  Expert in Diffusion Models and Vision-Language Models.
+url: https://yu-changqian.github.io
+baseurl: ""
+image: /assets/img/og-default.png
+
+twitter:
+  card: summary_large_image
+  username: ChangqianYu
+
+author:
+  name: Changqian Yu
+  email: y-changqian@outlook.com
+  title: Director of Kling Image @ Kuaishou
+  subtitle: PhD from HUST · Ex-Kunlun · Ex-Meituan · Ex-MSRA
+
+social:
+  github: yu-changqian
+  scholar: Hv-vj2sAAAAJ
+  linkedin: yu-changqian
+  twitter: ChangqianYu
+  zhihu: yu-chang-qian
+
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:title/
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: "/blog/page/:num/"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - .DS_Store
+  - scripts
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

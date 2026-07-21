@@ -1,0 +1,11 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <span class="footer__text">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
+    <div class="footer__links">
+      <a href="https://github.com/{{ site.social.github }}" aria-label="GitHub">{% include social-icon.html icon="github" %}</a>
+      <a href="https://scholar.google.com/citations?user={{ site.social.scholar }}" aria-label="Google Scholar">{% include social-icon.html icon="scholar" %}</a>
+      <a href="https://x.com/{{ site.social.twitter }}" aria-label="X (Twitter)">{% include social-icon.html icon="twitter" %}</a>
+      <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS Feed">{% include social-icon.html icon="rss" %}</a>
+    </div>
+  </div>
+</footer>

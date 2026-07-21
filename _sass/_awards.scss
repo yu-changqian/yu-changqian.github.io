@@ -1,0 +1,77 @@
+// ============================================================
+// Awards Page
+// ============================================================
+
+@use "variables" as *;
+
+.awards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 -0.5rem 1rem;
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+}
+
+.awards-list--challenges {
+  grid-template-columns: 5.5rem auto auto 1fr;
+}
+
+.awards-list--plain {
+  grid-template-columns: 1fr;
+}
+
+.awards-item {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: baseline;
+  padding: 0.5rem 0.5rem;
+  font-size: $text-sm;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: var(--bg-secondary);
+    border-radius: 6px;
+  }
+
+  &--highlight {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+}
+
+.awards-item__year {
+  font-size: $text-xs;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.awards-item__rank {
+  white-space: nowrap;
+  font-size: $text-sm;
+}
+
+.awards-item__dash {
+  color: var(--text-tertiary);
+}
+
+.awards-item__text {
+  min-width: 0;
+}
+
+.awards-list--plain .awards-item {
+  padding-left: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .awards-list {
+    grid-template-columns: 4rem 1fr;
+  }
+
+  .awards-list--challenges {
+    grid-template-columns: 4rem auto auto 1fr;
+  }
+}

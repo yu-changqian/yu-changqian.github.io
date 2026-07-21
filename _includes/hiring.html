@@ -1,0 +1,17 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign t = site.data.i18n[lang] %}
+{% assign about = site.data.about %}
+{% if about.hiring.active %}
+<section class="section">
+  <div class="section__title"><span>{{ t.home.hiring }}</span></div>
+  <div class="hiring">
+    <p class="hiring__intro">{{ about.hiring.intro[lang] }}</p>
+    <ul class="hiring__directions">
+      {% for dir in about.hiring.directions %}
+      <li>{{ dir[lang] }}</li>
+      {% endfor %}
+    </ul>
+    <p class="hiring__cta">{{ about.hiring.cta[lang] }} <a href="mailto:{{ about.hiring.email }}">{{ about.hiring.email }}</a></p>
+  </div>
+</section>
+{% endif %}

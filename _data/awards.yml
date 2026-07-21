@@ -1,0 +1,132 @@
+awards:
+  - year: 2025
+    en: "Second Prize of Natural Science Award, Science and Technology Award of Chinese Institute of Electronics"
+    zh: "中国电子学会科学技术奖——自然科学奖二等奖"
+    highlight: true
+  - year: 2023-2025
+    en: "Stanford's Top 2% Scientists"
+    zh: "斯坦福全球前 2% 顶尖科学家"
+    highlight: true
+  - year: 2022
+    en: "CSIG Excellent Doctoral Dissertation Award — Top 10 nationwide"
+    zh: "中国图象图形学学会优秀博士学位论文奖（全国优博）"
+    highlight: true
+  - year: 2021
+    en: "Outstanding Graduate, Huazhong University of Science and Technology"
+    zh: "华中科技大学优秀毕业生"
+  - year: 2021
+    en: "Stars of Tomorrow Internship Program, Microsoft Research Asia"
+    zh: '微软亚洲研究院"明日之星"实习项目'
+  - year: 2019
+    en: "State Scholarship for Study Abroad, CSC"
+    zh: "国家建设高水平大学公派研究生奖学金, 国家留学基金委"
+  - year: 2018
+    en: "National Scholarship, Ministry of Education"
+    zh: "国家奖学金, 教育部"
+
+challenges:
+  - year: 2024
+    rank: 1
+    en: "Argoverse Challenge 2024, Single Agent Forecasting"
+    zh: "Argoverse Challenge 2024, 单智能体预测"
+  - year: 2024
+    rank: 3
+    en: "Argoverse Challenge 2024, Multi-agent Motion Forecasting"
+    zh: "Argoverse Challenge 2024, 多智能体运动预测"
+  - year: 2022
+    rank: 1
+    en: "GigaVision Challenge 2022, Trajectory Prediction"
+    zh: "GigaVision Challenge 2022, 轨迹预测"
+  - year: 2022
+    rank: 3
+    en: "Argoverse Challenge 2022, Motion Forecasting (Honorable Mention)"
+    zh: "Argoverse Challenge 2022, 运动预测 (Honorable Mention)"
+  - year: 2018
+    rank: 1
+    en: "COCO Challenge 2018, Panoptic Segmentation Track"
+    zh: "COCO Challenge 2018, 全景分割赛道"
+  - year: 2018
+    rank: 1
+    en: "Mapillary Challenge 2018, Panoptic Segmentation Track"
+    zh: "Mapillary Challenge 2018, 全景分割赛道"
+  - year: 2018
+    rank: 2
+    en: "Momenta Lane Detection Challenge"
+    zh: "Momenta 车道检测挑战赛"
+  - year: 2015
+    rank: 2
+    en: "National University Student Science Contest on Energy Saving"
+    zh: "全国大学生节能减排大赛"
+  - year: 2014
+    rank: 1
+    en: "RoboCup Open Finals & China Robot Competition"
+    zh: "RoboCup 公开赛决赛暨中国机器人大赛"
+  - year: 2014
+    rank: 2
+    en: "Shandong Province \"TI Cup\" Electronic Design Competition"
+    zh: '山东省"TI杯"电子设计竞赛'
+
+services:
+  - en: "Guest Editor, *Journal of Image and Graphics* — Special Issue on Image/Video Semantic Segmentation"
+    zh: '《中国图象图形学报》"图像/视频语义分割"专刊特邀编委'
+  - en: "Enterprise Advisor, Tsinghua University CS Professional Practice Course (2022)"
+    zh: "2022年清华大学计算机系专业实践课程企业指导教师"
+  - en: "Reviewer: CVPR '19–22, ICCV '19–21, ECCV '20–22, ICLR '22, NeurIPS '22, AAAI '20–21"
+    zh: "审稿人: CVPR '19–22, ICCV '19–21, ECCV '20–22, ICLR '22, NeurIPS '22, AAAI '20–21"
+  - en: "Reviewer: TPAMI, IJCV, TIP, TMM, TGRS, PR, SPL"
+    zh: "审稿人: TPAMI, IJCV, TIP, TMM, TGRS, PR, SPL"
+
+talks:
+  - date: "06/2021"
+    en:
+      venue: "Zhejiang University CAPG Group"
+      title: "Lite-HRNet: A Lightweight High-Resolution Network"
+    zh:
+      venue: "浙江大学 CAPG 组"
+      title: "Lite-HRNet: 轻量级高分辨率网络"
+  - date: "10/2020"
+    en:
+      venue: "Meituan Autonomous Delivery Group"
+      title: "Beyond Self-Attention for Semantic Segmentation"
+    zh:
+      venue: "美团自动配送部"
+      title: "Beyond Self-Attention for Semantic Segmentation"
+  - date: "09/2020"
+    en:
+      venue: "Huawei Noah's Ark Lab"
+      title: "Beyond Self-Attention for Semantic Segmentation"
+    zh:
+      venue: "华为诺亚方舟实验室"
+      title: "Beyond Self-Attention for Semantic Segmentation"
+  - date: "05/2019"
+    en:
+      venue: "Microsoft Research Asia VC Group"
+      title: "Context in Semantic Segmentation"
+    zh:
+      venue: "微软亚洲研究院视觉计算组"
+      title: "Context in Semantic Segmentation"
+  - date: "09/2018"
+    en:
+      venue: "ECCV 2018 COCO & Mapillary Joint Workshop"
+      title: "Panoptic Segmentation Challenge 2018"
+    zh:
+      venue: "ECCV 2018 COCO & Mapillary 联合 Workshop"
+      title: "全景分割挑战赛 2018"
+
+media:
+  - date: "08/2022"
+    url: "https://www.bilibili.com/video/BV1VW4y1t7iW/"
+    en:
+      outlet: "Bilibili — 在下小苏"
+      title: "Career Interview: One Year as an AI Researcher"
+    zh:
+      outlet: "Bilibili — 在下小苏"
+      title: "职业访谈：入职一年后的成长与变化"
+  - date: "08/2021"
+    url: "https://www.bilibili.com/video/BV1zr4y1y7Pf/"
+    en:
+      outlet: "Bilibili — 在下小苏"
+      title: "Career Interview: From PhD to Industry"
+    zh:
+      outlet: "Bilibili — 在下小苏"
+      title: "职业访谈：从博士到工业界"

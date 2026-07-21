@@ -1,0 +1,121 @@
+# =============================================================
+# Personal Info — Bilingual
+# =============================================================
+
+name:
+  en: "Changqian Yu"
+  zh: "余昌黔"
+
+photo: "/assets/img/bio_pic.jpg"
+
+title:
+  en: "Director of Kling Image @ Kuaishou · PhD from HUST"
+  zh: "可灵AI图像模型中心负责人 @ 快手 · 华中科技大学博士"
+
+tagline:
+  en: "I build multimodal AI that sees, understands, and creates."
+  zh: "构建能看、能懂、能创造的多模态 AI。"
+
+bio:
+  en:
+    - "I lead **[Kling Image](https://app.klingai.com/cn/omni/new)** at Kuaishou Technology, overseeing all image foundation models powering Kling AI's visual generation and understanding products. My research focuses on **Diffusion Models**, **Vision-Language Models**, and making AI see, think, and create. PhD from [HUST](http://english.hust.edu.cn/) (**🏆 CSIG Top-10 Dissertation Award**), **Stanford's Top 2% Scientists (3 consecutive years)**."
+  zh:
+    - "我在快手可灵AI负责 **图像模型中心**，统筹可灵AI全部图像基础模型的研发。研究方向聚焦 **Diffusion 模型**和**视觉语言模型**。[华中科技大学](http://www.hust.edu.cn/)博士（🏆 CSIG 全国优博），连续三年斯坦福全球前 2% 顶尖科学家。"
+
+# Career timeline — narrative style, rendered on homepage
+timeline:
+  - company:
+      en: "Kling AI, Kuaishou Technology"
+      zh: "快手可灵AI"
+    logo: "/assets/img/logos/kling.png"
+    logo_alt: "Kling"
+    period: "2026.04 – Present"
+    roles:
+      - title:
+          en: "Director"
+          zh: "算法总监"
+        # period: "2026.04 – Present"
+        en: "As **Director of Kling Image**, I oversee all image foundation models powering visual generation and understanding at scale. Current focus: **unified multimodal models** that bridge understanding and generation in a single architecture."
+        zh: "作为 **图像模型中心负责人**，统筹可灵AI全部图像基础模型的研发与落地。当前重点方向：**理解生成一体化**——在统一架构中实现多模态理解与生成。"
+
+      - title:
+          en: "Head of Algorithms"
+          zh: "技术主管"
+        # period: "2026.04 – 2026.04"
+        en: "Led the **Kling-Image-Omni** team, shipping products that power visual generation and understanding at scale. Key launches include [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog) — bringing visual reasoning to image generation — and [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog), the latest generation of Kling AI's omni-image foundation models."
+        zh: "带领 **Kling-Image-Omni** 团队，构建大规模视觉生成与理解产品。核心交付包括 [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog)——将视觉推理引入图像生成，以及 [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog)，可灵AI最新一代图像基础模型。"
+
+  - company:
+      en: "Kunlun Tech (Skywork)"
+      zh: "昆仑万维（天工）"
+    period: "2023 – 2025"
+    logo: "/assets/img/logos/skywork.jpg"
+    logo_alt: "Kunlun/Skywork"
+    en: "Led multimodal AI research. Shipped **Skywork-VL-32B**, a vision-language model integrating vision encoders with large language models, and built the storyboard generation model powering cinematic shot planning in [**SkyReels**](https://github.com/SkyworkAI/SkyReels-V1). Also built a scalable Diffusion training pipeline (MoE) for text-to-image generation."
+    zh: "主导多模态 AI 研究。交付了 **Skywork-VL-32B** 视觉语言模型，以及 [**SkyReels**](https://github.com/SkyworkAI/SkyReels-V1) 中的分镜生成大模型，驱动影视级镜头规划。同时构建了可扩展的 Diffusion（MoE）训练流水线，支持文生图。"
+
+  - company:
+      en: "Meituan"
+      zh: "美团"
+    period: "2021 – 2023"
+    logo: "/assets/img/logos/meituan.png"
+    logo_alt: "Meituan"
+    en: "Research Scientist at the Autonomous Delivery Department, developing trajectory prediction and motion planning models for the autonomous delivery fleet. The transformer-based prediction model was deployed on real vehicles serving millions of orders."
+    zh: "自动配送部研究科学家，为自动配送车队开发轨迹预测和运动规划模型。提出的基于 Transformer 的预测模型部署在真实配送车上，服务百万级订单。"
+
+  - company:
+      en: "Huazhong University of Science and Technology"
+      zh: "华中科技大学"
+    period: "2016 – 2021"
+    logo: "/assets/img/logos/hust.svg"
+    logo_alt: "HUST"
+    en: "PhD focusing on semantic and panoptic segmentation. Won **1st place** in the COCO & Mapillary Panoptic Segmentation Challenge 2018 at ECCV. Built [TorchSeg](https://github.com/ycszen/TorchSeg), a widely-used PyTorch segmentation codebase (2 000+ GitHub stars). Visiting student at the **University of Adelaide**. Interned at **Microsoft Research Asia** (Stars of Tomorrow) and **Megvii (Face++) Research**."
+    zh: "博士，研究方向为语义分割与全景分割。在 ECCV 2018 的 COCO & Mapillary 全景分割挑战赛中获得**第一名**。创建了 [TorchSeg](https://github.com/ycszen/TorchSeg)（2000+ GitHub star）。赴**阿德莱德大学**联合培养。在**微软亚洲研究院**（明日之星）和**旷视科技**实习。"
+
+# Hiring — displayed as a highlight card on homepage
+hiring:
+  active: true
+  email: "yuchangqian@kuaishou.com"
+  intro:
+    en: "We are building unified multimodal models that bridge visual understanding and generation, and extending toward Visual Agentic Intelligence — models that perceive, reason, and act in the visual world."
+    zh: "我们正在构建理解生成一体化的多模态模型，并向视觉智能体（Visual Agentic Intelligence）延伸——让模型能看、能想、能行动。"
+  directions:
+    - en: "Unified Understanding & Generation"
+      zh: "理解生成一体化"
+    - en: "Visual Tokenizer & Representation Learning"
+      zh: "视觉分词器与表征学习"
+    - en: "Visual Agentic Intelligence"
+      zh: "视觉智能体"
+    - en: "Multimodal Data & Infrastructure"
+      zh: "多模态数据与基建"
+  cta:
+    en: "We are continuously seeking outstanding talents to join us. Feel free to reach out!"
+    zh: "我们持续招募优秀人才，欢迎联系！"
+
+# Open-source projects — displayed as a simple list
+open_source:
+  - name: "SkyReels-V1"
+    url: "https://github.com/SkyworkAI/SkyReels-V1"
+    desc:
+      en: "Human-Centric Video Foundation Model. 2 700+ ⭐"
+      zh: "以人为中心的视频基座模型。2700+ ⭐"
+
+  - name: "SkyReels-A1"
+    url: "https://github.com/SkyworkAI/SkyReels-A1"
+    paper: "https://arxiv.org/abs/2502.10841"
+    desc:
+      en: "Expressive Portrait Animation in Video Diffusion Transformers. 500+ ⭐"
+      zh: "基于视频 Diffusion Transformer 的表情肖像动画生成。500+ ⭐"
+
+  - name: "LiteHRNet"
+    url: "https://github.com/HRNet/Lite-HRNet"
+    paper: "https://arxiv.org/abs/2104.06403"
+    desc:
+      en: "A Lightweight High-Resolution Network. 900+ ⭐"
+      zh: "轻量级高分辨率网络。900+ ⭐"
+
+  - name: "TorchSeg"
+    url: "https://github.com/ycszen/TorchSeg"
+    desc:
+      en: "PyTorch semantic segmentation codebase — BiSeNet, DFN, DenseASPP and more. 1 400+ ⭐"
+      zh: "PyTorch 语义分割代码库 — BiSeNet、DFN、DenseASPP 等。1400+ ⭐"
