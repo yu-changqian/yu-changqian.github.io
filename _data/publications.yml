@@ -23,7 +23,7 @@
     arxiv: "2402.05608"
     code: "https://github.com/feizc/DiS"
   preview: "dis.jpg"
-  citations: 49
+  citations: 50
 - key: "yu2021bisenetv2"
   title: "BiSeNet V2: Bilateral Network with Guided Aggregation for Real-time Semantic Segmentation"
   authors: "<strong>Changqian Yu</strong>, Changxin Gao†, Jingbo Wang, Gang Yu, Chunhua Shen, Nong Sang"
