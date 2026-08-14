@@ -1,3 +1,5 @@
+
+
 # yu-changqian.github.io
 
 Personal academic website built with Jekyll. Bilingual (EN/ZH), auto-deployed to GitHub Pages.
@@ -64,7 +66,7 @@ Site runs at `http://localhost:4000`. Push to `main` branch triggers automatic d
 │   └── awards.html
 └── .github/workflows/
     ├── deploy.yml             # Auto-deploy on push to main
-    └── update-citations.yml   # Weekly publication sync + citation updates
+    └── update-citations.yml   # Monthly publication sync + citation updates
 ```
 
 ## How to Update Content
@@ -164,7 +166,7 @@ This script will:
 - Fetch all papers from OpenAlex (mapped from Google Scholar profile)
 - Generate/update `_data/publications_all.yml` with `bibtex` and citations
 
-Workflow `.github/workflows/update-citations.yml` runs weekly to sync publications and refresh citation counts.
+Workflow `.github/workflows/update-citations.yml` runs monthly to sync publications and refresh citation counts.
 
 ### News
 
