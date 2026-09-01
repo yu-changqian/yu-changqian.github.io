@@ -10,7 +10,7 @@
     arxiv: "2407.11633"
     code: "https://github.com/feizc/DiT-MoE"
   preview: "dit-moe.png"
-  citations: 49
+  citations: 64
 - key: "fei2024dis"
   title: "Scalable Diffusion Models with State Space Backbone"
   authors: "Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Junshi Huang"
@@ -61,7 +61,7 @@
   year: 2018
   selected: true
   award: "ECCV 2018 Top-10 Influential Papers"
-  citations: 2700
+  citations: 2768
   google_scholar_id: "UeHWp8X0CEIC"
   links:
     paper: "https://openaccess.thecvf.com/content_ECCV_2018/html/Changqian_Yu_BiSeNet_Bilateral_Segmentation_ECCV_2018_paper.html"
@@ -75,7 +75,7 @@
   venue_full: "IEEE Conference on Computer Vision and Pattern Recognition"
   year: 2018
   selected: true
-  citations: 813
+  citations: 820
   google_scholar_id: "u5HHmVD_uO8C"
   links:
     paper: "https://openaccess.thecvf.com/content_cvpr_2018/html/Yu_Learning_a_Discriminative_CVPR_2018_paper.html"
