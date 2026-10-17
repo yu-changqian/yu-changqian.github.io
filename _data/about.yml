@@ -9,8 +9,8 @@ name:
 photo: "/assets/img/bio_pic.jpg"
 
 title:
-  en: "Director of Kling Image · Kuaishou Technology"
-  zh: "快手可灵AI · 图像模型中心负责人"
+  en: "Director of Kling Image · Kling AI"
+  zh: "可灵AI · 图像模型中心负责人"
 
 tagline:
   en: "I build multimodal AI that sees, understands, and creates."
@@ -18,15 +18,15 @@ tagline:
 
 bio:
   en:
-    - "I lead **[Kling Image](https://app.klingai.com/cn/omni/new)** at Kuaishou Technology, building foundation models for visual generation and understanding. My research spans **Diffusion Models**, **Vision-Language Models**, and unified multimodal intelligence. I received my PhD from [HUST](http://english.hust.edu.cn/) and was recognized with the **CSIG Top-10 Dissertation Award** and as one of **Stanford's Top 2% Scientists** for three consecutive years."
+    - "I lead **[Kling Image](https://app.klingai.com/cn/omni/new)** at Kling AI, building foundation models for visual generation and understanding. My research spans **Diffusion Models**, **Vision-Language Models**, and unified multimodal intelligence. I received my PhD from [HUST](http://english.hust.edu.cn/) and was recognized with the **CSIG Top-10 Dissertation Award** and as one of **Stanford's Top 2% Scientists** for three consecutive years."
   zh:
-    - "我在快手可灵AI负责 **图像模型中心**，构建视觉生成与理解基础模型。研究方向涵盖 **Diffusion 模型**、**视觉语言模型**与理解生成一体化。[华中科技大学](http://www.hust.edu.cn/)博士，获 **CSIG 全国优博**，连续三年入选**斯坦福全球前 2% 顶尖科学家**。"
+    - "我在可灵AI负责 **图像模型中心**，构建视觉生成与理解基础模型。研究方向涵盖 **Diffusion 模型**、**视觉语言模型**与理解生成一体化。[华中科技大学](http://www.hust.edu.cn/)博士，获 **CSIG 全国优博**，连续三年入选**斯坦福全球前 2% 顶尖科学家**。"
 
 # Career timeline — narrative style, rendered on homepage
 timeline:
   - company:
-      en: "Kling AI, Kuaishou Technology"
-      zh: "快手可灵AI"
+      en: "Kling AI"
+      zh: "可灵AI"
     logo: "/assets/img/logos/kling.png"
     logo_alt: "Kling"
     period: "2025 – Present"
@@ -75,7 +75,7 @@ timeline:
 # Hiring — displayed as a highlight card on homepage
 hiring:
   active: true
-  email: "yuchangqian@kuaishou.com"
+  email: "y-changqian@outlook.com"
   intro:
     en: "We are building unified multimodal models that bridge visual understanding and generation, and extending toward Visual Agentic Intelligence — models that perceive, reason, and act in the visual world."
     zh: "我们正在构建理解生成一体化的多模态模型，并向视觉智能体（Visual Agentic Intelligence）延伸——让模型能看、能想、能行动。"

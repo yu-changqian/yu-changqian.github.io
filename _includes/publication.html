@@ -4,8 +4,9 @@
 {% assign lang = page.lang | default: "en" %}
 {% assign tp = site.data.i18n[lang].publications %}
 {% assign th = site.data.i18n[lang].home %}
+{% capture publication_search_text %}{{ include.pub.title }} {{ include.pub.authors }} {{ include.pub.venue }} {{ include.pub.venue_full }} {{ include.pub.year }}{% endcapture %}
 
-<div class="pub-card">
+<div class="pub-card" data-publication data-search="{{ publication_search_text | strip_html | downcase | escape }}">
   {% if include.pub.preview %}
   <div class="pub-card__preview">
     <img src="{{ '/assets/img/publication_preview/' | append: include.pub.preview | relative_url }}" alt="{{ include.pub.title }}" loading="lazy">

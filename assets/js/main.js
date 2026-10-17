@@ -140,4 +140,35 @@
     });
   }
 
+  // --- Publication Search ---
+  var publicationSearch = document.getElementById("publication-search");
+  var publicationEmpty = document.getElementById("publication-empty");
+  if (publicationSearch) {
+    var publicationCards = Array.prototype.slice.call(
+      document.querySelectorAll("[data-publication]")
+    );
+    var yearGroups = Array.prototype.slice.call(
+      document.querySelectorAll(".year-group")
+    );
+
+    publicationSearch.addEventListener("input", function () {
+      var query = publicationSearch.value.trim().toLowerCase();
+      var visibleCount = 0;
+
+      publicationCards.forEach(function (card) {
+        var matches = !query || (card.dataset.search || "").indexOf(query) !== -1;
+        card.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+
+      yearGroups.forEach(function (group) {
+        group.hidden = !group.querySelector("[data-publication]:not([hidden])");
+      });
+
+      if (publicationEmpty) {
+        publicationEmpty.hidden = visibleCount !== 0;
+      }
+    });
+  }
+
 })();

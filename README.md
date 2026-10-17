@@ -96,8 +96,8 @@ Edit the `timeline` section in `_data/about.yml`:
 ```yaml
 timeline:
   - period: "2025 –"
-    logo: "/assets/img/logos/kuaishou.svg"   # optional
-    logo_alt: "Kuaishou"                     # optional
+    logo: "/assets/img/logos/company.svg"   # optional
+    logo_alt: "Company"                     # optional
     en: "Narrative paragraph with **bold** and [links](url)."
     zh: "对应的中文叙事。"
   - period: "2023 – 2025"

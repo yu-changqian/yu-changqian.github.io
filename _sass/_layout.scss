@@ -401,3 +401,43 @@ main {
     color: var(--text-tertiary);
   }
 }
+
+.page-header--editorial {
+  max-width: 44rem;
+  margin: 2rem 0 3rem;
+
+  h1 {
+    font-size: $text-4xl;
+    letter-spacing: -0.04em;
+    margin: 0.35rem 0 0.8rem;
+  }
+
+  p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 640px) {
+    margin: 1rem 0 2.25rem;
+
+    h1 { font-size: $text-3xl; }
+  }
+}
+
+.page-header__eyebrow {
+  color: var(--accent);
+  font-size: $text-xs;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-header__link {
+  display: inline-flex;
+  color: var(--text-primary);
+  font-size: $text-sm;
+  font-weight: 550;
+
+  &:hover { color: var(--accent); }
+}
