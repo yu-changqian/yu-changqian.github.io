@@ -3,37 +3,37 @@
 // ============================================================
 
 // --- Light Theme ---
-$bg-primary:        #ffffff;
-$bg-secondary:      #f8fafc;
-$bg-tertiary:       #f1f5f9;
-$text-primary:      #0f172a;
-$text-secondary:    #475569;
-$text-tertiary:     #94a3b8;
+$bg-primary:        #fdfdfc;
+$bg-secondary:      #f6f6f4;
+$bg-tertiary:       #efefec;
+$text-primary:      #171717;
+$text-secondary:    #525252;
+$text-tertiary:     #8a8a8a;
 $accent:            #2563eb;
 $accent-hover:      #1d4ed8;
 $accent-light:      #dbeafe;
-$border:            #e2e8f0;
-$card-bg:           #ffffff;
-$card-shadow:       0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.04);
-$card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
-$code-bg:           #f1f5f9;
+$border:            #e6e6e2;
+$card-bg:           #fdfdfc;
+$card-shadow:       none;
+$card-shadow-hover: none;
+$code-bg:           #f1f1ee;
 $code-text:         #e11d48;
 
 // --- Dark Theme ---
-$dark-bg-primary:      #0f172a;
-$dark-bg-secondary:    #1e293b;
-$dark-bg-tertiary:     #334155;
-$dark-text-primary:    #f1f5f9;
-$dark-text-secondary:  #94a3b8;
-$dark-text-tertiary:   #64748b;
+$dark-bg-primary:      #111110;
+$dark-bg-secondary:    #191918;
+$dark-bg-tertiary:     #242422;
+$dark-text-primary:    #f5f5f4;
+$dark-text-secondary:  #b0afaa;
+$dark-text-tertiary:   #777671;
 $dark-accent:          #60a5fa;
 $dark-accent-hover:    #93bbfd;
 $dark-accent-light:    rgba(96, 165, 250, 0.1);
-$dark-border:          #334155;
-$dark-card-bg:         #1e293b;
-$dark-card-shadow:     0 4px 20px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
-$dark-card-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
-$dark-code-bg:         #1e293b;
+$dark-border:          #2e2e2b;
+$dark-card-bg:         #111110;
+$dark-card-shadow:     none;
+$dark-card-shadow-hover: none;
+$dark-code-bg:         #20201e;
 $dark-code-text:       #f472b6;
 
 // --- Typography ---
@@ -45,7 +45,7 @@ $text-sm:   0.875rem;
 $text-base: 1rem;
 $text-lg:   1.125rem;
 $text-xl:   1.25rem;
-$text-2xl:  1.5rem;
+$text-2xl:  1.75rem;
 $text-3xl:  1.875rem;
 $text-4xl:  2.25rem;
 

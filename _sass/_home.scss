@@ -6,25 +6,26 @@
 
 .hero {
   display: flex;
-  gap: 3rem;
-  align-items: flex-start;
-  margin-bottom: 2.5rem;
+  gap: 3.5rem;
+  align-items: center;
+  margin: 1.5rem 0 5rem;
 
   @media (max-width: 640px) {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1.5rem;
+    gap: 1.75rem;
+    margin: 0.5rem 0 4rem;
   }
 }
 
 .hero__photo {
   flex-shrink: 0;
-  width: 140px;
-  height: 140px;
-  border-radius: 12px;
+  width: 156px;
+  height: 156px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border);
 
   img {
     width: 100%;
@@ -35,7 +36,7 @@
   @media (max-width: 640px) {
     width: 110px;
     height: 110px;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 }
 
@@ -44,44 +45,43 @@
 }
 
 .hero__name {
-  font-size: $text-2xl;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.15rem;
-  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
 
   @media (max-width: 640px) {
-    font-size: $text-xl;
+    font-size: 2rem;
   }
+}
+
+.hero__role {
+  color: var(--text-primary);
+  font-size: $text-sm;
+  font-weight: 550;
+  margin-bottom: 0.6rem;
 }
 
 .hero__tagline {
-  font-size: $text-xl;
-  font-weight: 600;
-  background: linear-gradient(120deg, var(--text-primary), var(--text-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
-  line-height: 1.4;
-  letter-spacing: -0.015em;
+  font-size: $text-lg;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.1rem;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
 
   @media (max-width: 640px) {
-    font-size: $text-lg;
+    font-size: $text-base;
   }
-}
-
-.hero__title {
-  font-size: $text-xs;
-  color: var(--text-tertiary);
-  margin-bottom: 0.75rem;
-  font-weight: 400;
 }
 
 .hero__bio {
   font-size: $text-base;
   color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 1.25rem;
+  line-height: 1.72;
+  margin-bottom: 1.1rem;
 
   p {
     margin-bottom: 0.5rem;
@@ -103,8 +103,28 @@
 }
 
 .hero__social {
+  gap: 1rem;
+
   @media (max-width: 640px) {
     justify-content: center;
+  }
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-tertiary);
+  font-size: $text-xs;
+  font-weight: 500;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
   }
 }
 
@@ -113,7 +133,8 @@
 .pub-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0;
+  border-top: 1px solid var(--border);
 }
 
 // --- Latest Posts ---
@@ -182,47 +203,43 @@
 .tl-list {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0;
 }
 
 .tl-item {
   display: flex;
-  gap: 1.25rem;
-  padding: 0.75rem 0.5rem;
-  border-radius: 8px;
-  transition: background $transition-fast;
-
-  &:hover {
-    background: var(--bg-secondary);
-  }
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
 
   @media (max-width: 640px) {
-    gap: 1rem;
+    gap: 0.875rem;
   }
 }
 
 .tl-item__logo-col {
   flex-shrink: 0;
-  width: 5.5rem;
+  width: 4.75rem;
   padding-top: 0.2rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
 
   @media (max-width: 640px) {
-    width: 4rem;
+    width: 3rem;
   }
 }
 
 .tl-item__logo {
-  max-width: 5.5rem;
-  max-height: 3.5rem;
+  max-width: 4.75rem;
+  max-height: 3rem;
   object-fit: contain;
   display: block;
+  filter: grayscale(0.15);
 
   @media (max-width: 640px) {
-    max-width: 4rem;
-    max-height: 3rem;
+    max-width: 3rem;
+    max-height: 2.25rem;
   }
 }
 
@@ -245,10 +262,16 @@
 }
 
 .tl-item__period {
+  margin-left: auto;
   font-size: $text-sm;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-tertiary);
   font-variant-numeric: tabular-nums;
+
+  @media (max-width: 640px) {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .tl-item__body {
@@ -279,28 +302,26 @@
 // --- Multi-role section ---
 
 .tl-item__roles {
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 .tl-role {
-  padding: 0.5rem 0 0.5rem 0.85rem;
-  border-left: 2px solid var(--border);
+  padding: 0.4rem 0 0.75rem 1rem;
+  border-left: 1px solid var(--border);
   position: relative;
 
   &::before {
     content: "";
     position: absolute;
-    left: -5px;
-    top: 0.85rem;
-    width: 8px;
-    height: 8px;
+    left: -3.5px;
+    top: 0.8rem;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--accent);
   }
 
-  &.tl-role--last {
-    border-left-color: transparent;
-  }
+  &.tl-role--last { padding-bottom: 0; }
 }
 
 .tl-role__header {
@@ -352,34 +373,47 @@
 .oss-list {
   list-style: none;
   padding: 0;
-  margin: 0 -0.5rem;
+  margin: 0;
+  border-top: 1px solid var(--border);
 }
 
 .oss-item {
-  padding: 0.5rem 0.5rem;
+  display: grid;
+  grid-template-columns: minmax(11rem, 0.75fr) minmax(0, 2fr);
+  gap: 1.5rem;
+  padding: 0.85rem 0;
   font-size: $text-sm;
   line-height: 1.6;
-  border-radius: 6px;
-  transition: background $transition-fast;
+  border-bottom: 1px solid var(--border);
 
-  &:hover {
-    background: var(--bg-secondary);
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
   }
+}
+
+.oss-item__project {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  min-width: 0;
 }
 
 .oss-item__name {
   font-weight: 600;
+  color: var(--text-primary);
+}
+
+.oss-item__links {
+  display: inline-flex;
+  gap: 0.5rem;
 }
 
 .oss-item__link {
   font-size: $text-xs;
   color: var(--text-tertiary);
-  margin-left: 0.25rem;
-}
 
-.oss-item__sep {
-  color: var(--text-tertiary);
-  margin: 0 0.35rem;
+  &:hover { color: var(--accent); }
 }
 
 .oss-item__desc {
@@ -388,21 +422,27 @@
 
 // --- Hiring ---
 
+.hiring {
+  border-left: 2px solid var(--border);
+  padding-left: 1.25rem;
+  max-width: 46rem;
+}
+
 .hiring__intro {
-  font-size: $text-sm;
+  font-size: $text-base;
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0 0 0.5rem;
+  line-height: 1.72;
+  margin: 0 0 0.75rem;
 }
 
 .hiring__directions {
   padding-left: 1.25rem;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
 
   li {
     font-size: $text-sm;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.7;
   }
 }
 
@@ -412,16 +452,13 @@
   margin: 0;
 
   a {
-    color: var(--text-primary);
-    font-weight: 500;
-    text-decoration: underline;
-    text-decoration-color: var(--border);
-    text-underline-offset: 4px;
-    transition: text-decoration-color $transition-fast, color $transition-fast;
+    color: var(--accent);
+    font-weight: 550;
 
     &:hover {
-      color: var(--accent);
-      text-decoration-color: var(--accent);
+      color: var(--accent-hover);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
   }
 }

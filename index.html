@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-description: "Changqian Yu — Director of Kling Image at Kuaishou. Expert in Diffusion Models and Vision-Language Models."
+description: "Changqian Yu — Director of Kling Image at Kuaishou, building foundation models for visual generation, understanding, and unified multimodal intelligence."
 ---
 {% assign lang = page.lang | default: "en" %}
 {% assign t = site.data.i18n[lang] %}
@@ -9,30 +9,6 @@ description: "Changqian Yu — Director of Kling Image at Kuaishou. Expert in Di
 <div class="container">
 
   {% include hero.html %}
-
-  <hr>
-
-  <section class="section">
-    <div class="section__title"><span>{{ t.home.timeline }}</span></div>
-    {% include timeline.html %}
-  </section>
-
-  {% include hiring.html %}
-
-  <section class="section">
-    <div class="section__title"><span>{{ t.home.open_source }}</span></div>
-    <ul class="oss-list">
-      {% for repo in about.open_source %}
-      <li class="oss-item">
-        <a href="{{ repo.url }}" class="oss-item__name" target="_blank" rel="noopener">{{ repo.name }}</a>
-        {% if repo.paper %}<a href="{{ repo.paper }}" class="oss-item__link" target="_blank" rel="noopener">[paper]</a>{% endif %}
-        {% if repo.demo %}<a href="{{ repo.demo }}" class="oss-item__link" target="_blank" rel="noopener">[demo]</a>{% endif %}
-        <span class="oss-item__sep">—</span>
-        <span class="oss-item__desc">{% if repo.desc[lang] %}{{ repo.desc[lang] }}{% else %}{{ repo.desc }}{% endif %}</span>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
 
   <section class="section">
     <div class="section__title">
@@ -48,43 +24,29 @@ description: "Changqian Yu — Director of Kling Image at Kuaishou. Expert in Di
     </div>
   </section>
 
-  {% if site.posts.size > 0 %}
   <section class="section">
-    <div class="section__title">
-      <span>{{ t.home.latest_posts }}</span>
-      <a href="{{ '/blog/' | relative_url }}" class="section__more">{{ t.home.view_all }}</a>
-    </div>
-    <div class="post-list">
-      {% for post in site.posts limit:3 %}
-      <a href="{{ post.url | relative_url }}" class="post-preview">
-        <div class="post-preview__meta">
-          <span class="post-preview__date">{{ post.date | date: "%b %d, %Y" }}</span>
-          {% for tag in post.tags limit:2 %}
-          <span class="post-preview__tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-        <h3 class="post-preview__title">{{ post.title }}</h3>
-        {% if post.description %}
-        <p class="post-preview__desc">{{ post.description }}</p>
-        {% endif %}
-      </a>
-      {% endfor %}
-    </div>
+    <div class="section__title"><span>{{ t.home.timeline }}</span></div>
+    {% include timeline.html %}
   </section>
-  {% endif %}
 
   <section class="section">
-    <div class="section__title">
-      <span>{{ t.home.news }}</span>
-    </div>
-    <ul class="news-list">
-      {% for news in site.data.news %}
-      <li class="news-item">
-        <span class="news-item__date">{{ news.year }}</span>
-        <p class="news-item__text">{{ news[lang] }}</p>
+    <div class="section__title"><span>{{ t.home.open_source }}</span></div>
+    <ul class="oss-list">
+      {% for repo in about.open_source %}
+      <li class="oss-item">
+        <div class="oss-item__project">
+          <a href="{{ repo.url }}" class="oss-item__name" target="_blank" rel="noopener">{{ repo.name }}</a>
+          <span class="oss-item__links">
+            {% if repo.paper %}<a href="{{ repo.paper }}" class="oss-item__link" target="_blank" rel="noopener">paper</a>{% endif %}
+            {% if repo.demo %}<a href="{{ repo.demo }}" class="oss-item__link" target="_blank" rel="noopener">demo</a>{% endif %}
+          </span>
+        </div>
+        <span class="oss-item__desc">{% if repo.desc[lang] %}{{ repo.desc[lang] }}{% else %}{{ repo.desc }}{% endif %}</span>
       </li>
       {% endfor %}
     </ul>
   </section>
+
+  {% include hiring.html %}
 
 </div>

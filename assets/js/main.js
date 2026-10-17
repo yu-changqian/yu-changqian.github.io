@@ -140,25 +140,4 @@
     });
   }
 
-  // --- Scroll Reveal Animations ---
-  if ("IntersectionObserver" in window) {
-    var reveals = document.querySelectorAll(
-      ".section, .pub-card, .post-preview"
-    );
-    var revealObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08 }
-    );
-    reveals.forEach(function (el) {
-      el.classList.add("reveal");
-      revealObserver.observe(el);
-    });
-  }
 })();

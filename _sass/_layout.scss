@@ -241,31 +241,30 @@
 // --- Main Content ---
 
 main {
-  padding-top: calc(#{$nav-height} + 1rem);
+  padding-top: calc(#{$nav-height} + 2rem);
   min-height: calc(100vh - 120px);
 }
 
 // --- Section ---
 
 .section {
-  margin-bottom: 3.5rem;
+  margin-bottom: 4.5rem;
 }
 
 .section__title {
-  font-family: $font-mono;
-  font-size: $text-base;
-  font-weight: 600;
+  font-size: $text-lg;
+  font-weight: 650;
   color: var(--text-primary);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .section__more {
-  font-size: $text-xs;
-  font-weight: 450;
+  font-size: $text-sm;
+  font-weight: 500;
   color: var(--text-tertiary);
 
   &:hover {
@@ -391,7 +390,7 @@ main {
 // --- Page Header ---
 
 .page-header {
-  margin-bottom: 2.5rem;
+  margin: 1rem 0 2.5rem;
 
   h1 {
     margin-bottom: 0.25rem;

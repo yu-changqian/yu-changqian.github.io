@@ -28,7 +28,7 @@
   --card-shadow-hover: #{$card-shadow-hover};
   --code-bg: #{$code-bg};
   --code-text: #{$code-text};
-  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg: rgba(253, 253, 252, 0.88);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -74,6 +74,7 @@ body {
   background: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   transition: background $transition-slow, color $transition-slow;
 }
 
@@ -216,19 +217,4 @@ table {
 ::selection {
   background: var(--accent-light);
   color: var(--accent);
-}
-
-// --- Scroll Reveal ---
-
-@media (prefers-reduced-motion: no-preference) {
-  .reveal {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-
-  .reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

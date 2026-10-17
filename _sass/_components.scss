@@ -8,28 +8,20 @@
 
 .pub-card {
   display: flex;
-  gap: 1rem;
-  padding: 1.25rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  box-shadow: var(--card-shadow);
-  transition: border-color $transition-fast, box-shadow $transition-fast, transform $transition-fast;
-
-  &:hover {
-    border-color: var(--border);
-    box-shadow: var(--card-shadow-hover);
-    transform: translateY(-2px);
-  }
+  gap: 1.25rem;
+  padding: 1.15rem 0;
+  background: transparent;
+  border-bottom: 1px solid var(--border);
 }
 
 .pub-card__preview {
   flex-shrink: 0;
-  width: 120px;
-  height: 80px;
-  border-radius: 6px;
+  width: 132px;
+  height: 84px;
+  border-radius: 5px;
   overflow: hidden;
   background: var(--bg-secondary);
+  border: 1px solid var(--border);
 
   img {
     width: 100%;
@@ -38,6 +30,11 @@
   }
 
   @media (max-width: 640px) {
+    width: 84px;
+    height: 56px;
+  }
+
+  @media (max-width: 420px) {
     display: none;
   }
 }
@@ -49,7 +46,7 @@
 
 .pub-card__title {
   font-size: $text-base;
-  font-weight: 600;
+  font-weight: 650;
   color: var(--text-primary);
   line-height: 1.4;
   margin-bottom: 0.35rem;
@@ -88,40 +85,12 @@
   display: inline-block;
   font-size: 0.7rem;
   font-weight: 600;
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
-  letter-spacing: 0.02em;
+  padding: 0;
+  border-radius: 0;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  background: var(--accent-light);
-  color: var(--accent);
-}
-
-.tag--cvpr { background: rgba(#dc2626, 0.1); color: #dc2626; }
-.tag--eccv { background: rgba(#7c3aed, 0.1); color: #7c3aed; }
-.tag--iccv { background: rgba(#0891b2, 0.1); color: #0891b2; }
-.tag--neur { background: rgba(#059669, 0.1); color: #059669; }
-.tag--ijcv { background: rgba(#d97706, 0.1); color: #d97706; }
-.tag--arxi { background: rgba(#6b7280, 0.1); color: #6b7280; }
-.tag--ieee { background: rgba(#2563eb, 0.1); color: #2563eb; }
-.tag--aaai { background: rgba(#0d9488, 0.1); color: #0d9488; }
-.tag--icml { background: rgba(#be185d, 0.1); color: #be185d; }
-.tag--iclr { background: rgba(#4f46e5, 0.1); color: #4f46e5; }
-.tag--acl,
-.tag--emnl { background: rgba(#b91c1c, 0.1); color: #b91c1c; }
-
-[data-theme="dark"] {
-  .tag--cvpr { background: rgba(#ef5350, 0.15); color: #ef5350; }
-  .tag--eccv { background: rgba(#a78bfa, 0.15); color: #a78bfa; }
-  .tag--iccv { background: rgba(#22d3ee, 0.15); color: #22d3ee; }
-  .tag--neur { background: rgba(#34d399, 0.15); color: #34d399; }
-  .tag--ijcv { background: rgba(#fbbf24, 0.15); color: #fbbf24; }
-  .tag--arxi { background: rgba(#9ca3af, 0.15); color: #9ca3af; }
-  .tag--ieee { background: rgba(#60a5fa, 0.15); color: #60a5fa; }
-  .tag--aaai { background: rgba(#2dd4bf, 0.15); color: #2dd4bf; }
-  .tag--icml { background: rgba(#f472b6, 0.15); color: #f472b6; }
-  .tag--iclr { background: rgba(#818cf8, 0.15); color: #818cf8; }
-  .tag--acl,
-  .tag--emnl { background: rgba(#fca5a5, 0.15); color: #fca5a5; }
+  background: transparent;
+  color: var(--text-tertiary);
 }
 
 // --- Award Badge ---
@@ -165,18 +134,19 @@
   gap: 0.25rem;
   font-size: 0.7rem;
   font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  min-height: 24px;
-  border-radius: 4px;
+  padding: 0;
+  min-height: auto;
+  border-radius: 0;
   color: var(--text-tertiary);
-  border: 1px solid var(--border);
+  border: none;
   text-decoration: none;
   transition: color $transition-fast, border-color $transition-fast, background $transition-fast;
 
   &:hover {
     color: var(--accent);
-    border-color: var(--accent);
-    background: var(--accent-light);
+    background: transparent;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   svg {
@@ -238,7 +208,8 @@
 .year-group__list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0;
+  border-top: 1px solid var(--border);
 }
 
 // --- Social Links ---

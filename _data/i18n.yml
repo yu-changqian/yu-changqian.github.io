@@ -5,13 +5,13 @@ en:
     blog: "Blog"
     awards: "Awards"
   home:
-    selected_publications: "Selected Publications"
+    selected_publications: "Selected Work"
     view_all: "View all →"
     latest_posts: "Latest Posts"
     news: "News"
-    timeline: "Timeline"
+    timeline: "Experience"
     open_source: "Open Source"
-    hiring: "We're Hiring"
+    hiring: "Join the Team"
     hiring_cta: "Interested? Reach out at"
     coming_soon: "Coming soon — stay tuned!"
     min_read: "min read"
@@ -48,6 +48,11 @@ en:
     title: "404"
     message: "Page not found — it may have been moved or deleted."
     back: "← Back to Home"
+  a11y:
+    skip_to_content: "Skip to content"
+    toggle_menu: "Toggle navigation"
+    toggle_theme: "Toggle color theme"
+    back_to_top: "Back to top"
 
 zh:
   nav:
@@ -56,13 +61,13 @@ zh:
     blog: "博客"
     awards: "荣誉"
   home:
-    selected_publications: "代表论文"
+    selected_publications: "代表工作"
     view_all: "查看全部 →"
     latest_posts: "最新博客"
     news: "动态"
     timeline: "经历"
     open_source: "开源项目"
-    hiring: "团队招聘"
+    hiring: "加入团队"
     hiring_cta: "感兴趣欢迎联系："
     coming_soon: "即将更新，敬请期待！"
     min_read: "分钟阅读"
@@ -99,3 +104,8 @@ zh:
     title: "404"
     message: "页面未找到 — 可能已被移动或删除。"
     back: "← 返回首页"
+  a11y:
+    skip_to_content: "跳转到正文"
+    toggle_menu: "展开或收起导航"
+    toggle_theme: "切换颜色主题"
+    back_to_top: "返回顶部"
