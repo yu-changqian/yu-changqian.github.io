@@ -22,7 +22,9 @@
         {{ include.pub.title }}
       {% endif %}
     </div>
+    {% if include.pub.authors %}
     <div class="pub-card__authors">{{ include.pub.authors }}</div>
+    {% endif %}
     <div class="pub-card__meta">
       {% assign venue_lower = include.pub.venue | downcase | truncate: 4, "" %}
       <span class="tag tag--{{ venue_lower }}">{{ include.pub.venue }}</span>

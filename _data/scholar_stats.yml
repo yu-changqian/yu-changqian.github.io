@@ -1,7 +1,7 @@
-total_citations: 9000
-h_index: 18
-i10_index: 25
-total_papers: 37
-max_citations: 3700
-max_cited_paper: "BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation"
-last_updated: "2026-03-26"
+total_citations: 10576
+h_index: 22
+i10_index: 30
+total_papers: 45
+max_citations: 4084
+max_cited_paper: 'Bisenet: Bilateral segmentation network for real-time semantic segmentation'
+last_updated: '2026-10-17'

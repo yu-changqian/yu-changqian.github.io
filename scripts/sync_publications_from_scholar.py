@@ -36,14 +36,21 @@ MY_NAMES = {"changqian yu"}
 MY_NAME_DISPLAY = "Changqian Yu"
 
 # Opaque blocklist: entries are sha256 hashes so the list reveals nothing.
-# Title hashes are computed from title_signature(title); arXiv hashes from the raw ID.
+# Title hashes use title_signature(title); arXiv IDs and normalized author names use raw text.
 EXCLUDED_TITLE_HASHES = {
     "9ab2e71b77fe7edd76e4643627198b0cac59a64142b162b2e6a1e087191c7da8",
     "f94f8231a345fb58b0c58b34da93bb4988de21a160d1a1864bf0cb0c74af1f94",
+    "71f7d2ac81ec01fe21847234c534021008065605c443716736354858352f250f",
+    "5e283e48121e03c8d2de6d5c88190e2f2649603dd6cdfdb7ee19067d43f22421",
 }
 EXCLUDED_ARXIV_HASHES = {
     "84222acdaae1b8c2d4546e3588d580a556e6d135dd9f7f9d9ba10217b6127efe",
     "86c1f86546f9193cfd457c5fb10241edb2e9fb494d139d4ed27e6eb95c478d25",
+}
+EXCLUDED_AUTHOR_HASHES = {
+    "55a2f44e83b806b96505e2cf138299b0e2d5fc68948767f4c678c33af22e5a06",
+    "9c5bf24af982e53766f1b391e86d9bc84450b710d3000f917c47cd4078f2db3f",
+    "af650879958da1888cdef45c9bc2deea7514fb291703a505ca0c32ac5f013b89",
 }
 
 
@@ -57,6 +64,12 @@ def is_excluded(title: str = "", arxiv_id: str | None = None) -> bool:
     if arxiv_id and _sha256(arxiv_id) in EXCLUDED_ARXIV_HASHES:
         return True
     return False
+
+
+def is_excluded_author(name: str) -> bool:
+    normalized = re.sub(r"\s+", " ", name.strip().lower())
+    variants = {normalized, normalized.replace(" ", "")}
+    return any(_sha256(value) in EXCLUDED_AUTHOR_HASHES for value in variants)
 
 SESSION = requests.Session()
 SESSION.headers.update(
@@ -177,6 +190,22 @@ def slug(text: str) -> str:
     return s[:80] if s else "paper"
 
 
+def parse_author_names(raw: Any) -> list[str]:
+    if isinstance(raw, list):
+        return [str(name).strip() for name in raw if str(name).strip()]
+    if isinstance(raw, str):
+        separator = r"\s+and\s+" if re.search(r"\s+and\s+", raw) else r",\s*"
+        return [name.strip() for name in re.split(separator, raw) if name.strip()]
+    return []
+
+
+def format_authors(raw: Any) -> str:
+    names = parse_author_names(raw)
+    return ", ".join(
+        f"<strong>{name}</strong>" if name.lower() in MY_NAMES else name for name in names
+    )
+
+
 def venue_info(source_name: str) -> tuple[str, str]:
     if not source_name:
         return "Unknown", "Unknown venue"
@@ -279,7 +308,7 @@ def fetch_gs_publications(scholar_id: str) -> tuple[list[dict[str, Any]], dict[s
     from scholarly import scholarly
 
     author = scholarly.search_author_id(scholar_id)
-    author = scholarly.fill(author, sections=["publications"])
+    author = scholarly.fill(author, sections=["indices", "counts", "publications"])
     stats = {
         "total_citations": int(author.get("citedby", 0)),
         "h_index": int(author.get("hindex", 0)),
@@ -314,6 +343,8 @@ def enrich_from_openalex(title: str) -> dict[str, Any] | None:
             (a.get("author") or {}).get("display_name", "").strip()
             for a in work.get("authorships", [])
         ]
+        if any(is_excluded_author(name) for name in author_names):
+            return {"_excluded": True}
         if not any(n.lower() in MY_NAMES for n in author_names):
             continue
 
@@ -372,16 +403,14 @@ def enrich_from_openalex(title: str) -> dict[str, Any] | None:
 # Scholarly fallback for venue
 # ---------------------------------------------------------------------------
 
-def fill_venue_from_scholarly(gs_pub: dict[str, Any]) -> str:
-    """Call scholarly.fill() on a single publication to get venue."""
+def fill_from_scholarly(gs_pub: dict[str, Any]) -> dict[str, Any]:
+    """Call scholarly.fill() on a publication to recover missing metadata."""
     try:
         from scholarly import scholarly
 
-        filled = scholarly.fill(gs_pub)
-        bib = filled.get("bib", {})
-        return bib.get("conference") or bib.get("journal") or bib.get("venue") or ""
+        return scholarly.fill(gs_pub)
     except Exception:
-        return ""
+        return {}
 
 
 # ---------------------------------------------------------------------------
@@ -412,6 +441,23 @@ def main() -> None:
     gs_pubs, gs_stats = fetch_gs_publications(args.scholar_id)
     print(f"[INFO] Google Scholar returned {len(gs_pubs)} publications")
 
+    # Keep curated/featured publications on the same Google Scholar citation
+    # source as the automatically generated publication list.
+    gs_citations = {
+        title_signature((p.get("bib") or {}).get("title", "")): int(p.get("num_citations") or 0)
+        for p in gs_pubs
+        if (p.get("bib") or {}).get("title")
+    }
+    curated_updates = 0
+    for item in curated:
+        citation_count = gs_citations.get(title_signature(item.get("title", "")))
+        if citation_count is not None and item.get("citations") != citation_count:
+            item["citations"] = citation_count
+            curated_updates += 1
+    if curated_updates:
+        save_yaml(CURATED_FILE, curated)
+    print(f"[INFO] Updated Google Scholar citations for {curated_updates} curated publications")
+
     seen_keys: set[str] = set()
     results: list[dict[str, Any]] = []
     unfilled_gs_pubs: list[tuple[dict[str, Any], dict[str, Any]]] = []
@@ -421,6 +467,8 @@ def main() -> None:
         title = (bib.get("title") or "").strip()
         if not title:
             continue
+        if any(is_excluded_author(name) for name in parse_author_names(bib.get("author", ""))):
+            continue
         year = int(bib.get("pub_year") or 0) or None
         citations = int(gs_pub.get("num_citations") or 0)
 
@@ -428,7 +476,7 @@ def main() -> None:
             continue
 
         sig = title_signature(title)
-        if sig in curated_sigs:
+        if any(sig == curated_sig or sig in curated_sig or curated_sig in sig for curated_sig in curated_sigs):
             continue
 
         key_base = slug(title)
@@ -444,6 +492,8 @@ def main() -> None:
         enriched = enrich_from_openalex(title)
         time.sleep(0.15)
 
+        if enriched and enriched.get("_excluded"):
+            continue
         if enriched:
             source_name = enriched["source_name"]
             doi_url = enriched["doi_url"]
@@ -457,11 +507,7 @@ def main() -> None:
             source_name = ""
             doi_url = None
             arxiv_id = None
-            authors_raw = bib.get("author", "")
-            parts = [a.strip() for a in re.split(r"\s+and\s+", authors_raw) if a.strip()]
-            authors = ", ".join(
-                f"<strong>{a}</strong>" if a.lower() in MY_NAMES else a for a in parts
-            )
+            authors = format_authors(bib.get("author", ""))
 
         is_arxiv = bool(arxiv_id) and not source_name
         venue, venue_full = venue_info(source_name) if source_name else ("Unknown", "Unknown venue")
@@ -517,6 +563,18 @@ def main() -> None:
             "bibtex": bib_text,
         }
 
+        if old:
+            if not item["authors"] and old.get("authors"):
+                item["authors"] = old["authors"]
+                if old.get("bibtex"):
+                    item["bibtex"] = old["bibtex"]
+            if item["venue"] == "Unknown" and old.get("venue") not in {None, "Unknown"}:
+                item["venue"] = old["venue"]
+                item["venue_full"] = old.get("venue_full", item["venue_full"])
+            if not item["year"] and old.get("year"):
+                item["year"] = old["year"]
+            item["links"] = {**(old.get("links") or {}), **item["links"]}
+
         if venue == "Unknown" and not enriched:
             unfilled_gs_pubs.append((gs_pub, item))
         else:
@@ -525,13 +583,42 @@ def main() -> None:
     if unfilled_gs_pubs:
         print(f"[INFO] Falling back to scholarly.fill() for {len(unfilled_gs_pubs)} papers without venue ...")
         for gs_pub, item in unfilled_gs_pubs:
-            raw_venue = fill_venue_from_scholarly(gs_pub)
+            filled = fill_from_scholarly(gs_pub)
+            filled_bib = filled.get("bib", {})
+            if any(is_excluded_author(name) for name in parse_author_names(filled_bib.get("author", ""))):
+                continue
+            raw_venue = (
+                filled_bib.get("conference")
+                or filled_bib.get("journal")
+                or filled_bib.get("venue")
+                or ""
+            )
             if raw_venue:
                 v, vf = venue_info(raw_venue)
                 item["venue"] = v
                 item["venue_full"] = vf
-                if item["bibtex"].startswith("@article{"):
-                    item["bibtex"] = fallback_bibtex(item["key"], item["title"], item["authors"], item.get("year"), vf)
+
+            filled_authors = format_authors(filled_bib.get("author", ""))
+            if filled_authors:
+                item["authors"] = filled_authors
+
+            filled_year = int(filled_bib.get("pub_year") or filled_bib.get("year") or 0)
+            if filled_year and not item.get("year"):
+                item["year"] = filled_year
+                item["key"] = f"auto-{filled_year}-{slug(item['title'])}"
+
+            pub_url = filled.get("pub_url") or filled_bib.get("url")
+            if pub_url and not item["links"].get("paper"):
+                item["links"]["paper"] = pub_url
+
+            if item["bibtex"].startswith("@article{"):
+                item["bibtex"] = fallback_bibtex(
+                    item["key"],
+                    item["title"],
+                    item["authors"],
+                    item.get("year"),
+                    item["venue_full"],
+                )
             results.append(item)
             time.sleep(1.0)
 

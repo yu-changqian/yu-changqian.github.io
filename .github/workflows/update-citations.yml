@@ -27,10 +27,6 @@ jobs:
 
       - name: Sync publications from Google Scholar
         run: python scripts/sync_publications_from_scholar.py --scholar-id Hv-vj2sAAAAJ
-        continue-on-error: true
-
-      - name: Update citation counts for selected publications
-        run: python scripts/update_citations.py
 
       - name: Commit and push if changed
         run: |

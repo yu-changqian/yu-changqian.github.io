@@ -36,7 +36,7 @@ permalink: /zh/publications/
   <div id="publication-list">
   {% for year_group in pubs_by_year %}
   <div class="year-group">
-    <div class="year-group__label">{{ year_group.name }}</div>
+    <div class="year-group__label">{% if year_group.name == "0" %}{{ t.preprints }}{% else %}{{ year_group.name }}{% endif %}</div>
     <div class="year-group__list">
       {% for pub in year_group.items %}
         {% include publication.html pub=pub %}

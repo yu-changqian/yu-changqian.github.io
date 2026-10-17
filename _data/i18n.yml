@@ -31,6 +31,7 @@ en:
     search_label: "Search publications"
     search_placeholder: "Search by title, author, venue, or year"
     no_results: "No publications match your search."
+    preprints: "Preprints"
   awards:
     eyebrow: "Recognition"
     title: "Awards & Services"
@@ -93,6 +94,7 @@ zh:
     search_label: "检索论文"
     search_placeholder: "按标题、作者、会议或年份检索"
     no_results: "没有匹配的论文。"
+    preprints: "预印本"
   awards:
     eyebrow: "荣誉"
     title: "荣誉与服务"
