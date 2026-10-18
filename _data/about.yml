@@ -38,6 +38,13 @@ timeline:
         en: "As **Director of Kling Image**, I oversee all image foundation models powering visual generation and understanding at scale. Current focus: **unified multimodal models** that bridge understanding and generation in a single architecture."
         zh: "作为 **图像模型中心负责人**，统筹可灵AI全部图像基础模型的研发与落地。当前重点方向：**理解生成一体化**——在统一架构中实现多模态理解与生成。"
 
+      - title:
+          en: "Head of Algorithms"
+          zh: "技术主管"
+        period: "2026.04 – Present"
+        en: "Led the **Kling-Image-Omni** team, shipping products that power visual generation and understanding at scale. Key launches include [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog) — bringing visual reasoning to image generation — and [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog), the latest generation of Kling AI's omni-image foundation models."
+        zh: "带领 **Kling-Image-Omni** 团队，构建大规模视觉生成与理解产品。核心交付包括 [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog)——将视觉推理引入图像生成，以及 [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog)，可灵AI最新一代图像基础模型。"
+
   - company:
       en: "Kunlun Tech (Skywork)"
       zh: "昆仑万维（天工）"
