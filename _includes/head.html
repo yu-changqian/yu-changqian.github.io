@@ -31,7 +31,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"
       onerror="this.href=this.href.replace('fonts.googleapis.com','fonts.loli.net')">
 
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% assign asset_version = site.time | date: '%s' %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ asset_version }}">
 
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32.png' | relative_url }}">
