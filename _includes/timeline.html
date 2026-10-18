@@ -15,14 +15,31 @@
       <span class="tl-item__period">{{ entry.period }}</span>
     </div>
     {% if entry.roles %}
+    {% assign role_count = entry.roles | size %}
     <div class="tl-item__roles">
       {% for role in entry.roles %}
-      <div class="tl-role{% if forloop.last %} tl-role--last{% endif %}">
-        <div class="tl-role__header">
-          <span class="tl-role__title">{{ role.title[lang] }}</span>
-          <span class="tl-role__period">{{ role.period }}</span>
+      <div class="tl-role{% if role.logo %} tl-role--with-logo{% endif %}{% if forloop.last %} tl-role--last{% endif %}">
+        {% if role.logo %}
+        <div class="tl-role__logo-wrap">
+          <img src="{{ role.logo | relative_url }}" alt="{{ role.logo_alt | default: 'logo' }}" class="tl-role__logo" loading="lazy">
         </div>
-        <div class="tl-role__body">{{ role[lang] | markdownify }}</div>
+        {% endif %}
+        <div class="tl-role__content">
+          <div class="tl-role__header">
+            <div class="tl-role__identity">
+              <span class="tl-role__title">{{ role.title[lang] }}</span>
+              {% if role.organization %}
+              <span class="tl-role__organization">{{ role.organization[lang] }}</span>
+              {% endif %}
+            </div>
+            {% if role_count > 1 and role.period and role.period != entry.period %}
+            <span class="tl-role__period">{{ role.period }}</span>
+            {% endif %}
+          </div>
+          {% if role[lang] %}
+          <div class="tl-role__body">{{ role[lang] | markdownify }}</div>
+          {% endif %}
+        </div>
       </div>
       {% endfor %}
     </div>

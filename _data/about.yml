@@ -29,7 +29,7 @@ timeline:
       zh: "可灵AI"
     logo: "/assets/img/logos/kling.png"
     logo_alt: "Kling"
-    period: "2025 – Present"
+    period: "2026.04 – Present"
     roles:
       - title:
           en: "Director"
@@ -37,13 +37,6 @@ timeline:
         period: "2026.04 – Present"
         en: "As **Director of Kling Image**, I oversee all image foundation models powering visual generation and understanding at scale. Current focus: **unified multimodal models** that bridge understanding and generation in a single architecture."
         zh: "作为 **图像模型中心负责人**，统筹可灵AI全部图像基础模型的研发与落地。当前重点方向：**理解生成一体化**——在统一架构中实现多模态理解与生成。"
-
-      - title:
-          en: "Head of Algorithms"
-          zh: "技术主管"
-        period: "2025 – 2026.04"
-        en: "Led the **Kling-Image-Omni** team, shipping products that power visual generation and understanding at scale. Key launches include [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog) — bringing visual reasoning to image generation — and [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog), the latest generation of Kling AI's omni-image foundation models."
-        zh: "带领 **Kling-Image-Omni** 团队，构建大规模视觉生成与理解产品。核心交付包括 [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog)——将视觉推理引入图像生成，以及 [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog)，可灵AI最新一代图像基础模型。"
 
   - company:
       en: "Kunlun Tech (Skywork)"
@@ -69,8 +62,43 @@ timeline:
     period: "2016 – 2021"
     logo: "/assets/img/logos/hust.svg"
     logo_alt: "HUST"
-    en: "PhD focusing on semantic and panoptic segmentation. Won **1st place** in the COCO & Mapillary Panoptic Segmentation Challenge 2018 at ECCV. Built [TorchSeg](https://github.com/ycszen/TorchSeg), a widely-used PyTorch segmentation codebase (1,400+ GitHub stars). Visiting student at the **University of Adelaide**. Interned at **Microsoft Research Asia** (Stars of Tomorrow) and **Megvii (Face++) Research**."
-    zh: "博士，研究方向为语义分割与全景分割。在 ECCV 2018 的 COCO & Mapillary 全景分割挑战赛中获得**第一名**。创建了 [TorchSeg](https://github.com/ycszen/TorchSeg)（1,400+ GitHub star）。赴**阿德莱德大学**联合培养。在**微软亚洲研究院**（明日之星）和**旷视科技**实习。"
+    roles:
+      - title:
+          en: "PhD Student"
+          zh: "博士研究生"
+        period: "2016 – 2021"
+        en: "Focused on semantic and panoptic segmentation. Won **1st place** in the COCO & Mapillary Panoptic Segmentation Challenge 2018 at ECCV. Built [TorchSeg](https://github.com/ycszen/TorchSeg), a widely-used PyTorch segmentation codebase (1,400+ GitHub stars)."
+        zh: "研究方向为语义分割与全景分割。在 ECCV 2018 的 COCO & Mapillary 全景分割挑战赛中获得**第一名**。创建了 [TorchSeg](https://github.com/ycszen/TorchSeg)（1,400+ GitHub star）。"
+
+      - title:
+          en: "Visiting PhD Student"
+          zh: "联合培养博士生"
+        organization:
+          en: "University of Adelaide"
+          zh: "阿德莱德大学"
+        period: "2019 – 2020"
+        logo: "/assets/img/logos/adelaide.png"
+        logo_alt: "University of Adelaide"
+
+      - title:
+          en: "Research Intern · Stars of Tomorrow"
+          zh: "研究实习生 · 明日之星"
+        organization:
+          en: "Microsoft Research Asia"
+          zh: "微软亚洲研究院"
+        period: "2019 – 2020"
+        logo: "/assets/img/logos/microsoft.svg"
+        logo_alt: "Microsoft"
+
+      - title:
+          en: "Research Intern"
+          zh: "研究实习生"
+        organization:
+          en: "Megvii Research"
+          zh: "旷视研究院"
+        period: "2017 – 2019"
+        logo: "/assets/img/logos/megvii.png"
+        logo_alt: "Megvii"
 
 # Hiring — displayed as a highlight card on homepage
 hiring:
