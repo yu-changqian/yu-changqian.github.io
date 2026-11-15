@@ -23,22 +23,17 @@ social:
   linkedin: yu-changqian
   twitter: ChangqianYu
   zhihu: yu-chang-qian
+  xiaohongshu: 601f6788000000000100b09d
 
 markdown: kramdown
 highlighter: rouge
-permalink: /blog/:year/:title/
 
 sass:
   style: compressed
 
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate
-
-paginate: 10
-paginate_path: "/blog/page/:num/"
 
 exclude:
   - Gemfile
@@ -53,8 +48,4 @@ defaults:
       path: ""
     values:
       layout: default
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
+      image: /assets/img/og-default.png

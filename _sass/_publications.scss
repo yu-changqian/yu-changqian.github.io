@@ -10,14 +10,14 @@
 
 .scholar-stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  margin: 2rem 0 2.75rem;
+  margin: 2rem 0 2.5rem;
 }
 
 .scholar-stat {
-  padding: 1.15rem 1.5rem;
+  padding: 1.15rem 1.35rem;
   border-right: 1px solid var(--border);
 
   &:first-child { padding-left: 0; }
@@ -31,7 +31,7 @@
   display: block;
   color: var(--text-primary);
   font-size: $text-2xl;
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
@@ -44,29 +44,66 @@
   margin-top: 0.25rem;
 }
 
-.publication-search {
-  display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
+.publication-controls {
+  display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1.25rem;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
 
-  label {
-    color: var(--text-secondary);
-    font-size: $text-sm;
-    font-weight: 550;
+.publication-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pub-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 0.72rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: $text-xs;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color $transition-fast, background $transition-fast, border-color $transition-fast;
+
+  &:hover {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
   }
+
+  &.is-active {
+    color: #fff;
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+  }
+}
+
+[data-theme="dark"] .pub-chip.is-active {
+  color: #111110;
+  background: var(--text-primary);
+  border-color: var(--text-primary);
 }
 
 .publication-search__field {
   position: relative;
+  flex: 1 1 16rem;
+  max-width: 22rem;
 
   svg {
     position: absolute;
     top: 50%;
-    left: 0.85rem;
-    width: 16px;
-    height: 16px;
+    left: 0.8rem;
+    width: 15px;
+    height: 15px;
     color: var(--text-tertiary);
     transform: translateY(-50%);
     pointer-events: none;
@@ -74,8 +111,8 @@
 
   input {
     width: 100%;
-    height: 42px;
-    padding: 0 0.9rem 0 2.45rem;
+    height: 36px;
+    padding: 0 0.85rem 0 2.3rem;
     color: var(--text-primary);
     background: transparent;
     border: 1px solid var(--border);
@@ -110,7 +147,7 @@
   top: calc(#{$nav-height} + 1.5rem);
   color: var(--text-primary);
   font-size: $text-xl;
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.025em;
   font-variant-numeric: tabular-nums;
@@ -137,23 +174,36 @@
 
 @media (max-width: 640px) {
   .scholar-stats {
-    margin: 1.5rem 0 2.25rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 1.5rem 0 2rem;
   }
 
   .scholar-stat {
-    padding: 0.9rem 0.8rem;
+    padding: 0.9rem 0.85rem;
 
-    &:first-child { padding-left: 0; }
+    &:nth-child(2n + 1) { padding-left: 0; }
+    &:nth-child(2n) {
+      padding-right: 0;
+      border-right: 0;
+    }
+    &:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--border);
+    }
   }
 
   .scholar-stat__value {
     font-size: $text-xl;
   }
 
-  .publication-search {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+  .publication-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .publication-search__field {
+    flex: none;
+    max-width: none;
   }
 
   .year-group {

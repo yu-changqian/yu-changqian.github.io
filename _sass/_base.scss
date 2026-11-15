@@ -78,6 +78,10 @@ body {
   transition: background $transition-slow, color $transition-slow;
 }
 
+html[lang="zh"] body {
+  line-height: 1.8;
+}
+
 // --- Typography ---
 
 h1, h2, h3, h4, h5, h6 {
@@ -91,6 +95,10 @@ h1 {
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.2;
+}
+
+html[lang="zh"] h1 {
+  letter-spacing: -0.015em;
 }
 
 h2 {

@@ -1,3 +1,47 @@
+- key: cao2026longbanana
+  title: 'LongBanana: An Expert-Verified Benchmark for Long-Context Multi-Reference Image Synthesis'
+  authors: Haoxiang Cao, Yuxuan Zhang, Penghui Du, Bo Li, Jiajiong Cao, Yingying Fan, Zimeng Wu, Yifu Luo, Mingzhe Zheng, Junwen Miao, Huaisong Zhang, Yang Yao, Yu Wang, Dongfu Jiang, Ping Nie, Wenhu Chen, Chaoqun Wang, <strong>Changqian Yu</strong>, Kelsey R. Allen
+  venue: NeurIPS
+  venue_full: Advances in Neural Information Processing Systems
+  year: 2026
+  selected: true
+  featured: true
+  links:
+    arxiv: '2611.06856'
+    demo: https://long-banana.com/
+  preview: longbanana.png
+  citations: 0
+  bibtex: "@inproceedings{cao2026longbanana,\n  title={LongBanana: An Expert-Verified Benchmark for Long-Context Multi-Reference Image Synthesis},\n  author={Haoxiang Cao and Yuxuan Zhang and Penghui Du and Bo Li and Jiajiong Cao and Yingying Fan and Zimeng Wu and Yifu Luo and Mingzhe Zheng and Junwen Miao and Huaisong Zhang and Yang Yao and Yu Wang and Dongfu Jiang and Ping Nie and Wenhu Chen and Chaoqun Wang and Changqian Yu and Kelsey R. Allen},\n  booktitle={Advances in Neural Information Processing Systems},\n  year={2026}\n}"
+
+- key: tang2026stablevq
+  title: 'StableVQ: Practical Guidelines for Stable Vector-Quantized Tokenizer Training'
+  authors: Bao Tang, Jiahao Guo, Haoxiang Cao, Wenyu Liu, <strong>Changqian Yu</strong>, Kun Gai, Xinggang Wang
+  venue: NeurIPS
+  venue_full: Advances in Neural Information Processing Systems
+  year: 2026
+  selected: true
+  featured: true
+  links:
+    arxiv: '2609.26774'
+    demo: https://tt-day.github.io/StableVQ/
+  preview: stablevq.png
+  citations: 1
+  bibtex: "@inproceedings{tang2026stablevq,\n  title={StableVQ: Practical Guidelines for Stable Vector-Quantized Tokenizer Training},\n  author={Bao Tang and Jiahao Guo and Haoxiang Cao and Wenyu Liu and Changqian Yu and Kun Gai and Xinggang Wang},\n  booktitle={Advances in Neural Information Processing Systems},\n  year={2026}\n}"
+
+- key: zhang2026sdg
+  title: 'Where, What, Why, and Importance: Structured Defect Grounding for Text-to-Image Feedback'
+  authors: Huaisong Zhang, Hao Yu, Yuxuan Zhang, Jiahe Wang, Xinrui Chen, Haoxiang Cao, Feng Lu, Wendong Zhang, <strong>Changqian Yu</strong>, Chun Yuan
+  venue: NeurIPS
+  venue_full: Advances in Neural Information Processing Systems
+  year: 2026
+  selected: true
+  featured: true
+  links:
+    arxiv: '2606.06113'
+  preview: sdg.png
+  citations: 4
+  bibtex: "@inproceedings{zhang2026sdg,\n  title={Where, What, Why, and Importance: Structured Defect Grounding for Text-to-Image Feedback},\n  author={Huaisong Zhang and Hao Yu and Yuxuan Zhang and Jiahe Wang and Xinrui Chen and Haoxiang Cao and Feng Lu and Wendong Zhang and Changqian Yu and Chun Yuan},\n  booktitle={Advances in Neural Information Processing Systems},\n  year={2026}\n}"
+
 - key: fei2024scaling
   title: Scaling Diffusion Transformers to 16 Billion Parameters
   authors: Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Debang Li, Junshi Huang
@@ -5,12 +49,15 @@
   venue_full: arXiv preprint
   year: 2024
   selected: true
+  featured: true
   google_scholar_id: 4TOpqqG69KYC
   links:
     arxiv: '2407.11633'
     code: https://github.com/feizc/DiT-MoE
   preview: dit-moe.png
-  citations: 69
+  citations: 73
+  bibtex: "@article{fei2024scaling,\n  title={Scaling Diffusion Transformers to 16 Billion Parameters},\n  author={Zhengcong Fei and Mingyuan Fan and Changqian Yu and Debang Li and Junshi Huang},\n  journal={arXiv preprint arXiv:2407.11633},\n  year={2024}\n}"
+
 - key: fei2024dis
   title: Scalable Diffusion Models with State Space Backbone
   authors: Zhengcong Fei, Mingyuan Fan, <strong>Changqian Yu</strong>, Junshi Huang
@@ -18,12 +65,15 @@
   venue_full: arXiv preprint
   year: 2024
   selected: true
+  featured: false
   google_scholar_id: Zph67rFs4hoC
   links:
     arxiv: '2402.05608'
     code: https://github.com/feizc/DiS
   preview: dis.jpg
   citations: 65
+  bibtex: "@article{fei2024dis,\n  title={Scalable Diffusion Models with State Space Backbone},\n  author={Zhengcong Fei and Mingyuan Fan and Changqian Yu and Junshi Huang},\n  journal={arXiv preprint arXiv:2402.05608},\n  year={2024}\n}"
+
 - key: yu2021bisenetv2
   title: 'BiSeNet V2: Bilateral Network with Guided Aggregation for Real-time Semantic Segmentation'
   authors: <strong>Changqian Yu</strong>, Changxin Gao†, Jingbo Wang, Gang Yu, Chunhua Shen, Nong Sang
@@ -31,28 +81,34 @@
   venue_full: International Journal of Computer Vision
   year: 2021
   selected: true
+  featured: true
   award: ESI Highly Cited Paper
-  citations: 2265
+  citations: 2317
   google_scholar_id: Y0pCki6q_DkC
   links:
     paper: https://link.springer.com/article/10.1007/s11263-021-01515-2
     arxiv: '2004.02147'
     code: https://github.com/yu-changqian/TorchSeg/tree/master/model/bisenet
   preview: bisenetv2.png
+  bibtex: "@article{yu2021bisenetv2,\n  title={BiSeNet V2: Bilateral Network with Guided Aggregation for Real-time Semantic Segmentation},\n  author={Changqian Yu and Changxin Gao and Jingbo Wang and Gang Yu and Chunhua Shen and Nong Sang},\n  journal={International Journal of Computer Vision},\n  volume={129},\n  number={11},\n  pages={3051--3068},\n  year={2021}\n}"
+
 - key: yu2021litehrnet
   title: 'Lite-HRNet: A Lightweight High-Resolution Network'
   authors: <strong>Changqian Yu</strong>, Bin Xiao, Changxin Gao, Lu Yuan, Lei Zhang, Nong Sang, Jingdong Wang
   venue: CVPR
-  venue_full: IEEE Conference on Computer Vision and Pattern Recognition
+  venue_full: IEEE/CVF Conference on Computer Vision and Pattern Recognition
   year: 2021
   selected: true
-  citations: 794
+  featured: false
+  citations: 804
   google_scholar_id: WF5omc3nYNoC
   links:
     paper: https://openaccess.thecvf.com/content/CVPR2021/html/Yu_Lite-HRNet_A_Lightweight_High-Resolution_Network_CVPR_2021_paper.html
     arxiv: '2104.06403'
     code: https://github.com/HRNet/Lite-HRNet
   preview: litehrnet.png
+  bibtex: "@inproceedings{yu2021litehrnet,\n  title={Lite-HRNet: A Lightweight High-Resolution Network},\n  author={Changqian Yu and Bin Xiao and Changxin Gao and Lu Yuan and Lei Zhang and Nong Sang and Jingdong Wang},\n  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\n  pages={10440--10450},\n  year={2021}\n}"
+
 - key: yu2018bisenet
   title: 'BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation'
   authors: <strong>Changqian Yu*</strong>, Jingbo Wang*, Chao Peng, Changxin Gao†, Gang Yu, Nong Sang
@@ -60,25 +116,30 @@
   venue_full: European Conference on Computer Vision
   year: 2018
   selected: true
+  featured: true
   award: ECCV 2018 Top-10 Influential Papers
-  citations: 4084
+  citations: 4142
   google_scholar_id: UeHWp8X0CEIC
   links:
     paper: https://openaccess.thecvf.com/content_ECCV_2018/html/Changqian_Yu_BiSeNet_Bilateral_Segmentation_ECCV_2018_paper.html
     arxiv: '1808.00897'
     code: https://github.com/yu-changqian/TorchSeg/tree/master/model/bisenet
   preview: bisenet_preview.png
+  bibtex: "@inproceedings{yu2018bisenet,\n  title={BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation},\n  author={Changqian Yu and Jingbo Wang and Chao Peng and Changxin Gao and Gang Yu and Nong Sang},\n  booktitle={European Conference on Computer Vision (ECCV)},\n  pages={325--341},\n  year={2018}\n}"
+
 - key: yu2018dfnet
   title: Learning a Discriminative Feature Network for Semantic Segmentation
   authors: <strong>Changqian Yu</strong>, Jingbo Wang, Chao Peng, Changxin Gao, Gang Yu, Nong Sang
   venue: CVPR
-  venue_full: IEEE Conference on Computer Vision and Pattern Recognition
+  venue_full: IEEE/CVF Conference on Computer Vision and Pattern Recognition
   year: 2018
   selected: true
-  citations: 1082
+  featured: false
+  citations: 1084
   google_scholar_id: u5HHmVD_uO8C
   links:
     paper: https://openaccess.thecvf.com/content_cvpr_2018/html/Yu_Learning_a_Discriminative_CVPR_2018_paper.html
     arxiv: '1804.09337'
     code: https://github.com/yu-changqian/TorchSeg/
   preview: dfnet.png
+  bibtex: "@inproceedings{yu2018dfnet,\n  title={Learning a Discriminative Feature Network for Semantic Segmentation},\n  author={Changqian Yu and Jingbo Wang and Chao Peng and Changxin Gao and Gang Yu and Nong Sang},\n  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\n  pages={1857--1866},\n  year={2018}\n}"

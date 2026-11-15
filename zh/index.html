@@ -13,22 +13,23 @@ description: "余昌黔 — 可灵AI图像模型中心负责人，研究视觉�
   {% include hero.html %}
 
   <section class="section">
+    <div class="section__title"><span>{{ t.home.timeline }}</span></div>
+    {% include timeline.html %}
+  </section>
+
+  {% include flagship.html %}
+
+  <section class="section">
     <div class="section__title">
       <span>{{ t.home.selected_publications }}</span>
       <a href="{{ '/zh/publications/' | relative_url }}" class="section__more">{{ t.home.view_all }}</a>
     </div>
     <div class="pub-grid">
-      {% assign selected = site.data.publications | where: "selected", true %}
-      {% assign featured = selected | slice: 0, 6 %}
+      {% assign featured = site.data.publications | where: "featured", true %}
       {% for pub in featured %}
         {% include publication.html pub=pub %}
       {% endfor %}
     </div>
-  </section>
-
-  <section class="section">
-    <div class="section__title"><span>{{ t.home.timeline }}</span></div>
-    {% include timeline.html %}
   </section>
 
   <section class="section">

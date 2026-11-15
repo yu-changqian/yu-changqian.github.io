@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% assign lang = page.lang | default: "en" %}
 {% assign t = site.data.i18n[lang] %}
+{% assign asset_version = site.time | date: '%s' %}
 <html lang="{{ page.lang | default: 'en' }}">
   <head>
     {% include head.html %}
@@ -15,6 +16,6 @@
     <button class="back-to-top" id="back-to-top" aria-label="{{ t.a11y.back_to_top }}">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}"></script>
   </body>
 </html>

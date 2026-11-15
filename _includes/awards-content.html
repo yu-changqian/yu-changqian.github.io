@@ -21,13 +21,15 @@
     <li class="awards-item">
       <span class="awards-item__year">{{ c.year }}</span>
       <span class="awards-item__rank awards-item__rank--{{ c.rank }}">
-        {% if lang == "zh" %}
+        {% if c.badge %}
+          {{ c.badge[lang] }}
+        {% elsif lang == "zh" %}
           {% if c.rank == 1 %}第一名{% elsif c.rank == 2 %}第二名{% elsif c.rank == 3 %}第三名{% else %}第{{ c.rank }}名{% endif %}
         {% else %}
           Rank {{ c.rank }}
         {% endif %}
       </span>
-      <span class="awards-item__text">{{ c[lang] }}</span>
+      <span class="awards-item__text">{{ c[lang] | markdownify | remove: '<p>' | remove: '</p>' }}</span>
     </li>
     {% endfor %}
   </ul>

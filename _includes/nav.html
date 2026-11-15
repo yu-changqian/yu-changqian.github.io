@@ -6,10 +6,8 @@
   {% assign prefix = "" %}
 {% endif %}
 {% assign has_translation = false %}
-{% if page.url == "/" or page.url == "/zh/" or page.url == "/blog/" or page.url == "/zh/blog/" or page.url contains "/publications/" or page.url contains "/awards/" %}
-  {% unless page.layout == "post" %}
-    {% assign has_translation = true %}
-  {% endunless %}
+{% if page.url == "/" or page.url == "/zh/" or page.url contains "/publications/" or page.url contains "/awards/" %}
+  {% assign has_translation = true %}
 {% endif %}
 
 <nav class="nav" id="nav" aria-label="Main navigation">

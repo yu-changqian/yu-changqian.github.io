@@ -12,22 +12,36 @@ permalink: /publications/
     <span class="page-header__eyebrow">{{ t.eyebrow }}</span>
     <h1>{{ t.title }}</h1>
     <p>{{ t.subtitle }}</p>
-    <a href="https://scholar.google.com/citations?user={{ site.social.scholar }}&hl=en" class="page-header__link" target="_blank" rel="noopener">{{ t.scholar_profile }}</a>
+    <div class="page-header__meta-row">
+      <a href="https://scholar.google.com/citations?user={{ site.social.scholar }}&hl=en" class="page-header__link" target="_blank" rel="noopener">{{ t.scholar_profile }}</a>
+      {% if stats.last_updated %}
+      <span class="page-header__synced">{{ t.last_synced }} {{ stats.last_updated }}</span>
+      {% endif %}
+    </div>
   </header>
 
   {% if stats %}
   <div class="scholar-stats" aria-label="Google Scholar statistics">
     <div class="scholar-stat"><span class="scholar-stat__value">{{ stats.total_citations | plus: 0 }}+</span><span class="scholar-stat__label">{{ t.total_citations }}</span></div>
+    <div class="scholar-stat"><span class="scholar-stat__value">{{ stats.h_index }}</span><span class="scholar-stat__label">{{ t.h_index }}</span></div>
     <div class="scholar-stat"><span class="scholar-stat__value">{{ stats.total_papers }}</span><span class="scholar-stat__label">{{ t.total_papers }}</span></div>
     <div class="scholar-stat"><span class="scholar-stat__value">{{ stats.max_citations | plus: 0 }}+</span><span class="scholar-stat__label">{{ t.max_citations }}</span></div>
   </div>
   {% endif %}
 
-  <div class="publication-search">
-    <label for="publication-search">{{ t.search_label }}</label>
+  <div class="publication-controls">
+    <div class="publication-filters" role="group" aria-label="Filter publications">
+      <button type="button" class="pub-chip is-active" data-pub-filter="all">{{ t.filter_all }}</button>
+      <button type="button" class="pub-chip" data-pub-filter="selected">{{ t.filter_selected }}</button>
+      <button type="button" class="pub-chip" data-pub-filter="NEURIPS">NeurIPS</button>
+      <button type="button" class="pub-chip" data-pub-filter="CVPR">CVPR</button>
+      <button type="button" class="pub-chip" data-pub-filter="ECCV">ECCV</button>
+      <button type="button" class="pub-chip" data-pub-filter="IJCV">IJCV</button>
+      <button type="button" class="pub-chip" data-pub-filter="ARXIV">arXiv</button>
+    </div>
     <div class="publication-search__field">
       <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
-      <input id="publication-search" type="search" placeholder="{{ t.search_placeholder }}" autocomplete="off">
+      <input id="publication-search" type="search" aria-label="{{ t.search_label }}" placeholder="{{ t.search_placeholder }}" autocomplete="off">
     </div>
   </div>
 

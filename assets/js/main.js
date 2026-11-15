@@ -50,24 +50,19 @@
   // --- Mobile Nav ---
   var navToggle = document.getElementById("nav-toggle");
   var navMenu = document.getElementById("nav-menu");
-  var hamburger = document.getElementById("nav-toggle");
 
   if (navToggle && navMenu) {
     navToggle.addEventListener("click", function () {
       var isOpen = navMenu.classList.toggle("open");
-      if (hamburger) {
-        hamburger.classList.toggle("open", isOpen);
-        hamburger.setAttribute("aria-expanded", String(isOpen));
-      }
+      navToggle.classList.toggle("open", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
     document.addEventListener("click", function (e) {
       if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
         navMenu.classList.remove("open");
-        if (hamburger) {
-          hamburger.classList.remove("open");
-          hamburger.setAttribute("aria-expanded", "false");
-        }
+        navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
       }
     });
   }
@@ -91,7 +86,7 @@
   }
 
   // --- Language auto-detection (browser-based) ---
-  var zhPages = ["/", "/publications/", "/blog/", "/awards/"];
+  var zhPages = ["/", "/publications/", "/awards/"];
 
   function detectLanguage() {
     if (localStorage.getItem("lang_pref")) return;
@@ -140,25 +135,41 @@
     });
   }
 
-  // --- Publication Search ---
+  // --- Publication Search & Filter Chips ---
   var publicationSearch = document.getElementById("publication-search");
   var publicationEmpty = document.getElementById("publication-empty");
-  if (publicationSearch) {
+  var filterChips = Array.prototype.slice.call(
+    document.querySelectorAll("[data-pub-filter]")
+  );
+
+  if (publicationSearch || filterChips.length > 0) {
     var publicationCards = Array.prototype.slice.call(
       document.querySelectorAll("[data-publication]")
     );
     var yearGroups = Array.prototype.slice.call(
       document.querySelectorAll(".year-group")
     );
+    var activeFilter = "all";
 
-    publicationSearch.addEventListener("input", function () {
-      var query = publicationSearch.value.trim().toLowerCase();
+    function updatePublications() {
+      var query = publicationSearch
+        ? publicationSearch.value.trim().toLowerCase()
+        : "";
       var visibleCount = 0;
 
       publicationCards.forEach(function (card) {
-        var matches = !query || (card.dataset.search || "").indexOf(query) !== -1;
-        card.hidden = !matches;
-        if (matches) visibleCount += 1;
+        var matchesSearch =
+          !query || (card.dataset.search || "").indexOf(query) !== -1;
+        var matchesFilter = true;
+        if (activeFilter === "selected") {
+          matchesFilter = card.dataset.selected === "true";
+        } else if (activeFilter !== "all") {
+          var v = card.dataset.venue || "";
+          matchesFilter = v === activeFilter || v.indexOf(activeFilter) === 0;
+        }
+        var show = matchesSearch && matchesFilter;
+        card.hidden = !show;
+        if (show) visibleCount += 1;
       });
 
       yearGroups.forEach(function (group) {
@@ -168,7 +179,95 @@
       if (publicationEmpty) {
         publicationEmpty.hidden = visibleCount !== 0;
       }
+    }
+
+    if (publicationSearch) {
+      publicationSearch.addEventListener("input", updatePublications);
+    }
+
+    filterChips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        activeFilter = chip.dataset.pubFilter || "all";
+        filterChips.forEach(function (c) {
+          c.classList.toggle("is-active", c === chip);
+        });
+        updatePublications();
+      });
     });
   }
 
+  // --- Copy BibTeX ---
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-copy-bib]");
+    if (!btn) return;
+    var card = btn.closest(".pub-card");
+    var tpl = card ? card.querySelector(".pub-card__bib") : null;
+    if (!tpl) return;
+
+    var raw = (tpl.textContent || tpl.innerHTML || "").trim();
+    var decodeEl = document.createElement("textarea");
+    decodeEl.innerHTML = raw;
+    var bib = decodeEl.value;
+
+    function markCopied() {
+      var original = btn.dataset.label || "BibTeX";
+      var copiedText = btn.dataset.copied || "Copied";
+      btn.textContent = copiedText;
+      btn.classList.add("is-copied");
+      clearTimeout(btn._copyTimer);
+      btn._copyTimer = setTimeout(function () {
+        btn.textContent = original;
+        btn.classList.remove("is-copied");
+      }, 1600);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(bib).then(markCopied);
+    } else {
+      decodeEl.style.position = "fixed";
+      decodeEl.style.opacity = "0";
+      document.body.appendChild(decodeEl);
+      decodeEl.select();
+      try {
+        document.execCommand("copy");
+        markCopied();
+      } finally {
+        document.body.removeChild(decodeEl);
+      }
+    }
+  });
+
+  // --- Showcase Lightbox ---
+  var lightbox = null;
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.hidden = true;
+    }
+  }
+
+  document.addEventListener("click", function (e) {
+    var shot = e.target.closest("[data-lightbox-src]");
+    if (!shot) return;
+    if (!lightbox) {
+      lightbox = document.createElement("div");
+      lightbox.className = "showcase-lightbox";
+      lightbox.setAttribute("role", "dialog");
+      lightbox.setAttribute("aria-modal", "true");
+      lightbox.innerHTML =
+        '<img alt=""><div class="showcase-lightbox__caption"></div>';
+      lightbox.addEventListener("click", closeLightbox);
+      document.body.appendChild(lightbox);
+    }
+    var img = lightbox.querySelector("img");
+    var cap = lightbox.querySelector(".showcase-lightbox__caption");
+    img.src = shot.dataset.lightboxSrc;
+    img.alt = shot.dataset.lightboxCaption || "";
+    cap.textContent = shot.dataset.lightboxCaption || "";
+    cap.hidden = !cap.textContent;
+    lightbox.hidden = false;
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeLightbox();
+  });
 })();

@@ -1,0 +1,89 @@
+{% assign lang = page.lang | default: "en" %}
+{% assign t = site.data.i18n[lang] %}
+{% assign models = site.data.about.signature_models %}
+
+{% if models and models.size > 0 %}
+<section class="section">
+  <div class="section__title">
+    <span>{{ t.home.flagship_models }}</span>
+    <span class="section__caption">{{ t.home.flagship_note }}</span>
+  </div>
+
+  {% for m in models %}
+    {% if m.featured %}
+    <article class="flagship-lead">
+      <div class="flagship-lead__top">
+        <div class="flagship-lead__heading">
+          <h3 class="flagship-lead__name">{{ m.name }}</h3>
+          {% if m.badge %}
+          <span class="flagship-badge flagship-badge--accent">{{ m.badge[lang] }}</span>
+          {% endif %}
+        </div>
+        {% if m.domain %}
+        <span class="flagship-lead__domain">{{ m.domain[lang] }}</span>
+        {% endif %}
+      </div>
+      <div class="flagship-lead__summary">{{ m.summary[lang] | markdownify }}</div>
+
+      {% if m.capabilities %}
+      <ul class="flagship-caps" aria-label="{{ m.name }} key capabilities">
+        {% for cap in m.capabilities %}
+        <li class="flagship-cap">{{ cap[lang] }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if m.metrics %}
+      <div class="flagship-benchmarks" role="list" aria-label="{{ m.name }} benchmark rankings">
+        {% for bm in m.metrics %}
+        <a href="{{ bm.url }}" class="flagship-benchmark" role="listitem" target="_blank" rel="noopener">
+          <span class="flagship-benchmark__label">{{ bm.label[lang] }} ↗</span>
+          <div class="flagship-benchmark__stats">
+            <span class="flagship-benchmark__rank">{% if lang == "zh" and bm.rank_zh %}{{ bm.rank_zh }}{% else %}{{ bm.rank }}{% endif %}</span>
+            <span class="flagship-benchmark__score">{{ bm.score }}</span>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if m.showcase and m.showcase.size > 0 %}
+      <div class="flagship-gallery" role="list" aria-label="{{ m.name }} visual showcase">
+        {% for item in m.showcase %}
+        <button type="button" class="flagship-shot" role="listitem" data-lightbox-src="{{ item.src | relative_url }}" data-lightbox-caption="{{ item.caption[lang] | default: item.tag[lang] | escape }}">
+          <img src="{{ item.src | relative_url }}" alt="{{ item.tag[lang] | default: m.name }}" loading="lazy">
+          {% if item.tag %}
+          <span class="flagship-shot__tag">{{ item.tag[lang] }}</span>
+          {% endif %}
+        </button>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% endif %}
+  {% endfor %}
+
+  <div class="model-matrix">
+    {% for m in models %}
+      {% unless m.featured %}
+      <article class="model-card">
+        <div class="model-card__top">
+          {% if m.url %}
+          <a href="{{ m.url }}" class="model-card__name" target="_blank" rel="noopener">{{ m.name }} <span class="model-card__arrow" aria-hidden="true">↗</span></a>
+          {% else %}
+          <h3 class="model-card__name">{{ m.name }}</h3>
+          {% endif %}
+          {% if m.tag %}
+          <span class="model-card__tag">{{ m.tag[lang] }}</span>
+          {% endif %}
+        </div>
+        {% if m.domain %}
+        <div class="model-card__domain">{{ m.domain[lang] }}</div>
+        {% endif %}
+        <p class="model-card__desc">{{ m.summary[lang] }}</p>
+      </article>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

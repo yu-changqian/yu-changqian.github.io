@@ -25,7 +25,7 @@
   margin: 0;
   color: var(--text-primary);
   font-size: $text-base;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -0.015em;
 }
 
@@ -49,12 +49,12 @@
   &--highlight {
     color: var(--text-primary);
 
-    .awards-item__text { font-weight: 550; }
+    .awards-item__text { font-weight: 500; }
   }
 }
 
 .awards-list--challenges .awards-item {
-  grid-template-columns: 5rem 4.75rem minmax(0, 1fr);
+  grid-template-columns: 4.5rem minmax(7.25rem, auto) minmax(0, 1fr);
 }
 
 .awards-list--plain .awards-item {
@@ -63,7 +63,7 @@
 
 .awards-item__year {
   font-size: $text-xs;
-  font-weight: 550;
+  font-weight: 500;
   color: var(--text-tertiary);
   font-variant-numeric: tabular-nums;
 }
@@ -83,7 +83,13 @@
 .awards-item__rank--1 {
   color: #a16207;
   border-color: rgba(161, 98, 7, 0.28);
-  background: rgba(234, 179, 8, 0.07);
+  background: rgba(234, 179, 8, 0.08);
+}
+
+[data-theme="dark"] .awards-item__rank--1 {
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.3);
+  background: rgba(234, 179, 8, 0.14);
 }
 
 .awards-item__text {
@@ -91,7 +97,21 @@
 
   strong {
     color: var(--text-primary);
-    font-weight: 550;
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--text-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+    transition: color $transition-fast, text-decoration-color $transition-fast;
+
+    &:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
   }
 }
 
@@ -113,19 +133,13 @@
   }
 
   .awards-item {
-    grid-template-columns: 4.5rem minmax(0, 1fr);
+    grid-template-columns: 4.25rem minmax(0, 1fr);
     gap: 0.75rem;
   }
 
   .awards-list--challenges .awards-item {
-    grid-template-columns: 4rem 4.5rem minmax(0, 1fr);
-    gap: 0.6rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .awards-list--challenges .awards-item {
-    grid-template-columns: 3.5rem minmax(0, 1fr);
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+    gap: 0.35rem 0.65rem;
   }
 
   .awards-list--challenges .awards-item__text {

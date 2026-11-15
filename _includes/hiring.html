@@ -3,15 +3,27 @@
 {% assign about = site.data.about %}
 {% if about.hiring.active %}
 <section class="section">
-  <div class="section__title"><span>{{ t.home.hiring }}</span></div>
-  <div class="hiring">
-    <p class="hiring__intro">{{ about.hiring.intro[lang] }}</p>
-    <ul class="hiring__directions">
+  <div class="section__title">
+    <span>{{ t.home.hiring }}</span>
+    <span class="section__caption">{{ t.home.hiring_note }}</span>
+  </div>
+  <div class="thesis">
+    <div class="thesis__intro">{{ about.hiring.intro[lang] | markdownify }}</div>
+    <div class="thesis__grid">
       {% for dir in about.hiring.directions %}
-      <li>{{ dir[lang] }}</li>
+      <div class="thesis__item">
+        <div class="thesis__head">
+          <span class="thesis__index">0{{ forloop.index }}</span>
+          <h3 class="thesis__title">{{ dir.title[lang] }}</h3>
+        </div>
+        <p class="thesis__desc">{{ dir.desc[lang] }}</p>
+      </div>
       {% endfor %}
-    </ul>
-    <p class="hiring__cta">{{ about.hiring.cta[lang] }} <a href="mailto:{{ about.hiring.email }}">{{ about.hiring.email }} →</a></p>
+    </div>
+    <div class="thesis__footer">
+      <p class="thesis__cta">{{ about.hiring.cta[lang] }}</p>
+      <a href="mailto:{{ about.hiring.email }}" class="thesis__mail">{{ about.hiring.email }} →</a>
+    </div>
   </div>
 </section>
 {% endif %}

@@ -1,9 +1,14 @@
 {% assign lang = page.lang | default: "en" %}
 {% assign about = site.data.about %}
+{% if lang == "zh" %}
+  {% assign prefix = "/zh" %}
+{% else %}
+  {% assign prefix = "" %}
+{% endif %}
 
 <section class="hero">
   <div class="hero__photo">
-    <img src="{{ about.photo | relative_url }}" alt="{{ about.name[lang] }}" width="140" height="140">
+    <img src="{{ about.photo | relative_url }}" alt="{{ about.name[lang] }}" width="156" height="156">
   </div>
   <div class="hero__info">
     <h1 class="hero__name">{{ about.name[lang] }}</h1>
@@ -14,21 +19,50 @@
       {{ paragraph | markdownify }}
       {% endfor %}
     </div>
+
+    {% if about.proof_metrics %}
+    <div class="hero__proof" aria-label="Key highlights">
+      {% for m in about.proof_metrics %}
+        {% assign m_href = m.url %}
+        {% if m.internal_url %}
+          {% assign m_href = prefix | append: m.internal_url | relative_url %}
+        {% endif %}
+        {% if m_href %}
+        <a href="{{ m_href }}" class="hero__proof-item" {% if m.url %}target="_blank" rel="noopener"{% endif %}>
+          <strong>{{ m.value[lang] | default: m.value }}</strong>
+          <span>{{ m.label[lang] }}</span>
+        </a>
+        {% else %}
+        <span class="hero__proof-item">
+          <strong>{{ m.value[lang] | default: m.value }}</strong>
+          <span>{{ m.label[lang] }}</span>
+        </span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
     <div class="social-links hero__social">
-      {% if site.social.github %}
-      <a href="https://github.com/{{ site.social.github }}" class="hero-link" target="_blank" rel="noopener">{% include social-icon.html icon="github" %}<span>GitHub</span></a>
+      {% if site.author.email %}
+      <a href="mailto:{{ site.author.email }}" class="hero-link">{% include social-icon.html icon="email" %}<span>{% if lang == "zh" %}邮箱{% else %}Email{% endif %}</span></a>
       {% endif %}
       {% if site.social.scholar %}
       <a href="https://scholar.google.com/citations?user={{ site.social.scholar }}" class="hero-link" target="_blank" rel="noopener">{% include social-icon.html icon="scholar" %}<span>Scholar</span></a>
       {% endif %}
-      {% if site.social.linkedin %}
-      <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" class="hero-link" target="_blank" rel="noopener">{% include social-icon.html icon="linkedin" %}<span>LinkedIn</span></a>
+      {% if site.social.github %}
+      <a href="https://github.com/{{ site.social.github }}" class="hero-link" target="_blank" rel="noopener">{% include social-icon.html icon="github" %}<span>GitHub</span></a>
       {% endif %}
       {% if site.social.twitter %}
       <a href="https://x.com/{{ site.social.twitter }}" class="hero-link" target="_blank" rel="noopener">{% include social-icon.html icon="twitter" %}<span>X</span></a>
       {% endif %}
-      {% if site.social.zhihu %}
-      <a href="https://www.zhihu.com/people/{{ site.social.zhihu }}" class="hero-link" target="_blank" rel="noopener">{% include social-icon.html icon="zhihu" %}<span>{% if lang == "zh" %}知乎{% else %}Zhihu{% endif %}</span></a>
+      {% if site.social.linkedin %}
+      <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" class="hero-link" target="_blank" rel="noopener">{% include social-icon.html icon="linkedin" %}<span>LinkedIn</span></a>
+      {% endif %}
+      {% if site.social.xiaohongshu %}
+      <a href="https://www.xiaohongshu.com/user/profile/{{ site.social.xiaohongshu }}" class="hero-link hero-link--xhs" target="_blank" rel="noopener">{% include social-icon.html icon="xiaohongshu" %}<span>{% if lang == "zh" %}小红书{% else %}RedNote{% endif %}</span></a>
+      {% endif %}
+      {% if site.social.zhihu and lang == "zh" %}
+      <a href="https://www.zhihu.com/people/{{ site.social.zhihu }}" class="hero-link" target="_blank" rel="noopener">{% include social-icon.html icon="zhihu" %}<span>知乎</span></a>
       {% endif %}
     </div>
   </div>

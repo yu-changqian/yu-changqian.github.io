@@ -2,10 +2,16 @@
   <div class="footer__inner">
     <span class="footer__text">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
     <div class="footer__links">
-      <a href="https://github.com/{{ site.social.github }}" aria-label="GitHub">{% include social-icon.html icon="github" %}</a>
-      <a href="https://scholar.google.com/citations?user={{ site.social.scholar }}" aria-label="Google Scholar">{% include social-icon.html icon="scholar" %}</a>
-      <a href="https://x.com/{{ site.social.twitter }}" aria-label="X (Twitter)">{% include social-icon.html icon="twitter" %}</a>
-      <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS Feed">{% include social-icon.html icon="rss" %}</a>
+      <a href="https://github.com/{{ site.social.github }}" aria-label="GitHub" target="_blank" rel="noopener">{% include social-icon.html icon="github" %}</a>
+      <a href="https://scholar.google.com/citations?user={{ site.social.scholar }}" aria-label="Google Scholar" target="_blank" rel="noopener">{% include social-icon.html icon="scholar" %}</a>
+      <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" aria-label="LinkedIn" target="_blank" rel="noopener">{% include social-icon.html icon="linkedin" %}</a>
+      <a href="https://x.com/{{ site.social.twitter }}" aria-label="X (Twitter)" target="_blank" rel="noopener">{% include social-icon.html icon="twitter" %}</a>
+      {% if site.social.xiaohongshu %}
+      <a href="https://www.xiaohongshu.com/user/profile/{{ site.social.xiaohongshu }}" aria-label="Xiaohongshu (RedNote)" target="_blank" rel="noopener">{% include social-icon.html icon="xiaohongshu" %}</a>
+      {% endif %}
+      <a href="mailto:{{ site.author.email }}" aria-label="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
     </div>
   </div>
 </footer>

@@ -253,13 +253,21 @@ main {
 
 .section__title {
   font-size: $text-lg;
-  font-weight: 650;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 1rem;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
+  gap: 1rem;
   letter-spacing: -0.02em;
+}
+
+.section__caption {
+  font-size: $text-xs;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: 0;
 }
 
 .section__more {
@@ -428,16 +436,29 @@ main {
 .page-header__eyebrow {
   color: var(--accent);
   font-size: $text-xs;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.page-header__meta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .page-header__link {
   display: inline-flex;
   color: var(--text-primary);
   font-size: $text-sm;
-  font-weight: 550;
+  font-weight: 500;
 
   &:hover { color: var(--accent); }
+}
+
+.page-header__synced {
+  font-size: $text-xs;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
 }

@@ -5,10 +5,8 @@
 
 {% assign lang = page.lang | default: "en" %}
 {% assign has_bilingual = false %}
-{% if page.url == "/" or page.url == "/zh/" or page.url contains "/publications/" or page.url contains "/blog/" or page.url contains "/awards/" %}
-  {% unless page.layout == "post" %}
-    {% assign has_bilingual = true %}
-  {% endunless %}
+{% if page.url == "/" or page.url == "/zh/" or page.url contains "/publications/" or page.url contains "/awards/" %}
+  {% assign has_bilingual = true %}
 {% endif %}
 {% if lang == "zh" %}
   {% assign has_bilingual = true %}
@@ -38,8 +36,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32.png' | relative_url }}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
 
-{% feed_meta %}
-
 {% if page.url == '/' or page.url == '/zh/' %}
 <script type="application/ld+json">
 {
@@ -61,28 +57,9 @@
     "https://github.com/{{ site.social.github }}",
     "https://scholar.google.com/citations?user={{ site.social.scholar }}",
     "https://www.linkedin.com/in/{{ site.social.linkedin }}",
-    "https://x.com/{{ site.social.twitter }}"
+    "https://x.com/{{ site.social.twitter }}",
+    "https://www.xiaohongshu.com/user/profile/{{ site.social.xiaohongshu }}"
   ]
-}
-</script>
-{% endif %}
-{% if page.layout == 'post' %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "{{ page.title | escape }}",
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ site.author.name }}",
-    "url": "{{ site.url }}"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "{{ site.author.name }}"
-  },
-  "url": "{{ page.url | absolute_url }}"
 }
 </script>
 {% endif %}

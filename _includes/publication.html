@@ -5,8 +5,11 @@
 {% assign tp = site.data.i18n[lang].publications %}
 {% assign th = site.data.i18n[lang].home %}
 {% capture publication_search_text %}{{ include.pub.title }} {{ include.pub.authors }} {{ include.pub.venue }} {{ include.pub.venue_full }} {{ include.pub.year }}{% endcapture %}
+{% assign v_up = include.pub.venue | upcase %}
+{% assign is_preprint = false %}
+{% if v_up == "ARXIV" or v_up == "UNKNOWN" %}{% assign is_preprint = true %}{% endif %}
 
-<div class="pub-card" data-publication data-search="{{ publication_search_text | strip_html | downcase | escape }}">
+<div class="pub-card" data-publication data-selected="{% if include.pub.selected %}true{% else %}false{% endif %}" data-venue="{{ v_up }}" data-search="{{ publication_search_text | strip_html | downcase | escape }}">
   {% if include.pub.preview %}
   <div class="pub-card__preview">
     <img src="{{ '/assets/img/publication_preview/' | append: include.pub.preview | relative_url }}" alt="{{ include.pub.title }}" loading="lazy">
@@ -15,9 +18,9 @@
   <div class="pub-card__content">
     <div class="pub-card__title">
       {% if include.pub.links.paper %}
-        <a href="{{ include.pub.links.paper }}">{{ include.pub.title }}</a>
+        <a href="{{ include.pub.links.paper }}" target="_blank" rel="noopener">{{ include.pub.title }}</a>
       {% elsif include.pub.links.arxiv %}
-        <a href="https://arxiv.org/abs/{{ include.pub.links.arxiv }}">{{ include.pub.title }}</a>
+        <a href="https://arxiv.org/abs/{{ include.pub.links.arxiv }}" target="_blank" rel="noopener">{{ include.pub.title }}</a>
       {% else %}
         {{ include.pub.title }}
       {% endif %}
@@ -26,8 +29,7 @@
     <div class="pub-card__authors">{{ include.pub.authors }}</div>
     {% endif %}
     <div class="pub-card__meta">
-      {% assign venue_lower = include.pub.venue | downcase | truncate: 4, "" %}
-      <span class="tag tag--{{ venue_lower }}">{{ include.pub.venue }}</span>
+      <span class="tag{% if is_preprint %} tag--preprint{% else %} tag--formal{% endif %}">{{ include.pub.venue }}</span>
       {% if include.pub.award %}
         <span class="badge">{{ include.pub.award }}</span>
       {% endif %}
@@ -35,18 +37,24 @@
       {% if include.pub.citations and citation_num > 0 %}
         <span class="pub-card__citations">{{ include.pub.citations }} {{ th.citations }}</span>
       {% endif %}
-      {% if include.pub.links.paper %}
-        <a href="{{ include.pub.links.paper }}" class="link-btn">{{ tp.paper }}</a>
-      {% endif %}
-      {% if include.pub.links.arxiv %}
-        <a href="https://arxiv.org/abs/{{ include.pub.links.arxiv }}" class="link-btn">{{ tp.arxiv }}</a>
-      {% endif %}
-      {% if include.pub.links.code %}
-        <a href="{{ include.pub.links.code }}" class="link-btn">{{ tp.code }}</a>
-      {% endif %}
-      {% if include.pub.links.demo %}
-        <a href="{{ include.pub.links.demo }}" class="link-btn">{{ tp.demo | default: "Demo" }}</a>
-      {% endif %}
+      <span class="pub-card__actions">
+        {% if include.pub.links.paper %}
+          <a href="{{ include.pub.links.paper }}" class="link-btn" target="_blank" rel="noopener">{{ tp.paper }}</a>
+        {% endif %}
+        {% if include.pub.links.arxiv %}
+          <a href="https://arxiv.org/abs/{{ include.pub.links.arxiv }}" class="link-btn" target="_blank" rel="noopener">{{ tp.arxiv }}</a>
+        {% endif %}
+        {% if include.pub.links.code %}
+          <a href="{{ include.pub.links.code }}" class="link-btn" target="_blank" rel="noopener">{{ tp.code }}</a>
+        {% endif %}
+        {% if include.pub.links.demo %}
+          <a href="{{ include.pub.links.demo }}" class="link-btn" target="_blank" rel="noopener">{{ tp.demo | default: "Project" }}</a>
+        {% endif %}
+        {% if include.pub.bibtex %}
+          <button type="button" class="link-btn link-btn--bib" data-copy-bib data-label="{{ tp.bibtex }}" data-copied="{{ tp.copied }}">{{ tp.bibtex }}</button>
+          <template class="pub-card__bib">{{ include.pub.bibtex | escape }}</template>
+        {% endif %}
+      </span>
     </div>
   </div>
 </div>

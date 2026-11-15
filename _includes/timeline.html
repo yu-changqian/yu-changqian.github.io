@@ -6,7 +6,7 @@
 <div class="tl-item">
   <div class="tl-item__logo-col">
     {% if entry.logo %}
-    <img src="{{ entry.logo | relative_url }}" alt="{{ entry.logo_alt | default: 'logo' }}" class="tl-item__logo" loading="lazy">
+    <img src="{{ entry.logo | relative_url }}" alt="{{ entry.logo_alt | default: 'logo' }}" class="tl-item__logo{% if entry.logo_style %} tl-logo--{{ entry.logo_style }}{% endif %}" loading="lazy">
     {% endif %}
   </div>
   <div class="tl-item__content">
@@ -21,7 +21,7 @@
       <div class="tl-role{% if role.logo %} tl-role--with-logo{% endif %}{% if forloop.last %} tl-role--last{% endif %}">
         {% if role.logo %}
         <div class="tl-role__logo-wrap">
-          <img src="{{ role.logo | relative_url }}" alt="{{ role.logo_alt | default: 'logo' }}" class="tl-role__logo" loading="lazy">
+          <img src="{{ role.logo | relative_url }}" alt="{{ role.logo_alt | default: 'logo' }}" class="tl-role__logo{% if role.logo_style %} tl-logo--{{ role.logo_style }}{% endif %}" loading="lazy">
         </div>
         {% endif %}
         <div class="tl-role__content">

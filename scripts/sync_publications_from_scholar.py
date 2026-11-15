@@ -17,8 +17,10 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import re
 import time
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -67,9 +69,24 @@ def is_excluded(title: str = "", arxiv_id: str | None = None) -> bool:
 
 
 def is_excluded_author(name: str) -> bool:
-    normalized = re.sub(r"\s+", " ", name.strip().lower())
-    variants = {normalized, normalized.replace(" ", "")}
-    return any(_sha256(value) in EXCLUDED_AUTHOR_HASHES for value in variants)
+    cleaned = re.sub(r"\s+", " ", name.strip().lower())
+    candidates = {cleaned, cleaned.replace(" ", "")}
+    if "," in cleaned:
+        last, first = [p.strip() for p in cleaned.split(",", 1)]
+        flipped = re.sub(r"\s+", " ", f"{first} {last}".strip())
+        candidates.add(flipped)
+        candidates.add(flipped.replace(" ", ""))
+    return any(_sha256(value) in EXCLUDED_AUTHOR_HASHES for value in candidates)
+
+
+def bibtex_has_excluded_author(bib_text: str | None) -> bool:
+    if not bib_text:
+        return False
+    m = re.search(r"\bauthor\s*=\s*\{([^}]+)\}", bib_text, flags=re.IGNORECASE | re.DOTALL)
+    if not m:
+        return False
+    raw_authors = re.sub(r"\s+", " ", m.group(1)).split(" and ")
+    return any(is_excluded_author(a) for a in raw_authors if a.strip())
 
 SESSION = requests.Session()
 SESSION.headers.update(
@@ -182,11 +199,13 @@ def _word_set(s: str, remove_stopwords: bool = False) -> set[str]:
 
 
 def title_signature(title: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "", title.lower())
+    folded = unicodedata.normalize("NFKD", title or "").encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"[^a-z0-9]+", "", folded.lower())
 
 
 def slug(text: str) -> str:
-    s = re.sub(r"[^a-zA-Z0-9]+", "-", text.lower()).strip("-")
+    folded = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode("ascii")
+    s = re.sub(r"[^a-zA-Z0-9]+", "-", folded.lower()).strip("-")
     return s[:80] if s else "paper"
 
 
@@ -275,13 +294,69 @@ def fetch_bibtex_from_doi(doi_url: str | None) -> str | None:
     return text if text.startswith("@") else None
 
 
+def clean_title_text(title: str) -> str:
+    t = html.unescape(title or "").strip()
+    t = re.sub(r"Fr(?:\\'|')echet", "Fréchet", t)
+    t = re.sub(r"\s+", " ", t)
+    return t
+
+
+def extract_arxiv_id(text: str | None) -> str | None:
+    if not text:
+        return None
+    for pat in [
+        r"arxiv\.org/(?:abs|pdf)/([0-9]{4}\.[0-9]{4,5})",
+        r"10\.48550/arxiv\.([0-9]{4}\.[0-9]{4,5})",
+        r"\barxiv\s*:\s*([0-9]{4}\.[0-9]{4,5})\b",
+    ]:
+        m = re.search(pat, text, flags=re.IGNORECASE)
+        if m:
+            return m.group(1)
+    if re.fullmatch(r"[0-9]{4}\.[0-9]{4,5}", text.strip()):
+        return text.strip()
+    return None
+
+
+def is_arxiv_url_or_doi(url: str | None) -> bool:
+    if not url:
+        return False
+    low = url.lower()
+    return "arxiv.org/" in low or "10.48550/arxiv" in low
+
+
+def normalize_links(raw_links: dict[str, str]) -> dict[str, str]:
+    links: dict[str, str] = {}
+    arxiv_id = extract_arxiv_id(raw_links.get("arxiv"))
+    paper_url = (raw_links.get("paper") or "").strip()
+    if paper_url:
+        paper_arxiv = extract_arxiv_id(paper_url)
+        if paper_arxiv or is_arxiv_url_or_doi(paper_url):
+            arxiv_id = arxiv_id or paper_arxiv
+        else:
+            links["paper"] = paper_url
+    if arxiv_id:
+        links["arxiv"] = arxiv_id
+    for k in ("code", "demo"):
+        val = (raw_links.get(k) or "").strip()
+        if val:
+            links[k] = val
+    return links
+
+
 def fallback_bibtex(key: str, title: str, authors: str, year: int | None, venue_full: str) -> str:
-    authors_clean = re.sub(r"<[^>]+>", "", authors)
+    authors_clean = re.sub(r"<[^>]+>", "", authors or "").strip()
+    authors_bib = " and ".join(a.strip() for a in authors_clean.split(",") if a.strip())
+    is_conf = any(
+        kw in (venue_full or "").lower()
+        for kw in ("conference", "workshop", "neural information processing", "aaai", "multimedia", "iclr", "icml")
+    )
+    entry_type = "inproceedings" if is_conf else "article"
+    venue_field = "booktitle" if is_conf else "journal"
     return (
-        f"@article{{{key},\n"
-        f"  title={{{title}}},\n"
-        f"  author={{{authors_clean}}},\n"
-        f"  journal={{{venue_full}}},\n"
+        f"@{entry_type}{{{key},\n"
+        f"  title={{{clean_title_text(title)}}},\n"
+        f"  author={{{authors_bib}}},\n"
+        f"  {venue_field}={{{venue_full}}},\n"
         f"  year={{{year or 0}}}\n"
         f"}}"
     )
@@ -389,14 +464,121 @@ def enrich_from_openalex(title: str) -> dict[str, Any] | None:
 
     formal = [c for c in candidates if c["_is_formal"]]
     best = formal[0] if formal else candidates[0]
+    best["is_formal"] = bool(formal)
 
-    if not formal and candidates:
-        for c in candidates:
-            if c.get("arxiv_id") and not best.get("arxiv_id"):
-                best["arxiv_id"] = c["arxiv_id"]
+    for c in candidates:
+        if c.get("arxiv_id") and not best.get("arxiv_id"):
+            best["arxiv_id"] = c["arxiv_id"]
 
     best.pop("_is_formal", None)
     return best
+
+
+# ---------------------------------------------------------------------------
+# arXiv enrichment (exact authors, venue acceptance comments, project/code URLs)
+# ---------------------------------------------------------------------------
+
+def search_arxiv_by_title(title: str) -> str | None:
+    """Find an arXiv ID by exact title signature on arxiv.org search."""
+    sig = title_signature(title)
+    if not sig:
+        return None
+    query = unicodedata.normalize("NFKD", title or "").encode("ascii", "ignore").decode("ascii")
+    query = re.sub(r"[^a-zA-Z0-9\s:-]+", " ", query)
+    query = re.sub(r"\s+", " ", query).strip()
+    try:
+        resp = SESSION.get(
+            "https://arxiv.org/search/",
+            params={"query": query, "searchtype": "title", "source": "header"},
+            headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0)"},
+            timeout=15,
+        )
+    except requests.RequestException:
+        return None
+    if resp.status_code >= 400:
+        return None
+    for block in re.findall(r'<li class="arxiv-result">(.*?)</li>', resp.text, flags=re.S):
+        id_m = re.search(r"arxiv\.org/abs/([0-9]{4}\.[0-9]{4,5})", block)
+        title_m = re.search(r'<p class="title[^"]*">(.*?)</p>', block, flags=re.S)
+        if not id_m or not title_m:
+            continue
+        found_title = re.sub(r"<[^>]+>", "", title_m.group(1))
+        fsig = title_signature(found_title)
+        if fsig and (fsig == sig or sig in fsig or fsig in sig):
+            return id_m.group(1)
+    return None
+
+
+def enrich_from_arxiv(arxiv_id: str) -> dict[str, Any] | None:
+    """Fetch metadata from https://arxiv.org/abs/<id>."""
+    clean_id = extract_arxiv_id(arxiv_id)
+    if not clean_id:
+        return None
+    if is_excluded(arxiv_id=clean_id):
+        return {"_excluded": True}
+    try:
+        resp = SESSION.get(
+            f"https://arxiv.org/abs/{clean_id}",
+            headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0)"},
+            timeout=15,
+        )
+    except requests.RequestException:
+        return None
+    if resp.status_code >= 400:
+        return None
+
+    title_m = re.search(r'<meta name="citation_title" content="([^"]+)"', resp.text)
+    raw_authors = re.findall(r'<meta name="citation_author" content="([^"]+)"', resp.text)
+    date_m = re.search(r'<meta name="citation_date" content="(\d{4})', resp.text)
+    comment_m = re.search(r'<td class="tablecell comments mathjax">(.*?)</td>', resp.text, flags=re.S)
+
+    norm_authors: list[str] = []
+    for raw in raw_authors:
+        raw_unescaped = html.unescape(raw).strip()
+        if "," in raw_unescaped:
+            last, first = [p.strip() for p in raw_unescaped.split(",", 1)]
+            norm_authors.append(f"{first} {last}".strip())
+        else:
+            norm_authors.append(raw_unescaped)
+
+    title = clean_title_text(title_m.group(1)) if title_m else ""
+    if is_excluded(title=title, arxiv_id=clean_id):
+        return {"_excluded": True}
+    if any(is_excluded_author(a) for a in norm_authors):
+        return {"_excluded": True}
+    if norm_authors and not any(a.lower() in MY_NAMES for a in norm_authors):
+        return None
+
+    venue_hint: tuple[str, str] | None = None
+    code_url: str | None = None
+    demo_url: str | None = None
+
+    if comment_m:
+        comment_html = comment_m.group(1)
+        comment_text = html.unescape(re.sub(r"<[^>]+>", " ", comment_html)).strip()
+        low_c = comment_text.lower()
+        if not any(neg in low_c for neg in ("submitted to", "under review", "preprint")):
+            for ac, mapped in ACRONYM_TO_VENUE.items():
+                if re.search(rf"\b{re.escape(ac)}\b", comment_text, flags=re.IGNORECASE):
+                    venue_hint = mapped
+                    break
+        urls = [html.unescape(u).strip() for u in re.findall(r'href="([^"]+)"', comment_html)]
+        for u in urls:
+            if is_arxiv_url_or_doi(u):
+                continue
+            if "github.com/" in u.lower() and not code_url:
+                code_url = u
+            elif not demo_url:
+                demo_url = u
+
+    return {
+        "title": title,
+        "authors_formatted": format_authors(norm_authors) if norm_authors else "",
+        "year": int(date_m.group(1)) if date_m else None,
+        "venue_hint": venue_hint,
+        "code_url": code_url,
+        "demo_url": demo_url,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -464,7 +646,7 @@ def main() -> None:
 
     for gs_pub in gs_pubs:
         bib = gs_pub.get("bib", {})
-        title = (bib.get("title") or "").strip()
+        title = clean_title_text(bib.get("title") or "")
         if not title:
             continue
         if any(is_excluded_author(name) for name in parse_author_names(bib.get("author", ""))):
@@ -489,35 +671,64 @@ def main() -> None:
         if old:
             key = old.get("key", key)
 
+        gs_citation = bib.get("citation", "")
+        arxiv_id = extract_arxiv_id(gs_citation)
+        if not arxiv_id and old:
+            old_links = old.get("links") or {}
+            arxiv_id = extract_arxiv_id(old_links.get("arxiv")) or extract_arxiv_id(old_links.get("paper"))
+
         enriched = enrich_from_openalex(title)
-        time.sleep(0.15)
+        time.sleep(0.12)
 
         if enriched and enriched.get("_excluded"):
             continue
         if enriched:
             source_name = enriched["source_name"]
             doi_url = enriched["doi_url"]
-            arxiv_id = enriched["arxiv_id"]
+            arxiv_id = enriched["arxiv_id"] or arxiv_id
             authors = enriched["authors_formatted"]
             citations = max(citations, enriched.get("cited_by_count", 0))
-            year = year or enriched.get("year")
+            if enriched.get("is_formal") and enriched.get("year"):
+                year = enriched["year"]
+            else:
+                year = year or enriched.get("year")
             if is_excluded(arxiv_id=arxiv_id):
                 continue
         else:
             source_name = ""
             doi_url = None
-            arxiv_id = None
             authors = format_authors(bib.get("author", ""))
+
+        if not arxiv_id and not enriched and (year or 0) >= 2022:
+            arxiv_id = search_arxiv_by_title(title)
+
+        arxiv_meta = None
+        if arxiv_id and (not enriched or not enriched.get("is_formal")):
+            arxiv_meta = enrich_from_arxiv(arxiv_id)
+            if arxiv_meta and arxiv_meta.get("_excluded"):
+                continue
+
+        if arxiv_meta:
+            if arxiv_meta.get("title"):
+                title = arxiv_meta["title"]
+            if arxiv_meta.get("authors_formatted"):
+                authors = arxiv_meta["authors_formatted"]
+            year = year or arxiv_meta.get("year")
 
         is_arxiv = bool(arxiv_id) and not source_name
         venue, venue_full = venue_info(source_name) if source_name else ("Unknown", "Unknown venue")
         if is_arxiv and venue == "Unknown":
             venue, venue_full = "arXiv", "arXiv preprint"
 
+        if arxiv_meta and arxiv_meta.get("venue_hint"):
+            av, avf = arxiv_meta["venue_hint"]
+            cur_rank = 0 if venue == "Unknown" else (1 if venue.lower() == "arxiv" else 2)
+            if cur_rank < 2:
+                venue, venue_full = av, avf
+
         # Use Google Scholar citation string as venue hint
         # (e.g. "CVPR, 2026" or "European Conference on Computer Vision (ECCV), 325-341, 2018")
-        gs_citation = bib.get("citation", "")
-        if gs_citation:
+        if gs_citation and "…" not in gs_citation and "..." not in gs_citation:
             gs_venue_part = re.split(r",\s*\d{4}", gs_citation)[0].strip()
             gs_venue_part = re.sub(r",\s*[\d\-–]+$", "", gs_venue_part).strip()
             if gs_venue_part and "arxiv" not in gs_venue_part.lower():
@@ -527,9 +738,22 @@ def main() -> None:
                 if gs_rank > cur_rank:
                     venue, venue_full = gs_v, gs_vf
 
-        bib_text = fetch_bibtex_from_doi(doi_url)
-        if not bib_text and arxiv_id:
-            bib_text = fetch_bibtex_from_doi(f"https://doi.org/10.48550/arXiv.{arxiv_id}")
+        dropped_formal_doi = False
+        bib_text = fetch_bibtex_from_doi(doi_url) if (doi_url and not is_arxiv_url_or_doi(doi_url)) else None
+        if bibtex_has_excluded_author(bib_text):
+            dropped_formal_doi = True
+            bib_text = None
+            doi_url = None
+            source_name = ""
+            if not arxiv_id:
+                continue
+            if not arxiv_meta:
+                arxiv_meta = enrich_from_arxiv(arxiv_id)
+                if arxiv_meta and arxiv_meta.get("_excluded"):
+                    continue
+                if arxiv_meta and arxiv_meta.get("authors_formatted"):
+                    authors = arxiv_meta["authors_formatted"]
+            venue, venue_full = ("arXiv", "arXiv preprint")
 
         inferred = infer_venue_from_bibtex(bib_text)
         if inferred:
@@ -541,14 +765,35 @@ def main() -> None:
             if from_bib_rank > current_rank or (current_is_series and from_bib_rank >= 2):
                 venue, venue_full = iv, ivf
 
-        if not bib_text:
-            bib_text = fallback_bibtex(key, title, authors, year, venue_full)
-
         links: dict[str, str] = {}
-        if doi_url:
+        if doi_url and not is_arxiv_url_or_doi(doi_url):
             links["paper"] = doi_url
         if arxiv_id:
             links["arxiv"] = arxiv_id
+        if arxiv_meta:
+            if arxiv_meta.get("code_url"):
+                links["code"] = arxiv_meta["code_url"]
+            if arxiv_meta.get("demo_url"):
+                links["demo"] = arxiv_meta["demo_url"]
+
+        if old:
+            if not authors and old.get("authors"):
+                authors = old["authors"]
+            if venue == "Unknown" and old.get("venue") not in {None, "Unknown"}:
+                venue = old["venue"]
+                venue_full = old.get("venue_full", venue_full)
+            if not year and old.get("year"):
+                year = old["year"]
+            old_links = dict(old.get("links") or {})
+            if dropped_formal_doi:
+                old_links.pop("paper", None)
+            merged_links = {**old_links, **links}
+            links = normalize_links(merged_links)
+        else:
+            links = normalize_links(links)
+
+        if not bib_text or "author={}" in bib_text:
+            bib_text = fallback_bibtex(key, title, authors, year, venue_full)
 
         item = {
             "key": key,
@@ -562,18 +807,6 @@ def main() -> None:
             "links": links,
             "bibtex": bib_text,
         }
-
-        if old:
-            if not item["authors"] and old.get("authors"):
-                item["authors"] = old["authors"]
-                if old.get("bibtex"):
-                    item["bibtex"] = old["bibtex"]
-            if item["venue"] == "Unknown" and old.get("venue") not in {None, "Unknown"}:
-                item["venue"] = old["venue"]
-                item["venue_full"] = old.get("venue_full", item["venue_full"])
-            if not item["year"] and old.get("year"):
-                item["year"] = old["year"]
-            item["links"] = {**(old.get("links") or {}), **item["links"]}
 
         if venue == "Unknown" and not enriched:
             unfilled_gs_pubs.append((gs_pub, item))
@@ -610,8 +843,15 @@ def main() -> None:
             pub_url = filled.get("pub_url") or filled_bib.get("url")
             if pub_url and not item["links"].get("paper"):
                 item["links"]["paper"] = pub_url
+            item["links"] = normalize_links(item["links"])
+            if item["links"].get("arxiv") and item["venue"] == "Unknown":
+                item["venue"] = "arXiv"
+                item["venue_full"] = "arXiv preprint"
 
-            if item["bibtex"].startswith("@article{"):
+            if not item.get("year") and item.get("venue") == "Unknown":
+                continue
+
+            if item["bibtex"].startswith(("@article{", "@inproceedings{")) or "author={}" in item["bibtex"]:
                 item["bibtex"] = fallback_bibtex(
                     item["key"],
                     item["title"],
