@@ -237,8 +237,56 @@
     }
   });
 
-  // --- Showcase Lightbox ---
+  // --- Editorial Gallery Drawer & Darkroom Carousel ---
+  document.addEventListener("click", function (e) {
+    var toggle = e.target.closest("[data-gallery-toggle]");
+    if (!toggle) return;
+    var root = toggle.closest("[data-editorial-gallery]");
+    var drawer = root ? root.querySelector("[data-gallery-drawer]") : null;
+    if (!drawer) return;
+
+    var willExpand = drawer.hidden;
+    if (willExpand) {
+      Array.prototype.forEach.call(
+        drawer.querySelectorAll("img[data-lazy-src]"),
+        function (img) {
+          if (!img.getAttribute("src")) {
+            img.setAttribute("src", img.getAttribute("data-lazy-src"));
+          }
+        }
+      );
+    }
+    drawer.hidden = !willExpand;
+    toggle.setAttribute("aria-expanded", String(willExpand));
+    toggle.textContent = willExpand
+      ? toggle.dataset.collapseLabel
+      : toggle.dataset.expandLabel;
+  });
+
   var lightbox = null;
+  var gallerySources = [];
+  var galleryIndex = 0;
+
+  function pad2(n) {
+    return n < 10 ? "0" + n : String(n);
+  }
+
+  function renderLightbox() {
+    if (!lightbox || !gallerySources.length) return;
+    var img = lightbox.querySelector(".showcase-lightbox__img");
+    var counter = lightbox.querySelector(".showcase-lightbox__counter");
+    img.src = gallerySources[galleryIndex];
+    counter.textContent =
+      pad2(galleryIndex + 1) + " / " + pad2(gallerySources.length);
+  }
+
+  function stepLightbox(delta) {
+    if (!lightbox || lightbox.hidden || !gallerySources.length) return;
+    galleryIndex =
+      (galleryIndex + delta + gallerySources.length) % gallerySources.length;
+    renderLightbox();
+  }
+
   function closeLightbox() {
     if (lightbox) {
       lightbox.hidden = true;
@@ -246,28 +294,51 @@
   }
 
   document.addEventListener("click", function (e) {
-    var shot = e.target.closest("[data-lightbox-src]");
-    if (!shot) return;
+    var tile = e.target.closest("[data-gallery-open]");
+    if (!tile) return;
+    var root = tile.closest("[data-editorial-gallery]") || document;
+    var allTiles = Array.prototype.slice.call(
+      root.querySelectorAll("[data-gallery-open]")
+    );
+    gallerySources = allTiles.map(function (el) {
+      return el.dataset.gallerySrc;
+    });
+    galleryIndex = parseInt(tile.dataset.galleryOpen, 10) || 0;
+
     if (!lightbox) {
       lightbox = document.createElement("div");
       lightbox.className = "showcase-lightbox";
       lightbox.setAttribute("role", "dialog");
       lightbox.setAttribute("aria-modal", "true");
       lightbox.innerHTML =
-        '<img alt=""><div class="showcase-lightbox__caption"></div>';
-      lightbox.addEventListener("click", closeLightbox);
+        '<button type="button" class="showcase-lightbox__close" aria-label="Close">&times;</button>' +
+        '<button type="button" class="showcase-lightbox__nav showcase-lightbox__nav--prev" aria-label="Previous">&#8249;</button>' +
+        '<img class="showcase-lightbox__img" alt="Kling Image 4.0 visual output">' +
+        '<button type="button" class="showcase-lightbox__nav showcase-lightbox__nav--next" aria-label="Next">&#8250;</button>' +
+        '<div class="showcase-lightbox__counter"></div>';
+      lightbox.addEventListener("click", function (ev) {
+        if (
+          ev.target === lightbox ||
+          ev.target.closest(".showcase-lightbox__close")
+        ) {
+          closeLightbox();
+        } else if (ev.target.closest(".showcase-lightbox__nav--prev")) {
+          stepLightbox(-1);
+        } else if (ev.target.closest(".showcase-lightbox__nav--next")) {
+          stepLightbox(1);
+        }
+      });
       document.body.appendChild(lightbox);
     }
-    var img = lightbox.querySelector("img");
-    var cap = lightbox.querySelector(".showcase-lightbox__caption");
-    img.src = shot.dataset.lightboxSrc;
-    img.alt = shot.dataset.lightboxCaption || "";
-    cap.textContent = shot.dataset.lightboxCaption || "";
-    cap.hidden = !cap.textContent;
+
+    renderLightbox();
     lightbox.hidden = false;
   });
 
   document.addEventListener("keydown", function (e) {
+    if (!lightbox || lightbox.hidden) return;
     if (e.key === "Escape") closeLightbox();
+    else if (e.key === "ArrowLeft") stepLightbox(-1);
+    else if (e.key === "ArrowRight") stepLightbox(1);
   });
 })();

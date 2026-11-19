@@ -36,10 +36,10 @@ challenges:
   - year: 2026
     rank: 1
     badge:
-      en: "#1 CN · #6 Global"
+      en: "#1 CN · Global #6"
       zh: "国内 #1 · 全球 #6"
-    en: "[Artificial Analysis Image Arena](https://artificialanalysis.ai/image/leaderboard/text-to-image) — Text-to-Image & Image Editing (*Kling Image 4.0*)"
-    zh: "[Artificial Analysis 国际图像评测](https://artificialanalysis.ai/image/leaderboard/text-to-image) — 文生图 & 图像编辑双榜（*Kling Image 4.0*）"
+    en: "[Artificial Analysis Image Arena](https://artificialanalysis.ai/image/leaderboard/editing) — Image Editing & Text-to-Image ([*Kling Image 4.0*](https://klingai.com/release-note/release-notes/Kling_Image_4?type=dialog))"
+    zh: "[Artificial Analysis 国际图像评测](https://artificialanalysis.ai/image/leaderboard/editing) — 图像编辑 & 文生图双榜（[*Kling Image 4.0*](https://klingai.com/release-note/release-notes/Kling_Image_4?type=dialog)）"
   - year: 2024
     rank: 1
     en: "Argoverse Challenge 2024 (CVPR), Single-Agent Motion Forecasting"

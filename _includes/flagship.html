@@ -14,14 +14,23 @@
     <article class="flagship-lead">
       <div class="flagship-lead__top">
         <div class="flagship-lead__heading">
+          {% if m.url %}
+          <h3 class="flagship-lead__name"><a href="{{ m.url }}" class="flagship-lead__name-link" target="_blank" rel="noopener">{{ m.name }} <span class="model-card__arrow" aria-hidden="true">↗</span></a></h3>
+          {% else %}
           <h3 class="flagship-lead__name">{{ m.name }}</h3>
+          {% endif %}
           {% if m.badge %}
           <span class="flagship-badge flagship-badge--accent">{{ m.badge[lang] }}</span>
           {% endif %}
         </div>
-        {% if m.domain %}
-        <span class="flagship-lead__domain">{{ m.domain[lang] }}</span>
-        {% endif %}
+        <div class="flagship-lead__meta">
+          {% if m.domain %}
+          <span class="flagship-lead__domain">{{ m.domain[lang] }}</span>
+          {% endif %}
+          {% if m.url %}
+          <a href="{{ m.url }}" class="flagship-lead__ext" target="_blank" rel="noopener">{{ t.home.release_notes }} ↗</a>
+          {% endif %}
+        </div>
       </div>
       <div class="flagship-lead__summary">{{ m.summary[lang] | markdownify }}</div>
 
@@ -48,15 +57,33 @@
       {% endif %}
 
       {% if m.showcase and m.showcase.size > 0 %}
-      <div class="flagship-gallery" role="list" aria-label="{{ m.name }} visual showcase">
-        {% for item in m.showcase %}
-        <button type="button" class="flagship-shot" role="listitem" data-lightbox-src="{{ item.src | relative_url }}" data-lightbox-caption="{{ item.caption[lang] | default: item.tag[lang] | escape }}">
-          <img src="{{ item.src | relative_url }}" alt="{{ item.tag[lang] | default: m.name }}" loading="lazy">
-          {% if item.tag %}
-          <span class="flagship-shot__tag">{{ item.tag[lang] }}</span>
+      <div class="editorial-gallery" data-editorial-gallery>
+        <div class="bento-mosaic" role="list" aria-label="{{ m.name }} selected visual works">
+          {% for item in m.showcase limit:5 %}
+          <button type="button" class="bento-tile bento-tile--{{ forloop.index }}" role="listitem" data-gallery-open="{{ forloop.index0 }}" data-gallery-src="{{ item.src | relative_url }}" aria-label="{{ m.name }} visual sample {{ forloop.index }}">
+            <img src="{{ item.src | relative_url }}" alt="{{ m.name }} sample {{ forloop.index }}" {% if item.pos %}style="object-position: {{ item.pos }};"{% endif %} loading="lazy">
+          </button>
+          {% endfor %}
+        </div>
+
+        {% if m.showcase.size > 5 %}
+        <div class="masonry-drawer" data-gallery-drawer hidden>
+          {% for item in m.showcase offset:5 %}
+          {% assign item_idx = forloop.index0 | plus: 5 %}
+          {% assign item_num = forloop.index | plus: 5 %}
+          <button type="button" class="masonry-tile" data-gallery-open="{{ item_idx }}" data-gallery-src="{{ item.src | relative_url }}" aria-label="{{ m.name }} visual sample {{ item_num }}">
+            <img data-lazy-src="{{ item.src | relative_url }}" alt="{{ m.name }} sample {{ item_num }}" loading="lazy">
+          </button>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="gallery-bar">
+          <span class="gallery-bar__caption">{{ t.home.gallery_caption }}</span>
+          {% if m.showcase.size > 5 %}
+          <button type="button" class="gallery-toggle" data-gallery-toggle data-expand-label="{{ t.home.gallery_expand }} ({{ m.showcase.size }}) +" data-collapse-label="{{ t.home.gallery_collapse }} −" aria-expanded="false">{{ t.home.gallery_expand }} ({{ m.showcase.size }}) +</button>
           {% endif %}
-        </button>
-        {% endfor %}
+        </div>
       </div>
       {% endif %}
     </article>

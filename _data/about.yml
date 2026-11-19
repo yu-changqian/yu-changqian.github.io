@@ -18,19 +18,19 @@ tagline:
 
 bio:
   en:
-    - "I lead **[Kling Image](https://app.klingai.com/en/omni/new)** at Kling AI, architecting foundation models across visual generation, editing, and multimodal understanding. From pioneering real-time vision backbones (**BiSeNet**, **Lite-HRNet**) to scaling frontier multimodal systems (**Kling Image 4.0**, **SkyReels**), my work bridges foundational architecture design and global-scale products. PhD from [HUST](https://english.hust.edu.cn/) · **CSIG Top-10 Dissertation Award** · **Stanford's Top 2% Scientist**."
+    - "I lead **[Kling Image](https://app.klingai.com/en/omni/new)** at Kling AI, architecting foundation models across visual generation, editing, and multimodal understanding. From pioneering real-time vision backbones (**BiSeNet**, **Lite-HRNet**) to scaling unified multimodal systems ([**Kling Image 4.0**](https://klingai.com/release-note/release-notes/Kling_Image_4?type=dialog), **SkyReels**), my work bridges foundational architecture design and global-scale products. PhD from [HUST](https://english.hust.edu.cn/) · **CSIG Top-10 Dissertation Award** · **Stanford's Top 2% Scientist**."
   zh:
-    - "我在可灵AI负责 **图像模型中心**，统筹视觉生成、编辑与多模态理解基座模型的研发与落地。从定义实时视觉经典架构（**BiSeNet**、**Lite-HRNet**）到打造全球第一梯队多模态生成系统（**Kling Image 4.0**、**SkyReels**），致力于将原创架构研究转化为亿级用户产品。[华中科技大学](https://www.hust.edu.cn/)博士，获 **CSIG 全国优博** 与**中国电子学会自然科学二等奖**。"
+    - "我在可灵AI负责 **图像模型中心**，统筹视觉生成、编辑与多模态理解基座模型的研发与落地。从定义实时视觉经典架构（**BiSeNet**、**Lite-HRNet**）到打造全球第一梯队理解生成统一基座（[**Kling Image 4.0**](https://klingai.com/release-note/release-notes/Kling_Image_4?type=dialog)、**SkyReels**），致力于将原创架构研究转化为亿级用户产品。[华中科技大学](https://www.hust.edu.cn/)博士，获 **CSIG 全国优博** 与**中国电子学会自然科学二等奖**。"
 
 # Executive proof strip rendered in Hero
 proof_metrics:
   - value:
-      en: "#6 Global · #1 CN"
-      zh: "全球 #6 · 国内 #1"
+      en: "#1 CN · Global #6"
+      zh: "国内 #1 · 全球 #6"
     label:
       en: "AA Image Arena"
-      zh: "AA 国际图像双榜"
-    url: "https://artificialanalysis.ai/image/leaderboard/text-to-image"
+      zh: "AA 国际图像评测"
+    url: "https://artificialanalysis.ai/image/leaderboard/editing"
   - value: "10,700+"
     label:
       en: "Citations"
@@ -51,50 +51,60 @@ proof_metrics:
 signature_models:
   - name: "Kling Image 4.0"
     badge:
-      en: "Preview · Nov 2026"
-      zh: "预览版 · 2026.11"
+      en: "Launched · Nov 2026"
+      zh: "正式上线 · 2026.11"
     domain:
-      en: "Unified Visual Generation & Editing · Kling AI"
-      zh: "新一代图像生成与编辑基座 · 可灵AI"
+      en: "Unified Understanding & Generation · Kling AI"
+      zh: "原生理解生成统一架构 · 可灵AI"
+    url: "https://klingai.com/release-note/release-notes/Kling_Image_4?type=dialog"
     featured: true
     summary:
-      en: "Next-generation **native 8K** foundation model unifying ultra-high-definition text-to-image synthesis and instruction-driven image editing. Debuted at **#6 globally** on both Artificial Analysis leaderboards — **#1 among Chinese labs**, jumping **+255 Elo** in Text-to-Image and **+228 Elo** in Image Editing over 3.0 Omni."
-      zh: "新一代**原生 8K** 图像基座模型，融合超高清高保真文生图与指令级图像编辑能力。首次亮相即在 Artificial Analysis 国际评测双榜位列**全球第 6、国内第 1**，较 3.0 Omni 在文生图与图像编辑分别跃升 **+255 Elo** 与 **+228 Elo**。"
+      en: "Kling AI's flagship visual foundation model built on a **single-Transformer unified understanding-and-generation architecture** — moving beyond stitched LLM-plus-diffusion pipelines to fuse world knowledge, structured visual grammar (**15K-token** prompts, up to **10 references**), and a **native Agentic visual hub** in one context. Delivers **native 8K** photorealism, **2,000-character** multilingual typography (70+ fonts), **10-shot coherent series**, and layered long-canvas design. Ranked **#1 among Chinese labs** on both Artificial Analysis leaderboards (**+255 / +229 Elo** generational leap over 3.0 Omni)."
+      zh: "可灵全新一代**原生理解生成统一架构**图像基座模型——告别传统“语言模型拼接扩散模型”的割裂范式，以单一 Transformer 熔铸世界知识、**15K 超长上下文**（支持 **10 图参考**）与**原生 Agentic 视觉中枢**。支持 **原生 8K** 超高清直出、单图 **2,000 字**多语种排版（70+ 款字体）、单次 **10 张连贯组图**与长图分图层编辑；在 Artificial Analysis 文生图与图像编辑双榜稳居**国内第 1**，较 3.0 Omni 实现 **+255 / +229 Elo** 的代际跨越。"
     capabilities:
+      - en: "Unified Single-Transformer"
+        zh: "原生理解生成统一架构"
       - en: "Native 8K Ultra-HD"
         zh: "原生 8K 超高清直出"
-      - en: "Multi-Reference Consistency"
-        zh: "长上下文多参考一致"
-      - en: "Typography & Layout"
-        zh: "精准图文与版式"
-      - en: "Instruction-Driven Editing"
-        zh: "指令级图像编辑"
+      - en: "15K Context · 2,000-Char Typography"
+        zh: "15K 上下文 · 2000字排版"
+      - en: "10-Shot Coherent Series"
+        zh: "10图连贯组图 · 长图分层编辑"
+      - en: "Native Agentic Visual Hub"
+        zh: "原生 Agentic 视觉中枢"
     metrics:
-      - label:
-          en: "AA Text-to-Image"
-          zh: "AA 文生图榜单"
-        rank: "#6 Global · #1 CN"
-        rank_zh: "全球 #6 · 国内 #1"
-        score: "1180 Elo"
-        url: "https://artificialanalysis.ai/image/leaderboard/text-to-image"
       - label:
           en: "AA Image Editing"
           zh: "AA 图像编辑榜单"
         rank: "#6 Global · #1 CN"
         rank_zh: "全球 #6 · 国内 #1"
-        score: "1182 Elo"
+        score: "1183 Elo"
         url: "https://artificialanalysis.ai/image/leaderboard/editing"
-    # Visual showcase slot — drop official 4.0 images into assets/img/showcase/ and uncomment below:
-    # showcase:
-    #   - src: "/assets/img/showcase/kling4-01.webp"
-    #     tag: { en: "Cinematic Realism", zh: "电影级光影质感" }
-    #     caption: { en: "Kling Image 4.0 — Photorealistic lighting & material rendering", zh: "Kling Image 4.0 — 电影级光影与材质细节表现" }
-    #   - src: "/assets/img/showcase/kling4-02.webp"
-    #     tag: { en: "Multi-Reference", zh: "多参考主体一致" }
-    #   - src: "/assets/img/showcase/kling4-03.webp"
-    #     tag: { en: "Typography", zh: "复杂文字与版式" }
-    #   - src: "/assets/img/showcase/kling4-04.webp"
-    #     tag: { en: "Instruction Edit", zh: "精准指令级编辑" }
+      - label:
+          en: "AA Text-to-Image"
+          zh: "AA 文生图榜单"
+        rank: "#7 Global · #1 CN"
+        rank_zh: "全球 #7 · 国内 #1"
+        score: "1180 Elo"
+        url: "https://artificialanalysis.ai/image/leaderboard/text-to-image"
+    showcase:
+      - src: "/assets/img/showcase/t01-cinema-chess.webp"
+        pos: "52% 46%"
+      - src: "/assets/img/showcase/t02-citrus-scent.webp"
+        pos: "50% 44%"
+      - src: "/assets/img/showcase/t03-prism-light.webp"
+        pos: "50% 50%"
+      - src: "/assets/img/showcase/t04-brutalist-cover.webp"
+        pos: "50% 30%"
+      - src: "/assets/img/showcase/t05-basalt-monolith.webp"
+        pos: "50% 42%"
+      - src: "/assets/img/showcase/t06-swiss-grid.webp"
+      - src: "/assets/img/showcase/t07-concrete-hall.webp"
+      - src: "/assets/img/showcase/t08-vision-visor.webp"
+      - src: "/assets/img/showcase/t09-porcelain-zine.webp"
+      - src: "/assets/img/showcase/t10-maison-drape.webp"
+      - src: "/assets/img/showcase/t11-alpine-perfume.webp"
+      - src: "/assets/img/showcase/t12-midnight-gt.webp"
 
   - name: "Kling-Image 3.0 & 3.0 Omni"
     domain:
@@ -181,15 +191,15 @@ timeline:
           en: "Director"
           zh: "算法总监"
         period: "2026.04 – Present"
-        en: "As **Director of Kling Image**, I oversee Kling AI's image foundation model series — including the native 8K **Kling Image 4.0** (**#6 globally · #1 among Chinese labs** on [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/text-to-image)). Current focus: **unified multimodal models** bridging visual understanding and generation."
-        zh: "作为 **图像模型中心负责人**，统筹可灵AI图像基座模型体系的研发与落地（含位列 [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/text-to-image) 全球第 6、国内第 1 的原生 8K 基座 **Kling Image 4.0**）。当前重点方向：**理解生成一体化**。"
+        en: "As **Director of Kling Image**, I oversee Kling AI's image foundation model series. Shipped [**Kling Image 4.0**](https://klingai.com/release-note/release-notes/Kling_Image_4?type=dialog) — a single-Transformer **unified understanding-and-generation** model featuring native 8K synthesis, 15K-token structured control, coherent 10-shot series, and agentic visual capabilities (**#1 among Chinese labs** on [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/editing))."
+        zh: "作为 **图像模型中心负责人**，统筹可灵AI图像基座模型体系的研发与落地。主导发布 [**Kling Image 4.0**](https://klingai.com/release-note/release-notes/Kling_Image_4?type=dialog)——采用单一 Transformer **原生理解生成统一架构**，突破原生 8K 直出、15K 超长语义、连贯组图与 Agentic 视觉中枢（位列 [Artificial Analysis](https://artificialanalysis.ai/image/leaderboard/editing) 双榜**国内第 1**、全球第一梯队）。"
 
       - title:
           en: "Head of Algorithms"
           zh: "技术主管"
         period: "2026.04 – Present"
-        en: "Led the **Kling-Image-Omni** team, shipping products that power visual generation and understanding at scale. Key launches include [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog) — bringing visual reasoning to image generation — and [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog), the latest generation of Kling AI's omni-image foundation models."
-        zh: "带领 **Kling-Image-Omni** 团队，构建大规模视觉生成与理解产品。核心交付包括 [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog)——将视觉推理引入图像生成，以及 [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog)，可灵AI最新一代图像基础模型。"
+        en: "Led the **Kling-Image-Omni** team, shipping products that power visual generation and understanding at scale, including [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog) — bringing visual reasoning to image generation — and [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog), Kling AI's omni-image foundation model series."
+        zh: "带领 **Kling-Image-Omni** 团队，构建大规模视觉生成与理解产品。核心交付包括 [**Kling-Image-O1**](https://app.klingai.com/cn/release-notes/exv6o36sxa?type=dialog)——将视觉推理引入图像生成，以及 [**Kling-Image 3.0 & 3.0 Omni**](https://app.klingai.com/cn/release-notes/rz3idhopum?type=dialog) 全能图像基础模型系列。"
 
   - company:
       en: "Kunlun Tech (Skywork)"

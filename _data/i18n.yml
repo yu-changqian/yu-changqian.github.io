@@ -6,7 +6,10 @@ en:
   home:
     flagship_models: "Signature Models"
     flagship_note: "From real-time perception to multimodal generation"
-    release_notes: "Release"
+    release_notes: "Release Notes"
+    gallery_caption: "Curated native outputs · Click any frame to inspect"
+    gallery_expand: "Expand Gallery"
+    gallery_collapse: "Collapse Gallery"
     selected_publications: "Selected Publications"
     view_all: "View all →"
     news: "News"
@@ -67,7 +70,10 @@ zh:
   home:
     flagship_models: "代表模型"
     flagship_note: "从实时视觉感知到多模态生成基座"
-    release_notes: "发布详情"
+    release_notes: "官方发布日志"
+    gallery_caption: "精选原生直出画册 · 点击任意画面进入暗房浏览"
+    gallery_expand: "展开全部作品"
+    gallery_collapse: "收起更多作品"
     selected_publications: "代表论文"
     view_all: "查看全部 →"
     news: "动态"
